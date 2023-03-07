@@ -1,4 +1,4 @@
-class ItineraryController < ApplicationController
+class ItinerariesController < ApplicationController
   def show
   end
 
