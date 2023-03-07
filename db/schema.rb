@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_110645) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_143417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.text "description"
+    t.float "lat"
+    t.float "long"
+    t.integer "duration"
+    t.integer "cost"
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "itineraries", force: :cascade do |t|
+    t.integer "original_itinerary_id"
+    t.bigint "user_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.string "destination"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "public", default: false
+    t.index ["user_id"], name: "index_itineraries_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +47,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_110645) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "itineraries", "users"
 end
