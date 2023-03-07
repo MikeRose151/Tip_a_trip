@@ -1,4 +1,4 @@
-class ItineraryController < ApplicationController
+class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
     @favourites = @itinerary.favourites # activities that might become part of the itinerary
