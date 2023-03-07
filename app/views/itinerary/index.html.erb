@@ -1,2 +1,9 @@
 <h1>Itinerary#index</h1>
 <p>Find me in app/views/itinerary/index.html.erb</p>
+
+<h1> Itineraries: </h1>
+<% @itineraries.each do |itinerary| %>
+  <h4> Itinerary: <%= itinerary.title %> </p>
+  <p> From: <%= itinerary.start_date %> | To: <%= itinerary.end_date %> </p>
+  <p> Original Creator: <%= "[to be coded]" %> </p>
+<% end %>
