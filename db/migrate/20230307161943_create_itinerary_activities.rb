@@ -1,4 +1,4 @@
-class CreateItineraryActivitiesJoinTable < ActiveRecord::Migration[7.0]
+class CreateItineraryActivities < ActiveRecord::Migration[7.0]
   def change
     create_table :itinerary_activities do |t|
       t.references :itinerary, null: false, foreign_key: true
