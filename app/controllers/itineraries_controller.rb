@@ -13,16 +13,11 @@ class ItinerariesController < ApplicationController
     @itinerary_activities = @itinerary_activities.map do |activity|
       Activity.find_by_id(activity.activity_id)
     end
-
-
-     
-
   end
 
   def index
     @itineraries = Itinerary.all
   end
-
 
   def create
 
@@ -38,7 +33,6 @@ class ItinerariesController < ApplicationController
       # @itinerary =
     end
   end
-
 
   #
   #   if itinerary_params.user
@@ -62,17 +56,10 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-
-
   end
 
   private
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
-
   end
-
-
-
-
 end
