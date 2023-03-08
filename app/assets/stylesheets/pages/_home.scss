@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+body{
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #0B0633 0%,
+    #0B0633 50%,
+    #F5F4F4 50%,
+    #F5F4F4 100%
+  );
+}
+p{
+  color: $gray;
+}
