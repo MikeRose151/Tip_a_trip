@@ -13,20 +13,16 @@ class ItinerariesController < ApplicationController
     @itinerary_activities = @itinerary_activities.map do |activity|
       Activity.find_by_id(activity.activity_id)
     end
-
-
-     
-
   end
 
   def index
     @itineraries = Itinerary.all
   end
 
-
   def create
+    # raise
 
-    if params[:itineraries_id].nil?
+    if params[:original_itn_id].nil?
       @itinerary = Itinerary.new(itinerary_params)
       @itinerary.user = current_user
       if @itinerary.save
@@ -35,10 +31,10 @@ class ItinerariesController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     else
-      # @itinerary =
+      @itinerary = Itinerary.find(params[:original_itn_id])
+      #??????
     end
   end
-
 
   #
   #   if itinerary_params.user
@@ -62,17 +58,10 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-
-
   end
 
   private
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
-
   end
-
-
-
-
 end
