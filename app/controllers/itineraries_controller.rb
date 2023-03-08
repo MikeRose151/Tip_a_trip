@@ -7,6 +7,14 @@ class ItinerariesController < ApplicationController
     @favourites = @favourites.map do |favourite|
       Activity.find_by_id(favourite.activity_id)
     end
+
+    @itinerary_activities = []
+    @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
+    @itinerary_activities = @itinerary_activities.map do |activity|
+      Activity.find_by_id(activity.activity_id)
+    end
+
+
      
   end
   
