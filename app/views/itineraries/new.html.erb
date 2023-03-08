@@ -1,2 +1,10 @@
 <h1>Itinerary#new</h1>
 <p>Find me in app/views/itinerary/new.html.erb</p>
+
+<%= simple_form_for [@itinerary] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :destination %>
+  <%= f.input :title %>
+  <%= f.submit %>
+<% end %>
