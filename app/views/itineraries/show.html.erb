@@ -1,19 +1,14 @@
-<h1>Itinerary#show</h1>
-<p>Find me in app/views/itinerary/show.html.erb</p>
-
 <h1> Itinerary: <%= @itinerary.title%> </h1>
 
+<h4> Activities </h4>
+  <ul>
+    <% @itinerary_activities.each do |activity| %>
+        <li> <%= activity.name %> </li>
+        <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
+    <% end %>
+  </ul>
 
-favourites
-<% @favourites.each do |favourite| %>
-    <%= favourite.name  %>
-<% end %>
-
-
-Activities
-<% @itinerary_activities.each do |activity| %>
-    <%= activity.name  %>
-<% end %>
+<%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
 Add this Itinerary
 <form action="/itineraries" method="post">
