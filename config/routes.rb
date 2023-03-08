@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  get 'itinerary/show'
-  get 'itinerary/index'
-  get 'itinerary/create'
-  get 'itinerary/new'
-  get 'itinerary/edit'
-  get 'itinerary/update'
-  get 'activities/index'
-  devise_for :users
+  devise_for :users 
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  resources :users do
+    resources :itineraries, only: [:index] do
+      resources :activities, only: [:index] 
+    end
+
+  end
+
+  resources :itineraries, only: [:index, :show, :new, :create, :edit, :update]
+
+ 
 
   # Defines the root path route ("/")
   # root "articles#index"
