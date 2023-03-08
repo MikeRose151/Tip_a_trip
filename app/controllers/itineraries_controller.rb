@@ -11,8 +11,18 @@ class ItinerariesController < ApplicationController
     @itineraries = Itinerary.all
   end
 
-  def create
-  end
+  # def create
+  #   @itinerary = Itinerary.new(itinerary_params)
+  #   if itinerary_params.user
+  #       # do this
+  #       @itinerary.original_itinerary_id =
+  #   else
+  #     # do this
+  #   end
+  #   @itinerary.user = current_user
+  #   @itinerary.save
+  #   redirect_to itineraries_path
+  # end
 
   def new
     @itinerary = Itinerary.new
@@ -25,10 +35,14 @@ class ItinerariesController < ApplicationController
 
   def update
 
+
   end
 
   private
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
+
   end
+
+
 end
