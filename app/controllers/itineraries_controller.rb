@@ -1,6 +1,7 @@
 class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
+
     @favourites = @user.favourites if @user
     
     @user = current_user
@@ -25,6 +26,11 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-    
+
+  end
+
+  private
+  def itinerary_params
+    params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
   end
 end
