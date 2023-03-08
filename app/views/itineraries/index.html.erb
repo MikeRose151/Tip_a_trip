@@ -1,9 +1,16 @@
-<h1>Itinerary#index</h1>
-<p>Find me in app/views/itinerary/index.html.erb</p>
-
-<h1> Itineraries: </h1>
-<% @itineraries.each do |itinerary| %>
-  <h4> Itinerary: <%= itinerary.title %> </p>
-  <p> Tipper: <%= itinerary.user.username %> </p>
+<div>
+  <h1>Itinerary#index</h1>
+  <p>Find me in app/views/itinerary/index.html.erb</p>
+  <h1> Itineraries: </h1>
+  <div class="itineraries">
+    <%@itineraries.each do |itinerary|%>
+      <div class="card-itinerary">
+        <img src="https://images.unsplash.com/photo-1673529553057-a7101e6c5c69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+        <div class="sidebar">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <%# need to update user seeds so that username is a regular string %>
-<% end %>
+</div>

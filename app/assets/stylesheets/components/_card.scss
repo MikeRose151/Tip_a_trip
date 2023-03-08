@@ -1,0 +1,55 @@
+.itineraries {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 25px;
+  column-gap: 25px;
+  padding: 30px;
+}
+
+.card-itinerary {
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-itinerary img {
+  height: 100%;
+  width: 90%;
+  object-fit: cover;
+}
+
+.sidebar {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 100%;
+  background-color: $blue;
+  i {
+    font-size: 3em;
+    color: white;
+
+  }
+
+}
+
+.card-itinerary h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-itinerary p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-itinerary .card-itinerary-infos {
+  padding: 16px;
+}
