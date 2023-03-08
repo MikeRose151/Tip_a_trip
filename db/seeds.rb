@@ -31,7 +31,8 @@ puts 'Creating 30 fake Itineraries...'
 30.times do
   Itinerary.create(
     title:    Faker::Company.name,
-    destination: city.sample
+    destination: city.sample,
+    user: User.all.sample
   )
   
 end
