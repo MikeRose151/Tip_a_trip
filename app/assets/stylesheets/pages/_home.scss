@@ -9,6 +9,14 @@ body{
     #F5F4F4 100%
   );
 }
-p{
-  color: $gray;
+
+.image {
+  width: 50%;
+  margin-top: 160px;
+}
+
+.nav-logo {
+  position: fixed;
+  top: 0;
+  right: 0;
 }
