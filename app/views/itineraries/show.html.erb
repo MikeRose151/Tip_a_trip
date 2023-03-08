@@ -6,13 +6,18 @@
 
 favourites
 <% @favourites.each do |favourite| %>
-    <%= favourite.name  %> 
+    <%= favourite.name  %>
 <% end %>
 
 
 Activities
 <% @itinerary_activities.each do |activity| %>
-    <%= activity.name  %> 
+    <%= activity.name  %>
 <% end %>
 
-
+Add this Itinerary
+<form action="/itineraries" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="original_itn_id" value="<%= @itinerary.id %>">
+  <input type="submit" name="commit" value="Add">
+</form>
