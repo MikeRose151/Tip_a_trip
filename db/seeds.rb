@@ -36,4 +36,24 @@ puts 'Creating 30 fake Itineraries...'
   )
   
 end
+
+
+puts 'Creating 100 fake Favourites...'
+200.times do
+  Favourite.create!(
+    user_id: User.all.sample.id,
+    activity_id: Activity.all.sample.id
+  )
+  
+end
+
+
+puts 'Creating 100 fake Itinerary Activities...'
+200.times do
+  ItineraryActivity.create!(
+    itinerary_id:    Itinerary.all.sample.id,
+    activity_id: Activity.all.sample.id
+  )
+  
+end
 puts 'Finished!'
