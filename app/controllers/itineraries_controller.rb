@@ -16,27 +16,40 @@ class ItinerariesController < ApplicationController
 
 
      
+
   end
-  
+
   def index
     @itineraries = Itinerary.all
   end
-  
- 
+
+
   def create
+
+    if params[:itineraries_id].nil?
+      @itinerary = Itinerary.new(itinerary_params)
+      @itinerary.user = current_user
+      if @itinerary.save
+        redirect_to itineraries_path
+      else
+        render :new, status: :unprocessable_entity
+      end
+    else
+      # @itinerary =
+    end
   end
 
-  # def create
-  #   @itinerary = Itinerary.new(itinerary_params)
+
+  #
   #   if itinerary_params.user
   #       # do this
   #       @itinerary.original_itinerary_id =
   #   else
   #     # do this
   #   end
-  #   @itinerary.user = current_user
-  #   @itinerary.save
+  #
   #   redirect_to itineraries_path
+
   # end
 
   def new
@@ -58,6 +71,8 @@ class ItinerariesController < ApplicationController
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
 
   end
+
+
 
 
 end
