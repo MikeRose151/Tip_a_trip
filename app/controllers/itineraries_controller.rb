@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
-    
+
     @itinerary_activities = []
     @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
     @itinerary_activities = @itinerary_activities.map do |activity|
@@ -69,6 +69,6 @@ class ItinerariesController < ApplicationController
 
   private
   def itinerary_params
-    params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
+    params.require(:itinerary).permit(:start_date, :end_date, :destination, :title)
   end
 end
