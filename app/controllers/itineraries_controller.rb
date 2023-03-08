@@ -1,18 +1,20 @@
 class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
-
-    @favourites = @user.favourites if @user
-    
     @user = current_user
-    # @activities = @itinerary.itinerary_activities 
+    @favourites = []
+    @favourites << Favourite.find_by_user_id(current_user)
+    @favourites = @favourites.map do |favourite|
+      Activity.find_by_id(favourite.activity_id)
+    end
+     
   end
   
   def index
     @itineraries = Itinerary.all
   end
   
-  # @itinerary.user_id == current_user if edit(@itinerary)
+ 
   def create
   end
 

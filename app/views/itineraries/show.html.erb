@@ -4,6 +4,7 @@
 <h1> Itinerary: <%= @itinerary.title%> </h1>
 
 
-<% @favourites.each do |fave| %>
-<%= fave.name %>
+
+<% @favourites.each do |favourite| %>
+    <%= favourite.name  %> 
 <% end %>
