@@ -4,6 +4,6 @@
 <h1> Itineraries: </h1>
 <% @itineraries.each do |itinerary| %>
   <h4> Itinerary: <%= itinerary.title %> </p>
-  <p> From: <%= itinerary.start_date %> | To: <%= itinerary.end_date %> </p>
-  <p> Original Creator: <%= "[to be coded]" %> </p>
+  <p> Tipper: <%= itinerary.user.username %> </p>
+  <%# need to update user seeds so that username is a regular string %>
 <% end %>
