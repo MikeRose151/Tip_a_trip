@@ -3,4 +3,7 @@
 
 <h1> Itinerary: <%= @itinerary.title %> </h1>
 
-<p> From: <%= itinerary.start_date %> | To: <%= itinerary.end_date %> </p>
+
+<% @favourites.each do |fave| %>
+<%= fave.name %>
+<% end %>
