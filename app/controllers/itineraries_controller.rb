@@ -1,10 +1,10 @@
 class ItinerariesController < ApplicationController
   def show
-    @Itinerary = Itinerary.find(params[:id])
+    @itinerary = Itinerary.find(params[:id])
 
     @user = current_user
     @favourites = @user.activities if @user
-    @activities = @itinerary.itinerary_activities 
+    @activities = @itinerary.itinerary_activities
   end
 
   def index
@@ -24,6 +24,11 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-    
+
+  end
+
+  private
+  def itinerary_params
+    params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
   end
 end
