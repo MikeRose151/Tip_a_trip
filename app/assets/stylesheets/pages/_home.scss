@@ -20,3 +20,67 @@ body{
   top: 0;
   right: 0;
 }
+
+.txtcolour {
+  color: #0B0633;
+  padding-left: 50;
+
+}
+
+.card-text{
+  color: #0B0633;
+}
+
+.card-title{
+  color:  #0B0633;
+  font-size: 25px;
+}
+.card-body{
+  text-align: center;
+  color: #F5F4F4;
+
+}
+
+.card{--bs-card-bg: #F5F4F4;
+  position: right;
+  --bs-card-border-width: 0px;
+  element.style {
+    width: 40rem;
+}
+}
+.row {
+  --bs-gutter-x: 1.5rem;}
+
+  element.style {
+    width: 18rem;
+}
+
+.hometext{
+  height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.body{--bs-body-font-family: var('Play', 'sans-serif');
+}
+
+.font{
+  font-family:$body;
+  font-size: 20px;
+}
+
+.fonttitle{
+  font-family:$headers;
+}
+
+.centre{
+  margin-inline: auto;
+}
+
+.logotext{
+  height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
