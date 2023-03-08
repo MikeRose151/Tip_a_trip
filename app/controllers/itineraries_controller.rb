@@ -20,8 +20,9 @@ class ItinerariesController < ApplicationController
   end
 
   def create
+    # raise
 
-    if params[:itineraries_id].nil?
+    if params[:original_itn_id].nil?
       @itinerary = Itinerary.new(itinerary_params)
       @itinerary.user = current_user
       if @itinerary.save
@@ -30,7 +31,8 @@ class ItinerariesController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     else
-      # @itinerary =
+      @itinerary = Itinerary.find(params[:original_itn_id])
+      #??????
     end
   end
 
