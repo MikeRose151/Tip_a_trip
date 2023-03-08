@@ -1,0 +1,2 @@
+class ItineraryActivity < ApplicationRecord
+end

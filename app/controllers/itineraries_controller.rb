@@ -1,16 +1,17 @@
 class ItinerariesController < ApplicationController
   def show
-    @Itinerary = Itinerary.find(params[:id])
-
+    @itinerary = Itinerary.find(params[:id])
+    @favourites = @user.favourites if @user
+    
     @user = current_user
-    @favourites = @user.activities if @user
-    @activities = @itinerary.itinerary_activities 
+    # @activities = @itinerary.itinerary_activities 
   end
-
+  
   def index
     @itineraries = Itinerary.all
   end
-
+  
+  # @itinerary.user_id == current_user if edit(@itinerary)
   def create
   end
 
@@ -20,7 +21,7 @@ class ItinerariesController < ApplicationController
 
   def edit
     @itinerary = Itinerary.find(params[:id])
-    @itinerary.public = true
+    @itinerary.public == true
   end
 
   def update
