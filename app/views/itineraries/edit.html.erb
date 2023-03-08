@@ -1,0 +1,22 @@
+<h1> Itinerary: <%= @itinerary.title%> </h1>
+
+<h4> Activities </h4>
+  <ul>
+    <% @itinerary_activities.each do |activity| %>
+        <li> <%= activity.name %> </li>
+        <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
+    <% end %>
+  </ul>
+
+<%# the above is the same as in part of the show.html.erb page so might wanna make a partial %>
+
+<h4> Shortlist </h4>
+  <ul>
+    <% @favourites.each do |favourite| %>
+        <%# if favourite.activity geocode is within a certain radius of itinerary.destination geocode... %>
+        <li> <%= favourite.name %> </li>
+        <%# code a button that if you click it then the favourite will get added to itinerary_activities array %>
+        <%# code another button that if you click it then the favourite will get removed from itinerary_activities array %>
+    <% end %>
+  </ul>
+

@@ -1,18 +1,6 @@
 class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
-    @user = current_user
-    @favourites = []
-    @favourites << Favourite.find_by_user_id(current_user)
-    @favourites = @favourites.map do |favourite|
-      Activity.find_by_id(favourite.activity_id)
-    end
-
-    @itinerary_activities = []
-    @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
-    @itinerary_activities = @itinerary_activities.map do |activity|
-      Activity.find_by_id(activity.activity_id)
-    end
   end
 
   def index
@@ -54,7 +42,20 @@ class ItinerariesController < ApplicationController
 
   def edit
     @itinerary = Itinerary.find(params[:id])
-    @itinerary.public == true
+    @user = current_user
+    @favourites = []
+    @favourites << Favourite.find_by_user_id(current_user)
+    @favourites = @favourites.map do |favourite|
+      Activity.find_by_id(favourite.activity_id)
+    end
+    # some of the above logic might need to live in the activities controller
+
+    @itinerary_activities = []
+    @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
+    @itinerary_activities = @itinerary_activities.map do |activity|
+      Activity.find_by_id(activity.activity_id)
+    end
+    # some of the above logic might need to live in the activities controller
   end
 
   def update
