@@ -1,8 +1,10 @@
 class ItinerariesController < ApplicationController
   def show
-    @itinerary = Itinerary.find(params[:id])
-    @favourites = @itinerary.favourites # activities that might become part of the itinerary
-    @activities = @itinerary.itinerary_activities # activities that are part of the itinerary
+    @Itinerary = Itinerary.find(params[:id])
+
+    @user = current_user
+    @favourites = @user.activities if @user
+    @activities = @itinerary.itinerary_activities 
   end
 
   def index
