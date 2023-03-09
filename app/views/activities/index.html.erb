@@ -1,9 +1,8 @@
-<h1>Activities#index</h1>
-<p>Find me in app/views/activities/index.html.erb</p>
 <h1> Activities: </h1>
 <% @activities.each do |activity| %>
   <p> Activity: <%= activity.name %> </p>
-  <p> Cost: <%= activity.cost %> </p>
+  <div> <%= cl_image_tag activity.photo.key, height: 300, crop: :fill %> </div>
+  <p> Cost: £<%= activity.cost %> </p>
   <%= button_to activity_favourites_path(activity), method: :post do %>
     <i class="fa-solid fa-circle-plus"></i>
   <% end %>
