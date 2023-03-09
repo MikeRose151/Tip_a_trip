@@ -8,19 +8,31 @@ Activity.destroy_all
 ItineraryActivity.destroy_all
 Favourite.destroy_all
 
-puts 'Creating 20 fake Users...'
+puts 'Creating 10 fake Users including test, Lazy Susan, and Tripper Trevor...'
 
 User.create!(
-  email:  "test@tat.com",
+  email: "test@tat.com",
   password: 123456,
-  username: Faker::Internet.user('username')
+  username: "Lieutenant Test"
 )
 
-19.times do
+User.create!(
+  email: "susan@tat.com",
+  password: 123456,
+  username: "Lazy Susan"
+)
+
+User.create!(
+  email: "trevor@tat.com",
+  password: 123456,
+  username: "Tripper Trevor"
+)
+
+7.times do
   User.create!(
-    email:  Faker::Internet.email,
+    email: Faker::Internet.email,
     password: 123456,
-    username: Faker::Internet.user('username')
+    username: Faker::Internet.username
   )
 end
 puts 'Finished!'
@@ -249,7 +261,7 @@ puts 'Creating 30 fake Itineraries...'
 end
 
 puts 'Creating 100 fake Favourites...'
-200.times do
+5.times do
   Favourite.create!(
     user_id: User.all.sample.id,
     activity_id: Activity.all.sample.id
@@ -257,7 +269,7 @@ puts 'Creating 100 fake Favourites...'
 end
 
 puts 'Creating 100 fake Itinerary Activities...'
-200.times do
+50.times do
   ItineraryActivity.create!(
     itinerary_id: Itinerary.all.sample.id,
     activity_id: Activity.all.sample.id
