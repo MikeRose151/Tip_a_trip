@@ -26,9 +26,20 @@ class ItinerariesController < ApplicationController
       end
     else
       # this happens when stealing an existing itenerary
-      @itinerary = Itinerary.find(params[:original_itinerary_id])
+      @original_itinerary = Itinerary.find(params[:original_itinerary_id])
+      @itinerary = Itinerary.new
+      @itinerary.original_itinerary_id = @original_itinerary.id
       @itinerary.user = current_user
-      raise
+      @itinerary.destination = @original_itinerary.destination
+      @itinerary.title = @original_itinerary.title
+      @itinerary.start_date = params[:start_date].to_date
+      @days_duration = (@original_itinerary.end_date - @original_itinerary.start_date).to_i
+      @itinerary.end_date = @itinerary.start_date + @days_duration
+      if @itinerary.save
+        redirect_to itineraries_path
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
@@ -61,5 +72,9 @@ class ItinerariesController < ApplicationController
 
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title)
+  end
+
+  def steal_itinerary_params
+    params.require(:itinerary).permit(:start_date)
   end
 end
