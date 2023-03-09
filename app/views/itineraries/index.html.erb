@@ -1,11 +1,12 @@
 <% if params[:user_id].nil? %>
 <%# if the URI pattern is /itineraries then show this %>
 
-  <div>
-    <h1> All itineraries: </h1>
-    <div class="itineraries">
-      <% @itineraries.each do |itinerary| %>
-        <% if itinerary.public? %>
+<div>
+  <h1> All itineraries: </h1>
+  <div class="itineraries">
+    <%@itineraries.each do |itinerary|%>
+      <% if itinerary.public? %>
+        <%= link_to itinerary_path(itinerary) do %>
           <div class="card-itinerary">
             <img src="https://images.unsplash.com/photo-1673529553057-a7101e6c5c69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
             <div class="sidebar">
@@ -25,12 +26,13 @@
     <div class="itineraries">
       <% @itineraries.each do |itinerary|%>
         <% if itinerary.user == current_user %>
-          <div class="card-itinerary">
-            <img src="https://images.unsplash.com/photo-1673529553057-a7101e6c5c69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
-            <div class="sidebar">
-              <i class="fa-solid fa-angle-right"></i>
+          <%= link_to itinerary_path(itinerary) do %>
+            <div class="card-itinerary">
+              <img src="https://images.unsplash.com/photo-1673529553057-a7101e6c5c69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+              <div class="sidebar">
+                <i class="fa-solid fa-angle-right"></i>
+              </div>
             </div>
-          </div>
         <% end %>
       <% end %>
     </div>
