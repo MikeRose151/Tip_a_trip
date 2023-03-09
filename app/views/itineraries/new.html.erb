@@ -4,7 +4,7 @@
 <%= simple_form_for [@itinerary] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.input :destination %>
+  <%= f.input :destination, collection: ['New York', 'London', 'Paris', 'Tokyo', 'Berlin', 'Rio', 'Oslo', 'Brussels', 'Prague', 'Edinburgh', 'Madrid', 'Lisbon', 'Bangkok', 'Amsterdam', 'Cardiff', 'Dublin'].sort %>
   <%= f.input :title %>
   <%= f.submit %>
 <% end %>
