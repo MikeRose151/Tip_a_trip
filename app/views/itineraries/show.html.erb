@@ -1,4 +1,5 @@
 <h1> Itinerary: <%= @itinerary.title%> </h1>
+<p> Duration: <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
 
 <h4> Activities </h4>
   <ul>
@@ -11,8 +12,11 @@
 <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
 Add this Itinerary
+Start date: ?
 <form action="/itineraries" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" name="original_itn_id" value="<%= @itinerary.id %>">
+  <input type="text" name="original_itinerary_id" value="<%= @itinerary.id %>">
+  <input type="date" name="start_date">
+  <%# javascript click event to display end_date to user, based on start_date + (original.end_date - original.start_date) %>
   <input type="submit" name="commit" value="Add">
 </form>

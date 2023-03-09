@@ -35,6 +35,8 @@ puts 'Creating 30 fake Itineraries...'
   Itinerary.create!(
     title: Faker::Company.name,
     destination: city.sample,
+    start_date: Date.new(2023, 2, 3),
+    end_date: Date.new(2023, 2, 6),
     user: User.all.sample,
     public: [true, false].sample
   )
