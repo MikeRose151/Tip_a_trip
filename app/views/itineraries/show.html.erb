@@ -1,22 +1,36 @@
-<h1> Itinerary: <%= @itinerary.title%> </h1>
-<p> Duration: <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="itinerary-show-title-card">
+        <h1> Itinerary: <%= @itinerary.title%> </h1>
+        <div class="itinerary-show-title-card-subtitle">
+          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
+          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
+        </div>
+      </div>
+      <div>
+        <div class="itinerary-show-activities-card">
+              <% @itinerary_activities.each do |activity| %>
+                  <div> <%= activity.name %> </div>
+                  <div> <%= activity.duration %> minutes </div>
+                  <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
+              <% end %>
+        </div>
+      </div>
+    </div>
 
-<h4> Activities </h4>
-  <ul>
-    <% @itinerary_activities.each do |activity| %>
-        <li> <%= activity.name %> </li>
-        <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
-    <% end %>
-  </ul>
+      <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
-<%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
-
-Add this Itinerary
-Start date: ?
-<form action="/itineraries" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" name="original_itinerary_id" value="<%= @itinerary.id %>">
-  <input type="date" name="start_date">
-  <%# javascript click event to display end_date to user, based on start_date + (original.end_date - original.start_date) %>
-  <input type="submit" name="commit" value="Add">
-</form>
+    <div class="col-6">
+      <p> Like the look of <%= @itinerary.user.username %>'s itinerary? Use it for your own trip! </p>
+      <form action="/itineraries" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
+        <label for="start">Start date:</label>
+        <input type="date" id="start" name="start_date" value="Start date" min="">
+        <%# javascript click event to display end_date to user, based on start_date + (original.end_date - original.start_date) %>
+        <input type="submit" name="commit" value="Use this itinerary">
+      </form>
+    </div>
+  </div>
+</div>
