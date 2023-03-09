@@ -2,14 +2,14 @@
 <%= simple_form_for [@itinerary] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.input :destination, collection: ['New York', 'London', 'Paris', 'Tokyo', 'Berlin', 'Rio', 'Oslo', 'Brussels', 'Prague', 'Edinburgh', 'Madrid', 'Lisbon', 'Bangkok', 'Amsterdam', 'Cardiff', 'Dublin'].sort, input_html: { id: 'destination-select' } %>
+  <%= f.input :destination, collection: ['New York', 'London', 'Paris', 'Tokyo', 'Berlin', 'Rio', 'Oslo', 'Brussels', 'Prague', 'Edinburgh', 'Madrid', 'Lisbon', 'Bangkok', 'Amsterdam', 'Cardiff', 'Dublin'].sort%>
   <%= f.input :title %>
   <%= f.submit %>
 <% end %>
 
 <div id="destination-image"></div>
 
-<script>
+<%# <script>
 $(document).ready(function() {
   $('#destination-select').on('change', function() {
     var destination = $(this).val();
@@ -27,4 +27,4 @@ $(document).ready(function() {
     }
   });
 });
-</script>
+</script> %>
