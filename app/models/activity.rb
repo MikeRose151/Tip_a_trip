@@ -3,5 +3,6 @@ class Activity < ApplicationRecord
   has_many :itinerary_activities
   has_many :users, through: :favourites
   has_many :favourites
-end
 
+  has_one_attached :photo
+end
