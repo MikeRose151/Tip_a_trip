@@ -20,33 +20,23 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    # raise
-
-    if params[:original_itn_id].nil?
+    if params[:original_itinerary_id].nil?
+      # this happens when creating brand new itinerary
       @itinerary = Itinerary.new(itinerary_params)
       @itinerary.user = current_user
+      @itinerary.original_itinerary_id = @itinerary.id
       if @itinerary.save
         redirect_to itineraries_path
       else
         render :new, status: :unprocessable_entity
       end
     else
-      @itinerary = Itinerary.find(params[:original_itn_id])
-      #??????
+      # this happens when stealing an existing itenerary
+      @itinerary = Itinerary.find(params[:original_itinerary_id])
+      @itinerary.user = current_user
+      raise
     end
   end
-
-  #
-  #   if itinerary_params.user
-  #       # do this
-  #       @itinerary.original_itinerary_id =
-  #   else
-  #     # do this
-  #   end
-  #
-  #   redirect_to itineraries_path
-
-  # end
 
   def new
     @itinerary = Itinerary.new
@@ -61,6 +51,7 @@ class ItinerariesController < ApplicationController
   end
 
   private
+
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title, :photo)
   end
