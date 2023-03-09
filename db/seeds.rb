@@ -136,6 +136,104 @@ lewagondemo = Activity.create(
 file_10 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678376163/Le-Wagon-cover_jugohq.jpg")
 lewagondemo.photo.attach(io: file_10, filename:"madame.jpg", content_type: "image/jpg")
 
+eiffeltower = Activity.create(
+  name: "Eiffel Tower",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris, France"
+)
+
+file_11 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678377318/eiffel_xe5juv.webp")
+eiffeltower.photo.attach(io: file_11, filename:"madame.jpg", content_type: "image/jpg")
+
+louvre = Activity.create(
+  name: "The Louvre",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "Rue de Rivoli, 75001 Paris, France"
+)
+
+file_12 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678377690/louvre_ookyvj.jpg")
+louvre.photo.attach(io: file_12, filename:"madame.jpg", content_type: "image/jpg")
+
+gardens = Activity.create(
+  name: "Luxembourg Gardens",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "Luxembourg Gardens, 75006 Paris, France"
+)
+
+file_13 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678378217/lux_psey0d.webp")
+gardens.photo.attach(io: file_13, filename:"madame.jpg", content_type: "image/jpg")
+
+rivertour = Activity.create(
+  name: "Bateaux Parisiens Seine River Gourmet Lunch & Sightseeing Cruise",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "Port de la Bourdonnais, 75007 Paris, France"
+)
+
+file_14 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678378986/145_rqtxhb.jpg")
+rivertour.photo.attach(io: file_14, filename:"madame.jpg", content_type: "image/jpg")
+
+panthean = Activity.create(
+  name: "The Panthéon",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "Pl. du Panthéon, 75005 Paris, France"
+)
+  file_15 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678379458/Pantheon-Paris_iksb1k.webp")
+  panthean.photo.attach(io: file_15, filename:"madame.jpg", content_type: "image/jpg")
+
+ombres = Activity.create(
+  name: "Les Ombres Restaurant",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "27 Quai Jacques Chirac, 75007 Paris, France"
+)
+file_16 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678379827/IMG_6339_gn8nri.jpg")
+ombres.photo.attach(io: file_16, filename:"madame.jpg", content_type: "image/jpg")
+
+orsay = Activity.create(
+  name: "Orsay Museum",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "1 Rue de la Légion d'Honneur, 75007 Paris, France"
+)
+
+file_17 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678380039/diane-picchiottino-eDv8b9Fa-tA-unsplash_gismdu.jpg")
+orsay.photo.attach(io: file_17, filename:"madame.jpg", content_type: "image/jpg")
+
+chapelle = Activity.create(
+  name: "Sainte-Chapelle",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "10 Bd du Palais, 75001 Paris, France"
+)
+
+file_18 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678380820/SAINTE_CHAPELLE-32_inlwas.jpg")
+chapelle.photo.attach(io: file_18, filename:"madame.jpg", content_type: "image/jpg")
+
+disney = Activity.create(
+  name: "Disney Land Paris",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "Bd de Parc, 77700 Coupvray, France"
+)
+
+file_19 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381133/63f25c4682440fdf3bb659eb3246b06a-_Disney_6_xm2nvh.png")
+disney.photo.attach(io: file_19, filename:"madame.jpg", content_type: "image/jpg")
+
+ segway= Activity.create(
+  name: "GO GO Segway tours - Paris",
+  duration: rand(30..180),
+  cost: rand(0..50),
+  address: "101 Av. de la Bourdonnais, 75007 Paris, France"
+)
+
+file_20 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
+segway.photo.attach(io: file_20, filename:"madame.jpg", content_type: "image/jpg")
+
 city = %w(Paris London Barcelona Berlin Rio)
 
 puts 'Creating 30 fake Itineraries...'
