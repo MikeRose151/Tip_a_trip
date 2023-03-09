@@ -4,5 +4,6 @@
 <h1> Activities: </h1>
 <% @activities.each do |activity| %>
   <p> Activity: <%= activity.name %> </p>
-  <p> Cost: <%= activity.cost %> </p>
+  <p> Cost: £<%= activity.cost %> </p>
+  <div> <%= cl_image_tag activity.photo.key, height: 300, crop: :fill %> </div>
 <% end %>
