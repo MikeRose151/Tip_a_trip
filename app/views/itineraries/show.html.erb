@@ -7,6 +7,10 @@
         <div class="itinerary-show-title-card-subtitle">
           <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
           <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
+          <%= simple_form_for(@itinerary, method: :patch) do |f| %>
+          <%= f.check_box :public %>
+          <%= f.submit "Publish?" %>
+          <% end %>
         </div>
       </div>
       <div>
@@ -29,6 +33,7 @@
       </div>
     </div>
 
+
       <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
     <div class="col-6">
@@ -44,3 +49,7 @@
     </div>
   </div>
 </div>
+
+
+
+
