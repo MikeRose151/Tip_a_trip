@@ -7,13 +7,11 @@ class ItinerariesController < ApplicationController
     @all_itinerary_activities.each do |itinerary_activity|
       @itinerary_activities << itinerary_activity if itinerary_activity.itinerary == @itinerary
     end
-
   end
 
   def index
     @itineraries = Itinerary.all
   end
-
 
   def new
     @itinerary = Itinerary.new
@@ -63,7 +61,8 @@ class ItinerariesController < ApplicationController
 
     @all_favourites.each do |favourite|
       if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
-        counter += favourite.activity.duration
+
+      # counter += favourite.activity_id.duration
         @favourites << favourite if counter <= 360
       end
     end
@@ -73,7 +72,7 @@ class ItinerariesController < ApplicationController
     @itinerary_activities = []
     @all_itinerary_activities.each do |itinerary_activity|
       if itinerary_activity.itinerary == @itinerary
-        counter += itinerary_activity.activity.duration
+        # counter += itinerary_activity.activity.duration
         @itinerary_activities << itinerary_activity if counter <= 360
       end
     end
