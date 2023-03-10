@@ -36,7 +36,7 @@ class ItinerariesController < ApplicationController
       @days_duration = (@original_itinerary.end_date - @original_itinerary.start_date).to_i
       @itinerary.end_date = @itinerary.start_date + @days_duration
       if @itinerary.save!
-        redirect_to edit_itinerary_path(@itinerary)
+        redirect_to user_itineraries_path(current_user)
       else
         render :new, status: :unprocessable_entity
       end
