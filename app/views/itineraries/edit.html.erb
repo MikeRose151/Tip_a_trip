@@ -1,5 +1,5 @@
-<h1> EDIT </h1> <%# putting this here for now to help distinguish between show and edit as they are very similar %>
-
+<h1> EDIT </h1>
+ <%# putting this here for now to help distinguish between show and edit as they are very similar %>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -29,18 +29,15 @@
         </ul>
       </div>
     </div>
-
     <%# the above is the same as in part of the show.html.erb page so might wanna make a partial %>
-
     <div class="col-6">
       <h4> Shortlist </h4>
-        <ul>
-          <% @favourites.each do |favourite| %>
-              <li> <%= favourite.activity.name %> </li>
-              <%# code a button that if you click it then the favourite will get added to itinerary_activities array %>
-              <%# code another button that if you click it then the favourite will get removed from itinerary_activities array %>
+      <ul>
+        <% @favourites.each do |favourite| %>
+          <li> <%= favourite.activity.name %> </li>
+          <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity), method: :post %>
           <% end %>
         </ul>
+      </div>
     </div>
   </div>
-</div>

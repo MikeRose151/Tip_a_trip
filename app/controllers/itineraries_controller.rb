@@ -61,19 +61,19 @@ class ItinerariesController < ApplicationController
     @all_favourites = Favourite.all
     @favourites = []
 
-    # @all_favourites.each do |favourite|
-    #   if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
-    #     counter += favourite.activity_id.duration
-    #     @favourites << favourite if counter <= 360
-    #   end
-    # end
+    @all_favourites.each do |favourite|
+      if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
+       # counter += favourite.activity_id.duration
+        @favourites << favourite if counter <= 360
+      end
+    end
     @itinerary_activities = @itinerary.activities
 
     @all_itinerary_activities = ItineraryActivity.all
     @itinerary_activities = []
     @all_itinerary_activities.each do |itinerary_activity|
       if itinerary_activity.itinerary == @itinerary
-        counter += itinerary_activity.activity.duration
+        # counter += itinerary_activity.activity.duration
         @itinerary_activities << itinerary_activity if counter <= 360
       end
     end
