@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_123800) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_10_065055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_123800) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "destination_id"
+    t.index ["destination_id"], name: "index_activities_on_destination_id"
+  end
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -68,11 +76,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_123800) do
     t.bigint "user_id", null: false
     t.date "start_date"
     t.date "end_date"
-    t.string "destination"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "public", default: false
+    t.bigint "destination_id"
+    t.index ["destination_id"], name: "index_itineraries_on_destination_id"
     t.index ["user_id"], name: "index_itineraries_on_user_id"
   end
 
@@ -100,8 +109,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_123800) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "activities", "destinations"
   add_foreign_key "favourites", "activities"
   add_foreign_key "favourites", "users"
+  add_foreign_key "itineraries", "destinations"
   add_foreign_key "itineraries", "users"
   add_foreign_key "itinerary_activities", "activities"
   add_foreign_key "itinerary_activities", "itineraries"
