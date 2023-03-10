@@ -7,13 +7,13 @@ class ItinerariesController < ApplicationController
     @all_itinerary_activities.each do |itinerary_activity|
       @itinerary_activities << itinerary_activity if itinerary_activity.itinerary == @itinerary
     end
+
   end
 
   def index
     @itineraries = Itinerary.all
   end
-
-
+  
   
   
   def create
@@ -83,6 +83,9 @@ class ItinerariesController < ApplicationController
   end
   
   def update
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.update(publish_params)
+    redirect_to action: "show", id: params[:id]
   end
   
   private
@@ -94,4 +97,9 @@ class ItinerariesController < ApplicationController
   def steal_itinerary_params
     params.require(:itinerary).permit(:start_date)
   end
+
+  def publish_params
+    params.require(:itinerary).permit(:public)
+  end
+
 end
