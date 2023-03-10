@@ -11,8 +11,16 @@
   </head>
 
   <body>
+
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+
     <%= yield %>
+
+   <footer class="footer py-1 sticky-bottom";>
+      <div class="container text-center">
+        <p>Tip-a-Trip </p>
+      </div>
+  </footer>
   </body>
 </html>
