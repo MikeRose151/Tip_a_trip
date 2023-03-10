@@ -2,10 +2,10 @@ class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
 
+    @all_itinerary_activities = ItineraryActivity.all
     @itinerary_activities = []
-    @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
-    @itinerary_activities = @itinerary_activities.map do |activity|
-      Activity.find_by_id(activity.activity_id)
+    @all_itinerary_activities.each do |itinerary_activity|
+      @itinerary_activities << itinerary_activity if itinerary_activity.itinerary == @itinerary
     end
   end
 
@@ -50,13 +50,19 @@ class ItinerariesController < ApplicationController
   def edit
     @itinerary = Itinerary.find(params[:id])
     @user = current_user
+    @all_favourites = Favourite.all
     @favourites = []
-    @favourites << Favourite.find_by_user_id(current_user)
-    @favourites = @favourites.map do |favourite|
-      Activity.find_by_id(favourite.activity_id)
+    @all_favourites.each do |favourite|
+      @favourites << favourite if favourite.user == current_user
+      # once schema complete: "&& favourite.activity.destination == @itinerary.destination"
     end
-    # some of the above logic might need to live in the activities controller
     @itinerary_activities = @itinerary.activities
+
+    @all_itinerary_activities = ItineraryActivity.all
+    @itinerary_activities = []
+    @all_itinerary_activities.each do |itinerary_activity|
+      @itinerary_activities << itinerary_activity if itinerary_activity.itinerary == @itinerary
+    end
     # @itinerary_activities = []
     # @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
     # @itinerary_activities = @itinerary_activities.map do |activity|
