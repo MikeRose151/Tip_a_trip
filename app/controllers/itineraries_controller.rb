@@ -26,9 +26,8 @@ class ItinerariesController < ApplicationController
       @destination = Destination.find_by(city: params[:itinerary][:destination])
       @itinerary.destination_id = @destination.id
       @itinerary.user = current_user
-      # @itinerary.original_itinerary_id = @itinerary.id
       if @itinerary.save!
-        # @itenerary.original_itinerary_id = @itinerary.id
+        @itinerary.original_itinerary_id = @itinerary.id
         redirect_to edit_itinerary_path(@itinerary)
       else
         render :new, status: :unprocessable_entity
@@ -66,7 +65,7 @@ class ItinerariesController < ApplicationController
         end
       end
       @itinerary_activities = @itinerary.activities
-      
+
       @all_itinerary_activities = ItineraryActivity.all
       @itinerary_activities = []
       @all_itinerary_activities.each do |itinerary_activity|
@@ -75,7 +74,7 @@ class ItinerariesController < ApplicationController
           @itinerary_activities << itinerary_activity if counter <= 360
         end
       end
-    
+
     # @itinerary_activities = []
     # @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
     # @itinerary_activities = @itinerary_activities.map do |activity|
@@ -83,12 +82,12 @@ class ItinerariesController < ApplicationController
     # end
     # some of the above logic might need to live in the activities controller
   end
-  
+
   def update
   end
-  
+
   private
-  
+
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :title)
   end
