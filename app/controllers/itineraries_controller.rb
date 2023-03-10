@@ -18,8 +18,9 @@ class ItinerariesController < ApplicationController
       # this happens when creating brand new itinerary
       @itinerary = Itinerary.new(itinerary_params)
       @itinerary.user = current_user
-      # @itinerary.original_itinerary_id = @itinerary.id
+      raise
       if @itinerary.save!
+        @itinerary.original_itinerary_id = @itinerary.id
         redirect_to edit_itinerary_path(@itinerary)
       else
         render :new, status: :unprocessable_entity
