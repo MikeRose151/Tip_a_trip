@@ -42,41 +42,71 @@ london = Destination.create(
   city: "London"
 )
 
+file_29 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678454278/London-City-Travel-Guide-Vogue-India_kku9bw.webp")
+london.photo.attach(io: file_29, filename:"london.jpg", content_type: "image/jpg")
+
 paris = Destination.create(
   city: "Paris"
 )
+
+file_30 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678454598/pD3bsKPrjsqNiFDGRL5oq6_mvwdao.jpg")
+paris.photo.attach(io: file_30, filename:"london.jpg", content_type: "image/jpg")
 
 rio = Destination.create(
   city: "Rio"
 )
 
+file_31 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678454979/rio_lfum1h.webp")
+rio.photo.attach(io: file_31, filename:"london.jpg", content_type: "image/jpg")
+
 nyc = Destination.create(
   city: "New York City"
 )
+
+file_32 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455145/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu__cropped_w9yxij.jpg")
+nyc.photo.attach(io: file_32, filename:"london.jpg", content_type: "image/jpg")
 
 barcelona = Destination.create(
   city: "Barcelona"
 )
 
+file_33 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455342/La-Rambla__2018_GettyImages-900268446_latzqi.webp")
+barcelona.photo.attach(io: file_33, filename:"london.jpg", content_type: "image/jpg")
+
 tokyo = Destination.create(
   city: "Tokyo"
 )
+
+file_34 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455513/Tokyo-2021-GettyImages-1208124099_csahos.webp")
+tokyo.photo.attach(io: file_34, filename:"london.jpg", content_type: "image/jpg")
 
 toronto = Destination.create(
   city: "Toronto"
 )
 
+file_35 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455675/167_3_2254_tif_medium_7465353d-756d-4e13-b610-d938dde974a5_av9df3.jpg")
+toronto.photo.attach(io: file_35, filename:"london.jpg", content_type: "image/jpg")
+
 rome = Destination.create(
   city: "Rome"
 )
+
+file_35 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455946/rome-attractions-experience-cityscape-image-guide_x9bbes.webp")
+rome.photo.attach(io: file_35, filename:"london.jpg", content_type: "image/jpg")
 
 amsterdam = Destination.create(
   city: "Amsterdam"
 )
 
+file_36 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678456276/iStock-516188849_zpyq2u.avif")
+amsterdam.photo.attach(io: file_36, filename:"london.jpg", content_type: "image/jpg")
+
 berlin = Destination.create(
   city: "Berlin"
 )
+
+file_37 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678456375/berlin_ywdgzj.jpg")
+berlin.photo.attach(io: file_37, filename:"london.jpg", content_type: "image/jpg")
 
 puts 'Creating 12 London Activities and 15 Paris Activities...'
 
@@ -190,6 +220,28 @@ lewagondemo = Activity.create(
 file_10 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678376163/Le-Wagon-cover_jugohq.jpg")
 lewagondemo.photo.attach(io: file_10, filename:"madame.jpg", content_type: "image/jpg")
 
+toweroflondon = Activity.create(
+  name: "Tower of London Tour",
+  duration: rand(30..180),
+  cost: rand(10..50),
+  address: "London EC3N 4AB",
+  destination_id: london.id
+)
+
+file_11 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678448339/tower_uzand4.jpg")
+toweroflondon.photo.attach(io: file_11, filename:"madame.jpg", content_type: "image/jpg")
+
+axethrowing= Activity.create(
+  name: "Bad Axe Throwing - Wembley Park",
+  duration: rand(30..180),
+  cost: rand(10..50),
+  address: "Boxpark, 18 Olympic Way, Wembley HA9 0JT",
+  destination_id: london.id
+)
+
+file_12 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678448393/Bad_Axe_Throwing_in_Boxpark_Wembl.2e16d0ba.fill-1200x630_ohaso5.jpg")
+axethrowing.photo.attach(io: file_12, filename:"madame.jpg", content_type: "image/jpg")
+
 eiffeltower = Activity.create(
   name: "Eiffel Tower",
   duration: rand(30..180),
@@ -198,8 +250,8 @@ eiffeltower = Activity.create(
   destination_id: paris.id
 )
 
-file_11 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678377318/eiffel_xe5juv.webp")
-eiffeltower.photo.attach(io: file_11, filename:"madame.jpg", content_type: "image/jpg")
+file_13 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678377318/eiffel_xe5juv.webp")
+eiffeltower.photo.attach(io: file_13, filename:"madame.jpg", content_type: "image/jpg")
 
 louvre = Activity.create(
   name: "The Louvre",
@@ -209,8 +261,8 @@ louvre = Activity.create(
   destination_id: paris.id
 )
 
-file_12 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678377690/louvre_ookyvj.jpg")
-louvre.photo.attach(io: file_12, filename:"madame.jpg", content_type: "image/jpg")
+file_14 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678377690/louvre_ookyvj.jpg")
+louvre.photo.attach(io: file_14, filename:"madame.jpg", content_type: "image/jpg")
 
 gardens = Activity.create(
   name: "Luxembourg Gardens",
@@ -220,8 +272,8 @@ gardens = Activity.create(
   destination_id: paris.id
 )
 
-file_13 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678378217/lux_psey0d.webp")
-gardens.photo.attach(io: file_13, filename:"madame.jpg", content_type: "image/jpg")
+file_15 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678378217/lux_psey0d.webp")
+gardens.photo.attach(io: file_15, filename:"madame.jpg", content_type: "image/jpg")
 
 rivertour = Activity.create(
   name: "Bateaux Parisiens Seine River Gourmet Lunch & Sightseeing Cruise",
@@ -231,8 +283,8 @@ rivertour = Activity.create(
   destination_id: paris.id
 )
 
-file_14 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678378986/145_rqtxhb.jpg")
-rivertour.photo.attach(io: file_14, filename:"madame.jpg", content_type: "image/jpg")
+file_16 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678378986/145_rqtxhb.jpg")
+rivertour.photo.attach(io: file_16, filename:"madame.jpg", content_type: "image/jpg")
 
 panthean = Activity.create(
   name: "The Panthéon",
@@ -241,8 +293,8 @@ panthean = Activity.create(
   address: "Pl. du Panthéon, 75005 Paris, France",
   destination_id: paris.id
 )
-  file_15 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678379458/Pantheon-Paris_iksb1k.webp")
-  panthean.photo.attach(io: file_15, filename:"madame.jpg", content_type: "image/jpg")
+  file_17 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678379458/Pantheon-Paris_iksb1k.webp")
+  panthean.photo.attach(io: file_17, filename:"madame.jpg", content_type: "image/jpg")
 
 ombres = Activity.create(
   name: "Les Ombres Restaurant",
@@ -251,8 +303,8 @@ ombres = Activity.create(
   address: "27 Quai Jacques Chirac, 75007 Paris, France",
   destination_id: paris.id
 )
-file_16 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678379827/IMG_6339_gn8nri.jpg")
-ombres.photo.attach(io: file_16, filename:"madame.jpg", content_type: "image/jpg")
+file_18 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678379827/IMG_6339_gn8nri.jpg")
+ombres.photo.attach(io: file_18, filename:"madame.jpg", content_type: "image/jpg")
 
 orsay = Activity.create(
   name: "Orsay Museum",
@@ -262,8 +314,8 @@ orsay = Activity.create(
   destination_id: paris.id
 )
 
-file_17 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678380039/diane-picchiottino-eDv8b9Fa-tA-unsplash_gismdu.jpg")
-orsay.photo.attach(io: file_17, filename:"madame.jpg", content_type: "image/jpg")
+file_19 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678380039/diane-picchiottino-eDv8b9Fa-tA-unsplash_gismdu.jpg")
+orsay.photo.attach(io: file_19, filename:"madame.jpg", content_type: "image/jpg")
 
 chapelle = Activity.create(
   name: "Sainte-Chapelle",
@@ -273,8 +325,8 @@ chapelle = Activity.create(
   destination_id: paris.id
 )
 
-file_18 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678380820/SAINTE_CHAPELLE-32_inlwas.jpg")
-chapelle.photo.attach(io: file_18, filename:"madame.jpg", content_type: "image/jpg")
+file_20 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678380820/SAINTE_CHAPELLE-32_inlwas.jpg")
+chapelle.photo.attach(io: file_20, filename:"madame.jpg", content_type: "image/jpg")
 
 disney = Activity.create(
   name: "Disney Land Paris",
@@ -284,34 +336,10 @@ disney = Activity.create(
   destination_id: paris.id
 )
 
-file_19 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381133/63f25c4682440fdf3bb659eb3246b06a-_Disney_6_xm2nvh.png")
-disney.photo.attach(io: file_19, filename:"madame.jpg", content_type: "image/jpg")
+file_21 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381133/63f25c4682440fdf3bb659eb3246b06a-_Disney_6_xm2nvh.png")
+disney.photo.attach(io: file_21, filename:"madame.jpg", content_type: "image/jpg")
 
  segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
-  duration: rand(30..180),
-  cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
-  destination_id: paris.id
-)
-
-file_20 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_20, filename:"madame.jpg", content_type: "image/jpg")
-
-# NEED TO PROPERLY COMPLETE THESE ACTIVITIES
-
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
-  duration: rand(30..180),
-  cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
-  destination_id: paris.id
-)
-
-file_21 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_21, filename:"madame.jpg", content_type: "image/jpg")
-
-segway= Activity.create(
   name: "GO GO Segway tours - Paris",
   duration: rand(30..180),
   cost: rand(0..50),
@@ -322,71 +350,76 @@ segway= Activity.create(
 file_22 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
 segway.photo.attach(io: file_22, filename:"madame.jpg", content_type: "image/jpg")
 
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+# NEED TO PROPERLY COMPLETE THESE ACTIVITIES
+
+triomphe= Activity.create(
+  name: "Arc de Triomphe Tour - Paris",
   duration: rand(30..180),
   cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
+  address: "Pl. Charles de Gaulle, 75008 Paris, France",
   destination_id: paris.id
 )
 
-file_23 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_23, filename:"madame.jpg", content_type: "image/jpg")
+file_23 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678448664/caption_j72fyq.jpg")
+triomphe.photo.attach(io: file_23, filename:"madame.jpg", content_type: "image/jpg")
 
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+montmartre= Activity.create(
+  name: "Montmartre Village",
   duration: rand(30..180),
   cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
+  address: "Montmartre, Blanche/Pigalle",
   destination_id: paris.id
 )
 
-file_24 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_24, filename:"madame.jpg", content_type: "image/jpg")
+file_24 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678449151/what-to-do-in-montmartre_hlbr7r.jpg")
+montmartre.photo.attach(io: file_24, filename:"madame.jpg", content_type: "image/jpg")
 
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+sacre = Activity.create(
+  name: "Sacre-Coeur - The Sacred Heart of Paris",
   duration: rand(30..180),
   cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
+  address: "Parvis du Sacré-Coeur - 35 rue du Chevalier de la Barre - 75018 Paris",
   destination_id: paris.id
 )
 
-file_25 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_25, filename:"madame.jpg", content_type: "image/jpg")
+file_25 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678451147/pexels-constanze-marie-6664684-scaled-1_gewr9v.jpg")
+sacre.photo.attach(io: file_25, filename:"madame.jpg", content_type: "image/jpg")
 
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+rouge= Activity.create(
+  name: "Moulin Rouge",
   duration: rand(30..180),
   cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
+  address: "Moulin Rouge. 82 boulevard de Clichy - 75018 Paris. Montmartre",
   destination_id: paris.id
 )
 
-file_26 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_26, filename:"madame.jpg", content_type: "image/jpg")
+file_26 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678451583/image_vatc9w.jpg")
+rouge.photo.attach(io: file_26, filename:"madame.jpg", content_type: "image/jpg")
 
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+wine = Activity.create(
+  name: "Loire Valley Castles & Wine Tasting Day Trip from Paris",
   duration: rand(30..180),
   cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
+  address: "Loire Valley Castles, France",
   destination_id: paris.id
 )
 
-file_27 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_27, filename:"madame.jpg", content_type: "image/jpg")
+file_27 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678452467/dorian-mongel-PuRFKwR4B2o-unsplash_sa4ego.jpg")
+wine.photo.attach(io: file_27, filename:"madame.jpg", content_type: "image/jpg")
 
-segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+
+
+
+bigbustour= Activity.create(
+  name: "Big Bus Paris Hop-On Hop-Off Tour",
   duration: rand(30..180),
   cost: rand(0..50),
-  address: "101 Av. de la Bourdonnais, 75007 Paris, France",
+  address: "Big Bus, 11 Av. de l'Opéra, 75001 Paris, France",
   destination_id: paris.id
 )
 
-file_28 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678381976/paris-segway-tours-segway-hero-medium-1_kfklug.jpg")
-segway.photo.attach(io: file_28, filename:"madame.jpg", content_type: "image/jpg")
+file_28 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678453067/58dc21fb-f843-4c6c-9a29-313eefcfb383-10883-paris-big-bus-paris-night-tour-02_p0k9dt.jpg")
+bigbustour.photo.attach(io: file_28, filename:"madame.jpg", content_type: "image/jpg")
 
 
 puts 'Creating 20 fake Itineraries...'
