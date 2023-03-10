@@ -11,9 +11,9 @@
         </div>
       </div>
       <div>
-        <a type="button" class="btn btn-primary" href="/itineraries">See itineraries button</a>
+        <p> <%= link_to "See itineraries", itineraries_path %> </p>
         <%# update the href for /activities so it only shows London activities %>
-        <a type="button" class="btn btn-primary" href="/activities">See activities button</a>
+        <p> <%= link_to "See activities", itinerary_activities_path(@itinerary) %> </p>
       </div>
       <div>
         <ul>
