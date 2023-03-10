@@ -31,7 +31,6 @@
       <h4> Shortlist </h4>
         <ul>
           <% @favourites.each do |favourite| %>
-              <%# if favourite.activity geocode is within a certain radius of itinerary.destination geocode... %>
               <li> <%= favourite.activity.name %> </li>
               <%# code a button that if you click it then the favourite will get added to itinerary_activities array %>
               <%# code another button that if you click it then the favourite will get removed from itinerary_activities array %>
