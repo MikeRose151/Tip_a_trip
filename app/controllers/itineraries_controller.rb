@@ -63,7 +63,7 @@ class ItinerariesController < ApplicationController
 
     @all_favourites.each do |favourite|
       if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
-        # counter += favourite.activity_id.duration
+        counter += favourite.activity.duration
         @favourites << favourite if counter <= 360
       end
     end
