@@ -21,7 +21,11 @@
             </div>
           <% end %>
         </ul>
-        <%= link_to 'Back to Itineraries', itineraries_path %>
+        <% if @itinerary.user == current_user %>
+          <%= link_to 'Back to My Itineraries', user_itineraries_path(current_user) %>
+        <% else %>
+          <%= link_to 'Back to Itineraries', itineraries_path %>
+        <% end %>
       </div>
     </div>
 
