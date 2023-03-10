@@ -1,3 +1,4 @@
+<h1> SHOW </h1> <%# putting this here for now to help distinguish between show and edit as they are very similar %>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -9,20 +10,24 @@
         </div>
       </div>
       <div>
-        <div class="itinerary-show-activities-card">
-              <% @itinerary_activities.each do |activity| %>
-                  <div> <%= activity.name %> </div>
-                  <div> <%= activity.duration %> minutes </div>
-                  <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
-              <% end %>
-        </div>
+        <ul>
+          <% @itinerary_activities.each do |itinerary_activity| %>
+            <div class="itinerary-show-activities-card">
+              <li>
+                <div> <%= itinerary_activity.activity.name %> </div>
+                <div> <%= itinerary_activity.activity.duration %> minutes </div>
+                <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
+              </li>
+            </div>
+          <% end %>
+        </ul>
       </div>
     </div>
 
       <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
     <div class="col-6">
-      <p> Like the look of <%= @itinerary.user.username %>'s itinerary? Use it for your own trip! </p>
+      <p> Like the look of <%= @itinerary.user.username %>'s itinerary? Use it for your own trip to <%= @itinerary.destination %>! </p>
       <form action="/itineraries" method="post">
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">

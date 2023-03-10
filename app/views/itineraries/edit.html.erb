@@ -1,21 +1,41 @@
-<h1> Itinerary: <%= @itinerary.title%> </h1>
+<h1> EDIT </h1> <%# putting this here for now to help distinguish between show and edit as they are very similar %>
 
-<h4> Activities </h4>
-  <ul>
-    <% @itinerary_activities.each do |activity| %>
-        <li> <%= activity.name %> </li>
-        <%# code a button that if you click it then the activity will get removed from itinerary_activities array %>
-    <% end %>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="itinerary-show-title-card">
+        <h1> Itinerary: <%= @itinerary.title%> </h1>
+        <div class="itinerary-show-title-card-subtitle">
+          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
+          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <% @itinerary_activities.each do |itinerary_activity| %>
+            <div class="itinerary-show-activities-card">
+              <li>
+                <div> <%= itinerary_activity.activity.name %> </div>
+                <div> <%= itinerary_activity.activity.duration %> minutes </div>
+                <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 
-<%# the above is the same as in part of the show.html.erb page so might wanna make a partial %>
+    <%# the above is the same as in part of the show.html.erb page so might wanna make a partial %>
 
-<h4> Shortlist </h4>
-  <ul>
-    <% current_user.favourites.each do |favourite| %>
-        <%# if favourite.activity geocode is within a certain radius of itinerary.destination geocode... %>
-        <li> <%= favourite.activity.name %> </li>
-        <%# code a button that if you click it then the favourite will get added to itinerary_activities array %>
-        <%# code another button that if you click it then the favourite will get removed from itinerary_activities array %>
-    <% end %>
-  </ul>
+    <div class="col-6">
+      <h4> Shortlist </h4>
+        <ul>
+          <% @favourites.each do |favourite| %>
+              <li> <%= favourite.activity.name %> </li>
+              <%# code a button that if you click it then the favourite will get added to itinerary_activities array %>
+              <%# code another button that if you click it then the favourite will get removed from itinerary_activities array %>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
