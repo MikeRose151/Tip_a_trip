@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-6">
       <div class="itinerary-show-title-card">
-        <h1> Itinerary: <%= @itinerary.title%> </h1>
+        <h1> <%= "#{@itinerary.destination.city} itinerary: #{@itinerary.title}" %> </h1>
         <div class="itinerary-show-title-card-subtitle">
           <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
           <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
