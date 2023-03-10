@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to itineraries_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
     <% end %>
 
@@ -12,11 +12,18 @@
   <div class="d-flex justify-content-center">
   <div class="form-group flex-grow-1 mx-sm-3">
     <form class="form-inline my-2 my-lg-0 d-flex">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2 text-white" type="search" placeholder="Search..." aria-label="Search">
+        <button class="btn btn-outline-success btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </div>
+    <li class="nav-item">
+  <div class="form-group flex-grow-1 mx-sm-3">
+    <%= form_tag new_itinerary_path, method: :get, class: "form-inline my-2 my-lg-0 d-flex" do %>
+      <%= submit_tag "Tip a Trip?", class: "btn btn-outline-success btn-outline-light my-2 my-sm-0" %>
+    <% end %>
+  </div>
+</li>
 </li>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
