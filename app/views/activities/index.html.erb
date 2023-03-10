@@ -2,9 +2,9 @@
   <%= link_to "Back to itinerary", edit_itinerary_path(@itinerary) %>
   <h1> Activities </h1>
   <% @activities.each do |activity| %>
-    <p> Activity: <%= activity.name %> </p>
+    <p style="color: black;"> Activity: <%= activity.name %> </p>
     <div> <%= cl_image_tag activity.photo.key, height: 300, crop: :fill %> </div>
-    <p> Cost: £<%= activity.cost %> </p>
+    <p style="color: black;"> Cost: £<%= activity.cost %> </p>
     <%= button_to itinerary_activity_favourites_path(@itinerary, activity), method: :post do %>
       <i class="fa-solid fa-circle-plus"></i>
     <% end %>
