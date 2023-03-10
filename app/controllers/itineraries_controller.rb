@@ -13,16 +13,22 @@ class ItinerariesController < ApplicationController
     @itineraries = Itinerary.all
   end
 
+  def new
+    @itinerary = Itinerary.new
+    @destinations = Destination.all
+    @destination_cities = @destinations.map(&:city)
+  end
 
-  
-  
   def create
     if params[:original_itinerary_id].nil?
       # this happens when creating brand new itinerary
       @itinerary = Itinerary.new(itinerary_params)
+      @destination = Destination.find_by(city: params[:itinerary][:destination])
+      @itinerary.destination_id = @destination.id
       @itinerary.user = current_user
       # @itinerary.original_itinerary_id = @itinerary.id
       if @itinerary.save!
+        # @itenerary.original_itinerary_id = @itinerary.id
         redirect_to edit_itinerary_path(@itinerary)
       else
         render :new, status: :unprocessable_entity
@@ -45,11 +51,7 @@ class ItinerariesController < ApplicationController
       end
     end
   end
-  
-  def new
-    @itinerary = Itinerary.new
-  end
-  
+
   def edit
     @itinerary = Itinerary.find(params[:id])
     @user = current_user
@@ -88,7 +90,7 @@ class ItinerariesController < ApplicationController
   private
   
   def itinerary_params
-    params.require(:itinerary).permit(:start_date, :end_date, :destination, :title)
+    params.require(:itinerary).permit(:start_date, :end_date, :title)
   end
 
   def steal_itinerary_params
