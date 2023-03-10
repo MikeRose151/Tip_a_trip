@@ -53,8 +53,7 @@ class ItinerariesController < ApplicationController
     @all_favourites = Favourite.all
     @favourites = []
     @all_favourites.each do |favourite|
-      @favourites << favourite if favourite.user == current_user
-      # once schema complete: "&& favourite.activity.destination == @itinerary.destination"
+      @favourites << favourite if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
     end
     @itinerary_activities = @itinerary.activities
 
