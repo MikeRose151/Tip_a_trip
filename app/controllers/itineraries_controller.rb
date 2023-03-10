@@ -13,16 +13,24 @@ class ItinerariesController < ApplicationController
   def index
     @itineraries = Itinerary.all
   end
-  
-  
-  
+
+
+  def new
+    @itinerary = Itinerary.new
+    @destinations = Destination.all
+    @destination_cities = @destinations.map(&:city)
+  end
+
+
   def create
     if params[:original_itinerary_id].nil?
       # this happens when creating brand new itinerary
       @itinerary = Itinerary.new(itinerary_params)
+      @destination = Destination.find_by(city: params[:itinerary][:destination])
+      @itinerary.destination_id = @destination.id
       @itinerary.user = current_user
-      # @itinerary.original_itinerary_id = @itinerary.id
       if @itinerary.save!
+        @itinerary.original_itinerary_id = @itinerary.id
         redirect_to edit_itinerary_path(@itinerary)
       else
         render :new, status: :unprocessable_entity
@@ -45,11 +53,7 @@ class ItinerariesController < ApplicationController
       end
     end
   end
-  
-  def new
-    @itinerary = Itinerary.new
-  end
-  
+
   def edit
     @itinerary = Itinerary.find(params[:id])
     @user = current_user
@@ -64,7 +68,7 @@ class ItinerariesController < ApplicationController
         end
       end
       @itinerary_activities = @itinerary.activities
-      
+
       @all_itinerary_activities = ItineraryActivity.all
       @itinerary_activities = []
       @all_itinerary_activities.each do |itinerary_activity|
@@ -73,7 +77,7 @@ class ItinerariesController < ApplicationController
           @itinerary_activities << itinerary_activity if counter <= 360
         end
       end
-    
+
     # @itinerary_activities = []
     # @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
     # @itinerary_activities = @itinerary_activities.map do |activity|
@@ -81,17 +85,17 @@ class ItinerariesController < ApplicationController
     # end
     # some of the above logic might need to live in the activities controller
   end
-  
+
   def update
     @itinerary = Itinerary.find(params[:id])
     @itinerary.update(publish_params)
     redirect_to action: "show", id: params[:id]
   end
-  
+
   private
-  
+
   def itinerary_params
-    params.require(:itinerary).permit(:start_date, :end_date, :destination, :title)
+    params.require(:itinerary).permit(:start_date, :end_date, :title)
   end
 
   def steal_itinerary_params
