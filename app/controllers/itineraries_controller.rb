@@ -7,13 +7,11 @@ class ItinerariesController < ApplicationController
     @all_itinerary_activities.each do |itinerary_activity|
       @itinerary_activities << itinerary_activity if itinerary_activity.itinerary == @itinerary
     end
-
   end
 
   def index
     @itineraries = Itinerary.all
   end
-
 
   def new
     @itinerary = Itinerary.new
