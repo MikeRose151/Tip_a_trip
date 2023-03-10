@@ -13,6 +13,9 @@ class ItinerariesController < ApplicationController
     @itineraries = Itinerary.all
   end
 
+
+  
+  
   def create
     if params[:original_itinerary_id].nil?
       # this happens when creating brand new itinerary
@@ -42,26 +45,35 @@ class ItinerariesController < ApplicationController
       end
     end
   end
-
+  
   def new
     @itinerary = Itinerary.new
   end
-
+  
   def edit
     @itinerary = Itinerary.find(params[:id])
     @user = current_user
+    counter = 0
     @all_favourites = Favourite.all
     @favourites = []
-    @all_favourites.each do |favourite|
-      @favourites << favourite if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
-    end
-    @itinerary_activities = @itinerary.activities
 
-    @all_itinerary_activities = ItineraryActivity.all
-    @itinerary_activities = []
-    @all_itinerary_activities.each do |itinerary_activity|
-      @itinerary_activities << itinerary_activity if itinerary_activity.itinerary == @itinerary
-    end
+      @all_favourites.each do |favourite|
+        if favourite.user == current_user && favourite.activity.destination == @itinerary.destination
+          counter += favourite.activity_id.duration
+          @favourites << favourite if counter <= 360
+        end
+      end
+      @itinerary_activities = @itinerary.activities
+      
+      @all_itinerary_activities = ItineraryActivity.all
+      @itinerary_activities = []
+      @all_itinerary_activities.each do |itinerary_activity|
+         if itinerary_activity.itinerary == @itinerary
+          counter += itinerary_activity.activity.duration
+          @itinerary_activities << itinerary_activity if counter <= 360
+        end
+      end
+    
     # @itinerary_activities = []
     # @itinerary_activities << ItineraryActivity.find_by_itinerary_id(params[:id])
     # @itinerary_activities = @itinerary_activities.map do |activity|
@@ -69,12 +81,12 @@ class ItinerariesController < ApplicationController
     # end
     # some of the above logic might need to live in the activities controller
   end
-
+  
   def update
   end
-
+  
   private
-
+  
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :destination, :title)
   end
