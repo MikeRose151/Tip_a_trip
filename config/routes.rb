@@ -16,10 +16,9 @@ Rails.application.routes.draw do
   end
 
   resources :itineraries, only: [:index, :show, :new, :create, :edit, :update] do
-  end
-
-  resources :activities, only: [:index] do
-    resources :favourites, only: [:create]
+    resources :activities, only: [:index] do
+      resources :favourites, only: [:create]
+    end
   end
 
   # Defines the root path route ("/")
