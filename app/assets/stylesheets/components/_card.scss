@@ -12,29 +12,31 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+
 }
 
 .card-itinerary img {
   height: 100%;
-  width: 90%;
+  width: 100%;
   object-fit: cover;
-}
-
-.sidebar {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10%;
-  height: 100%;
-  background-color: $dark-blue;
-  i {
-    font-size: 3em;
-    color: white;
-
-  }
 
 }
+
+// .sidebar {
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 2%;
+//   height: 100%;
+//   background-color: $dark-blue;
+//   i {
+//     font-size: 3em;
+//     color: white;
+
+//   }
+
+// }
 
 .card-itinerary h2 {
   font-size: 16px;
