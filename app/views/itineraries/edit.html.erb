@@ -17,7 +17,7 @@
       </div>
       <div>
         <%# update the href for /activities so it only shows London activities %>
-        <p> <%= button_to "Find activities", itinerary_activities_path(@itinerary) %> to add to your shortlist </p>
+        <p> <%= button_to "Find activities", itinerary_activities_path(@itinerary), method: :get  %> to add to your shortlist </p>
       </div>
         <% @favourites.each do |favourite| %>
           <li> <%= favourite.activity.name %> </li>
