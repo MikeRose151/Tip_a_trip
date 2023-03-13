@@ -2,11 +2,11 @@ require 'faker'
 require 'open-uri'
 
 puts "Cleaning database"
-Itinerary.destroy_all
-User.destroy_all
-Activity.destroy_all
 ItineraryActivity.destroy_all
 Favourite.destroy_all
+Itinerary.destroy_all
+Activity.destroy_all
+User.destroy_all
 
 puts 'Creating 10 fake Users including test, Lazy Susan, and Tripper Trevor...'
 
