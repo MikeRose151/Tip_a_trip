@@ -20,7 +20,6 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-
 }
 
 
@@ -167,4 +166,13 @@ a {
   align-items: center;
   margin: 8px;
   padding: 8px 32px;;
+}
+
+.stacked--up-left {
+  &:hover {
+      transform: translate(-5px, -5px);
+
+      &:before { transform: translate(5px, 5px); }
+      &:after { transform: translate(10px, 10px); }
+  }
 }
