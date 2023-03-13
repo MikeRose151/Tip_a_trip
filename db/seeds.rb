@@ -91,22 +91,22 @@ rome = Destination.create(
   city: "Rome"
 )
 
-file_35 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455946/rome-attractions-experience-cityscape-image-guide_x9bbes.webp")
-rome.photo.attach(io: file_35, filename:"london.jpg", content_type: "image/jpg")
+file_36 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678455946/rome-attractions-experience-cityscape-image-guide_x9bbes.webp")
+rome.photo.attach(io: file_36, filename:"london.jpg", content_type: "image/jpg")
 
 amsterdam = Destination.create(
   city: "Amsterdam"
 )
 
-file_36 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678456276/iStock-516188849_zpyq2u.avif")
-amsterdam.photo.attach(io: file_36, filename:"london.jpg", content_type: "image/jpg")
+file_37 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678456276/iStock-516188849_zpyq2u.avif")
+amsterdam.photo.attach(io: file_37, filename:"london.jpg", content_type: "image/jpg")
 
 berlin = Destination.create(
   city: "Berlin"
 )
 
-file_37 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678456375/berlin_ywdgzj.jpg")
-berlin.photo.attach(io: file_37, filename:"london.jpg", content_type: "image/jpg")
+file_38 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678456375/berlin_ywdgzj.jpg")
+berlin.photo.attach(io: file_38, filename:"london.jpg", content_type: "image/jpg")
 
 puts 'Creating 12 London Activities and 15 Paris Activities...'
 

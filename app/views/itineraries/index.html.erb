@@ -2,15 +2,16 @@
 <%# if the URI pattern is /itineraries then show this %>
 
 <div>
-  <h1> All itineraries: </h1>
+
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
       <% if itinerary.public? %>
        <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
         <%= link_to itinerary_path(itinerary) do %>
-          <div class="card-itinerary imageh">
 
-            <img class="image__img"src="https://images.unsplash.com/photo-1673529553057-a7101e6c5c69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Citys">
+          <div class="card-itinerary imageh">
+             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %> alt="Citys">
+       
           <div class="image__overlay">
             <div class="image__title"></div>
                  <%= itinerary.title %>
