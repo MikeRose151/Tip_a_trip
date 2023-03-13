@@ -1,4 +1,3 @@
-<h1> SHOW </h1> <%# putting this here for now to help distinguish between show and edit as they are very similar %>
 <div class="container" style ="height:vh100;">
   <div class="row">
     <div class="col-6">
@@ -16,16 +15,20 @@
 
       <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
-    <div class="col-6">
-      <p> Like the look of <%= @itinerary.user.username %>'s itinerary? Use it for your own trip to <%= @itinerary.destination.city %>! </p>
-      <form action="/itineraries" method="post">
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
-        <label for="start">Start date:</label>
-        <input type="date" id="start" name="start_date" value="Start date" min="">
-        <%# javascript click event to display end_date to user, based on form start_date + @itinerary_duration %>
-        <input type="submit" name="commit" value="Use this itinerary">
-      </form>
+    <div class="col-6 d-flex justify-content-center align-items-center">
+      <div style="background: white; padding: 26px; border-radius: 5%; width: 300px;">
+        <p> Like the look of <%= @itinerary.user.username %>'s itinerary? </p>
+        <p> Use it for your own trip to <%= @itinerary.destination.city %>! </p>
+        <form action="/itineraries" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%# <input type="submit" name="commit" value="Use this itinerary" class="steal-button"> %>
+          <input id="comment_submit" name="commit" src="/assets/button.png" type="image" value="Comment" width="100px" height="100px"/>
+          <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
+          <label for="start">Start date:</label>
+          <input type="date" id="start" name="start_date" value="Start date" min="">
+          <%# javascript click event to display end_date to user, based on form start_date + @itinerary_duration %>
+        </form>
+      </div>
     </div>
   </div>
 </div>
