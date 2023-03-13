@@ -18,8 +18,12 @@
       <ul>
         <% @favourites.each do |favourite| %>
           <li> <%= favourite.activity.name %> </li>
-          <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity), method: :post %>
-          <%= button_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
+          <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
+            <%= button_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
+          <% else %>
+            <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
+          <% end %>
+            <%= button_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
           <% end %>
         </ul>
       </div>
