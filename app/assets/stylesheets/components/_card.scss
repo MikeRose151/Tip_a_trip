@@ -68,7 +68,7 @@
 
 // }
 
-  
+
 // transition:background-color 0.9s ease
 // }
 
@@ -121,6 +121,7 @@
   background-color: white;
   border-radius: 8px;
   color: $dark-blue;
+  border: solid $dark-blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -144,4 +145,24 @@ a {
   padding: 24px 32px;
   align-items: center;
   margin: 0px 8px 8px;
+}
+
+.itinerary-favourites-title-card{
+  background-color: $dark-blue;
+  border-radius: 8px;
+  color: $light-gray;
+  margin: 32px 8px;
+  padding: 24px 32px;
+}
+
+.itinerary-show-favourites-card{
+  background-color: $light-gray;
+  border: solid $dark-blue;
+  border-radius: 8px;
+  color: $orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px;
+  padding: 8px 32px;;
 }
