@@ -2,31 +2,9 @@
 <div class="container" style ="height:vh100;">
   <div class="row">
     <div class="col-6">
-      <div class="itinerary-show-title-card">
-        <h1> Itinerary: <%= @itinerary.title%> </h1>
-        <div class="itinerary-show-title-card-subtitle">
-          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
-          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
-            <% if @itinerary.user == current_user %>
-              <%= simple_form_for(@itinerary, method: :patch) do |f| %>
-                <%= f.check_box :public %>
-                <%= f.submit "Publish?" %>
-              <% end %>
-            <% end %>
-        </div>
-      </div>
+      <%= render "itineraries/shared/itn_title" %>
+      <%= render "itineraries/shared/itn_list" %>
       <div>
-        <ul>
-          <% @itinerary_activities.each do |itinerary_activity| %>
-            <div class="itinerary-show-activities-card">
-              <li>
-                <div> <%= itinerary_activity.activity.name %> </div>
-                <div> <%= itinerary_activity.activity.duration %> minutes </div>
-                <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
-              </li>
-            </div>
-          <% end %>
-        </ul>
         <% if @itinerary.user == current_user %>
           <%= link_to 'Back to My Itineraries', user_itineraries_path(current_user) %>
         <% else %>
@@ -45,7 +23,7 @@
         <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
         <label for="start">Start date:</label>
         <input type="date" id="start" name="start_date" value="Start date" min="">
-        <%# javascript click event to display end_date to user, based on start_date + (original.end_date - original.start_date) %>
+        <%# javascript click event to display end_date to user, based on form start_date + @itinerary_duration %>
         <input type="submit" name="commit" value="Use this itinerary">
       </form>
     </div>

@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
-
+    @itinerary_duration = (@itinerary.end_date - @itinerary.start_date).to_i + 1
     @all_itinerary_activities = ItineraryActivity.all
     @itinerary_activities = []
     @all_itinerary_activities.each do |itinerary_activity|
@@ -54,6 +54,7 @@ class ItinerariesController < ApplicationController
 
   def edit
     @itinerary = Itinerary.find(params[:id])
+    @itinerary_duration = (@itinerary.end_date - @itinerary.start_date).to_i + 1
     @user = current_user
     counter = 0
     @all_favourites = Favourite.all

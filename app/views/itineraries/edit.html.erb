@@ -3,31 +3,13 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <div class="itinerary-show-title-card">
-        <h1> <%= "#{@itinerary.destination.city} itinerary: #{@itinerary.title}" %> </h1>
-        <div class="itinerary-show-title-card-subtitle">
-          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= (@itinerary.end_date - @itinerary.start_date).to_i %> days </p>
-          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
-        </div>
-      </div>
+      <%= render "itineraries/shared/itn_title" %>
       <div>
         <p> <%= link_to "See itineraries", itineraries_path %> </p>
         <%# update the href for /activities so it only shows London activities %>
         <p> <%= link_to "See activities", itinerary_activities_path(@itinerary) %> </p>
       </div>
-      <div>
-        <ul>
-          <% @itinerary_activities.each do |itinerary_activity| %>
-            <div class="itinerary-show-activities-card">
-              <li>
-                <div> <%= itinerary_activity.activity.name %> </div>
-                <div> <%= itinerary_activity.activity.duration %> minutes </div>
-                <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
-              </li>
-            </div>
-          <% end %>
-        </ul>
-      </div>
+      <%= render "itineraries/shared/itn_list" %>
     </div>
     <%# the above is the same as in part of the show.html.erb page so might wanna make a partial %>
     <div class="col-6">
