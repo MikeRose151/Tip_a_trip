@@ -1,30 +1,25 @@
 <% if params[:user_id].nil? %>
-<%# if the URI pattern is /itineraries then show this %>
-
-<div>
+<%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control rounded-pill mr-sm-2",
+    placeholder: "Browse Itineraries... "
+  %>
+  <% submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
       <% if itinerary.public? %>
        <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
         <%= link_to itinerary_path(itinerary) do %>
-
           <div class="card-itinerary imageh">
-             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %>
-
-          <div class="image__overlay">
-            <div class="image__title">
-                 <%= itinerary.destination.city%>
-                 <div class="image__user">
-                 <%= itinerary.title%>
-                 </div>
-                 </div>
-                 </p>
+             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %> >
+                <div class="image__overlay">
+                  <div class="image__title"> <%= itinerary.destination.city%> </div>
+                  <div class="image__user"> <%= itinerary.title%> </div>
                 </div>
-            <div class="sidebar hover">
-
-
-            </div>
+            <div class="sidebar hover"> </div>
           </div>
         <% end %>
       <% end %>

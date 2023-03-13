@@ -10,7 +10,14 @@ class ItinerariesController < ApplicationController
   end
 
   def index
-    @itineraries = Itinerary.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        destinations.city ILIKE :query
+      SQL
+      @itineraries = Itinerary.joins(:destination).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @itineraries = Itinerary.all
+    end
   end
 
   def new

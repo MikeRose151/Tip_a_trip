@@ -58,3 +58,22 @@
 
 
 }
+.search-form .form-control {
+  border-color: $dark-blue;
+  border-width: 2px;
+  background-color: transparent;
+  font-size: 14px;
+  height: 40px;
+
+  width: 500px;
+
+}
+
+.search-form {
+  padding: 10px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
