@@ -5,6 +5,7 @@
         <li>
           <div> <%= itinerary_activity.activity.name %> </div>
           <div> <%= itinerary_activity.activity.duration %> minutes </div>
+          <%= button_to 'Remove from itinerary', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), method: :delete %>
           <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
         </li>
       </div>

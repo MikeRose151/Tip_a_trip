@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :itineraries, only: [:index, :show, :new, :create, :edit, :update] do
     resources :activities, only: [:index] do
       resources :favourites, only: [:create]
-      resources :itinerary_activities, only: [:create]
+      resources :itinerary_activities, only: [:create, :destroy]
     end
   end
 
