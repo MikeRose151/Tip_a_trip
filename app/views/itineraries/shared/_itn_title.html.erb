@@ -1,5 +1,5 @@
 <div class="itinerary-show-title-card">
-  <h1> <%= "#{@itinerary.destination.city} itinerary: #{@itinerary.title}" %> </h1>
+  <h2> <%= "#{@itinerary.destination.city} itinerary: #{@itinerary.title}" %> </h2>
   <div class="itinerary-show-title-card-subtitle">
     <% if @itinerary_duration == 1 %>
       <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days" id=""></i> <%= "#{@itinerary_duration} day (#{@itinerary.start_date})" %> </p>
