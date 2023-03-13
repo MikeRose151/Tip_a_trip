@@ -24,7 +24,13 @@
 }
 
 
+
 // .sidebar {
+
+// .sidebar:hover{
+
+//   background-color:#4F53FF;
+
 
 //.sidebar:hover{
 
@@ -40,6 +46,16 @@
 //   justify-content: center;
 //   align-items: center;
 //   width: 2%;
+
+// }
+
+// .sidebar {
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 10%;
+
 //   height: 100%;
 //   background-color: $dark-blue;
 //   i {
@@ -47,11 +63,18 @@
 //     color: white;
 
 
+
 //   }
 
 // }
 
   }
+// transition:background-color 0.9s ease
+// }
+
+
+
+//   }
 // transition:background-color 0.9s ease
 // }
 
