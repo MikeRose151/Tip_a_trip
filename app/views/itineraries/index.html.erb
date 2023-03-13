@@ -1,14 +1,12 @@
 <% if params[:user_id].nil? %>
-<%# if the URI pattern is /itineraries then show this %>
 <%= form_with url: itineraries_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
-    placeholder: "search itineraries"
+    class: "form-control rounded-pill mr-sm-2",
+    placeholder: "Browse Itineraries..."
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
-<div>
 
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
@@ -17,7 +15,7 @@
         <%= link_to itinerary_path(itinerary) do %>
 
           <div class="card-itinerary imageh">
-             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %>>
+             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %>
 
           <div class="image__overlay">
             <div class="image__title">
