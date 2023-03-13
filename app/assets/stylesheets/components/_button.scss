@@ -1,3 +1,4 @@
+
 :root {
     --backgroundColor: rgba(246, 241, 209);
     --colorShadeA: rgb(106, 163, 137);
@@ -83,3 +84,15 @@
   
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
   }
+
+.steal-button{
+  // background: url('images/button') no-repeat;
+  // border: none;
+  background-color: aqua;
+  border: solid;
+}
+
+input[type=submit]{
+  background-color: aqua;
+}
+

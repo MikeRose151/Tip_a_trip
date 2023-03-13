@@ -1,5 +1,3 @@
-<h1> EDIT </h1>
- <%# putting this here for now to help distinguish between show and edit as they are very similar %>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -17,16 +15,19 @@
       </div>
       <div>
         <%# update the href for /activities so it only shows London activities %>
-        <p> <%= button_to "Find activities", itinerary_activities_path(@itinerary) %> to add to your shortlist </p>
+        <p> <%= button_to "Find activities", itinerary_activities_path(@itinerary), method: :get %> to add to your shortlist </p>
       </div>
         <% @favourites.each do |favourite| %>
-          <div class="itinerary-show-favourites-card">
-            <%= favourite.activity.name %>
-            <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity), method: :post %>
-            <%= button_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
-          </div>
-        <% end %>
-      </div>
+            <div class="itinerary-show-favourites-card">
+              <%= favourite.activity.name %>
+              <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
+                <%= button_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
+              <% else %>
+                <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
+              <% end %>
+              <%= button_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
+            </div>
+          <% end %>
     </div>
   </div>
 </div>
