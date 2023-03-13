@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
     <div class="container-fluid">
-      <%= link_to itineraries_path, class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logo.png" %>
       <% end %>
 
@@ -9,7 +9,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <li class="nav-item">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex">
           <div class="form-group flex-grow-1 mx-sm-3">
             <form class="form-inline my-2 my-lg-0 d-flex">
               <input class="form-control rounded-pill mr-sm-2 text-white" type="search" placeholder="Search..." aria-label="Search">
