@@ -13,4 +13,10 @@ class ItineraryActivitiesController < ApplicationController
       render edit_itinerary_path(@itinerary)
     end
   end
+
+  def destroy
+    @itinerary_activity = ItineraryActivity.find(params[:id])
+    @itinerary_activity.destroy
+    redirect_to edit_itinerary_path(@itinerary_activity.itinerary), see_status: :other
+  end
 end
