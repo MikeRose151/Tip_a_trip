@@ -6,10 +6,18 @@
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
       <% if itinerary.public? %>
+       <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
         <%= link_to itinerary_path(itinerary) do %>
-          <div class="card-itinerary">
-            <%= cl_image_tag itinerary.destination.photo.key %>
-            <div class="sidebar">
+
+          <div class="card-itinerary imageh">
+             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %> alt="Citys">
+       
+          <div class="image__overlay">
+            <div class="image__title"></div>
+                 <%= itinerary.title %>
+                 </p>
+                </div>
+            <div class="sidebar hover">
               <i class="fa-solid fa-angle-right"></i>
             </div>
           </div>
