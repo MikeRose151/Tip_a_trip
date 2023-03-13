@@ -1,0 +1,13 @@
+<div>
+  <ul>
+    <% @itinerary_activities.each do |itinerary_activity| %>
+      <div class="itinerary-show-activities-card">
+        <li>
+          <div> <%= itinerary_activity.activity.name %> </div>
+          <div> <%= itinerary_activity.activity.duration %> minutes </div>
+          <%# code a button that if you click it then the favourite will get removed from itinerary_activities array %>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+</div>
