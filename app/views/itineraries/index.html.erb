@@ -10,11 +10,12 @@
         <%= link_to itinerary_path(itinerary) do %>
 
           <div class="card-itinerary imageh">
-             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %> alt="Citys">
-       
+             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key%>>
+
           <div class="image__overlay">
-            <div class="image__title"></div>
-                 <%= itinerary.title %>
+            <div class="image__title">
+                 <%= itinerary.destination.city %>
+                 </div>
                  </p>
                 </div>
             <div class="sidebar hover">
