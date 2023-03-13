@@ -1,6 +1,5 @@
 
 <div class="container">
-
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 
     <div class="carousel-inner">
@@ -18,7 +17,6 @@
             <p style="color: black;"> Cost: £<%= activity.cost %> </p>
             <%= button_to itinerary_activity_favourites_path(@itinerary, activity), method: :post do %>
               <i class="fa-solid fa-circle-plus" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"></i>
-             
             <% end %>
           </div>
         </div>
