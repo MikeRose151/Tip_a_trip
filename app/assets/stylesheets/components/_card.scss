@@ -14,10 +14,18 @@
   align-items: center;
 }
 
+
 .card-itinerary img {
   height: 100%;
   width: 90%;
   object-fit: cover;
+}
+
+.sidebar:hover{
+
+  background-color:#4F53FF;
+
+
 }
 
 .sidebar {
@@ -33,7 +41,7 @@
     color: white;
 
   }
-
+transition:background-color 0.9s ease
 }
 
 .card-itinerary h2 {
