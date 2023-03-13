@@ -20,12 +20,15 @@
         <p> <%= button_to "Find activities", itinerary_activities_path(@itinerary) %> to add to your shortlist </p>
       </div>
         <% @favourites.each do |favourite| %>
-          <div class="itinerary-show-favourites-card">
-            <%= favourite.activity.name %>
-            <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity), method: :post %>
+          <li> <%= favourite.activity.name %> </li>
+          <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
+            <%= button_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
+          <% else %>
+            <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
+          <% end %>
             <%= button_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
-          </div>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
