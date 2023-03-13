@@ -13,8 +13,8 @@
       <% if itinerary.public? %>
        <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
         <%= link_to itinerary_path(itinerary) do %>
-          <div class="card-itinerary imageh">
-             <img class="image__img" <%= cl_image_tag itinerary.destination.photo.key %> 
+          <div class="card-itinerary stacked--up-left imageh">
+              <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
                 <div class="image__overlay">
                   <div class="image__title"> <%= itinerary.destination.city%> </div>
                   <div class="image__user"> <%= itinerary.title%> </div>
