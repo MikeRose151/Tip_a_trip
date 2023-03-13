@@ -425,7 +425,7 @@ bigbustour.photo.attach(io: file_28, filename:"madame.jpg", content_type: "image
 puts 'Creating 20 fake Itineraries...'
 
 itinerary_1 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Fun Time",
   destination_id: tokyo.id,
   start_date: Date.new(2022, 5, 8),
   end_date: Date.new(2022, 5, 26),
@@ -436,7 +436,7 @@ itinerary_1 = Itinerary.create!(
 itinerary_1.original_itinerary_id = itinerary_1.id
 
 itinerary_2 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Cultural Visit",
   destination_id: paris.id,
   start_date: Date.new(2022, 9, 26),
   end_date: Date.new(2022, 9, 30),
@@ -447,7 +447,7 @@ itinerary_2 = Itinerary.create!(
 itinerary_2.original_itinerary_id = itinerary_2.id
 
 itinerary_3 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Historical Trip",
   destination_id: rome.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
@@ -458,7 +458,7 @@ itinerary_3 = Itinerary.create!(
 itinerary_3.original_itinerary_id = itinerary_3.id
 
 itinerary_4 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "First Time Visit",
   destination_id: london.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
@@ -471,7 +471,7 @@ itinerary_4.original_itinerary_id = itinerary_4.id
 # ensure itinerary_4 and itinerary_5 are the same except for dates
 
 itinerary_5 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Basic Tourist",
   destination_id: london.id,
   start_date: Date.new(2023, 1, 4),
   end_date: Date.new(2023, 1, 7),
@@ -482,7 +482,7 @@ itinerary_5 = Itinerary.create!(
 itinerary_5.original_itinerary_id = itinerary_5.id
 
 itinerary_6 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Relaxing Time",
   destination_id: barcelona.id,
   start_date: Date.new(2022, 8, 1),
   end_date: Date.new(2022, 8, 5),
@@ -493,7 +493,7 @@ itinerary_6 = Itinerary.create!(
 itinerary_6.original_itinerary_id = itinerary_5.id
 
 itinerary_7 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Foodie Trip",
   destination_id: nyc.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 10),
@@ -504,7 +504,7 @@ itinerary_7 = Itinerary.create!(
 itinerary_7.original_itinerary_id = itinerary_7.id
 
 itinerary_8 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "First Time Visit",
   destination_id: rome.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 15),
@@ -515,7 +515,7 @@ itinerary_8 = Itinerary.create!(
 itinerary_8.original_itinerary_id = itinerary_8.id
 
 itinerary_9 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Mostly Pastry-Eating",
   destination_id: paris.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 5),
@@ -526,7 +526,7 @@ itinerary_9 = Itinerary.create!(
 itinerary_9.original_itinerary_id = itinerary_9.id
 
 itinerary_10 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Coffee Shops",
   destination_id: amsterdam.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 12),
@@ -537,7 +537,7 @@ itinerary_10 = Itinerary.create!(
 itinerary_10.original_itinerary_id = itinerary_10.id
 
 itinerary_11 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Nights Out",
   destination_id: berlin.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 13),
@@ -548,7 +548,7 @@ itinerary_11 = Itinerary.create!(
 itinerary_11.original_itinerary_id = itinerary_11.id
 
 itinerary_12 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Pizza (and seeing the city)",
   destination_id: rome.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
@@ -559,7 +559,7 @@ itinerary_12 = Itinerary.create!(
 itinerary_12.original_itinerary_id = itinerary_12.id
 
 itinerary_13 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Blimey",
   destination_id: london.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
@@ -570,7 +570,7 @@ itinerary_13 = Itinerary.create!(
 itinerary_13.original_itinerary_id = itinerary_13.id
 
 itinerary_14 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "The Best Dam(n) Itinerary",
   destination_id: amsterdam.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
@@ -581,7 +581,7 @@ itinerary_14 = Itinerary.create!(
 itinerary_14.original_itinerary_id = itinerary_14.id
 
 itinerary_15 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Bella Viaggio",
   destination_id: rome.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 5),
@@ -592,7 +592,7 @@ itinerary_15 = Itinerary.create!(
 itinerary_15.original_itinerary_id = itinerary_15.id
 
 itinerary_16 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Best Time in the 6ix",
   destination_id: toronto.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 9),
@@ -603,7 +603,7 @@ itinerary_16 = Itinerary.create!(
 itinerary_16.original_itinerary_id = itinerary_16.id
 
 itinerary_17 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Beaching Around",
   destination_id: rio.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 8),
@@ -614,7 +614,7 @@ itinerary_17 = Itinerary.create!(
 itinerary_17.original_itinerary_id = itinerary_17.id
 
 itinerary_18 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Ich bin ein Berliner",
   destination_id: berlin.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 11),
@@ -625,7 +625,7 @@ itinerary_18 = Itinerary.create!(
 itinerary_18.original_itinerary_id = itinerary_18.id
 
 itinerary_19 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Tea and Crumpets",
   destination_id: london.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 4),
@@ -636,7 +636,7 @@ itinerary_19 = Itinerary.create!(
 itinerary_19.original_itinerary_id = itinerary_19.id
 
 itinerary_20 = Itinerary.create!(
-  title: Faker::Company.name,
+  title: "Le Meilleur Itinéraire",
   destination_id: paris.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 10),
