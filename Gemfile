@@ -75,6 +75,10 @@ group :development do
   # gem "spring"
 end
 
+
+#react bootstrap 
+gem 'react-bootstrap-rails', '~> 0.30.2'
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
