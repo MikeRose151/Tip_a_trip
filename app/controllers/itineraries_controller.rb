@@ -10,11 +10,6 @@ class ItinerariesController < ApplicationController
   end
 
   def index
-    # if params[:query].present?
-    #   @itineraries = Itinerary.destination.where(city: params[:query])
-    # else
-    #   @itineraries = Itinerary.all
-    # end
     if params[:query].present?
       sql_query = <<~SQL
         destinations.city ILIKE :query
