@@ -1,14 +1,34 @@
-
-<%= simple_form_for @itinerary do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :destination, collection: @destination_cities.sort%>
-  <%= f.input :title %>
-  <%= f.submit %>
-<% end %>
-
-<div id="destination-image"></div>
-
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="itinerary-show-title-card">
+        <h1>Let's build your new itinerary!</h1>
+        <div class="itinerary-show-title-card-subtitle">
+          <p class="itinerary-show-title-card-subtitle-text">
+            Complete the below form to get started
+          </p>
+          <p class="itinerary-show-title-card-subtitle-text">
+            <span><i class="fa-solid fa-pencil"></i> <%= current_user.username%></span>
+          </p>
+        </div>
+      </div>
+      <div class="card-new-itinerary-form">
+        <%= simple_form_for @itinerary do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.input :destination, collection: @destination_cities.sort%>
+          <%= f.input :title %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-6">
+      <%# <div id="destination-image"> %>
+        <%= image_tag("globe", class: "destination-image") %>
+      <%# </div> %>
+    </div>
+  </div>
+</div>
 <%# <script>
 $(document).ready(function() {
   $('#destination-select').on('change', function() {

@@ -1,12 +1,39 @@
+
 <div class="container">
-  <%= link_to "Back to itinerary", edit_itinerary_path(@itinerary) %>
-  <h1> Activities </h1>
-  <% @activities.each do |activity| %>
-    <p style="color: black;"> Activity: <%= activity.name %> </p>
-    <div> <%= cl_image_tag activity.photo.key, height: 300, crop: :fill %> </div>
-    <p style="color: black;"> Cost: £<%= activity.cost %> </p>
-    <%= button_to itinerary_activity_favourites_path(@itinerary, activity), method: :post do %>
-      <i class="fa-solid fa-circle-plus"></i>
-    <% end %>
-  <% end %>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+
+    <div class="carousel-inner">
+      <% @activities.each_with_index do |activity, index| %>
+
+        <% if index == 0 %>
+          <div class="carousel-item active">
+        <% else %>
+          <div class="carousel-item">
+        <% end %>
+
+          <%= cl_image_tag activity.photo.key, class: "d-block activity-img"%>
+          <div class="carousel-caption d-none d-md-block"> 
+            <p style="color: black;"> Activity: <%= activity.name %> </p>
+            <p style="color: black;"> Cost: £<%= activity.cost %> </p>
+            <%= button_to itinerary_activity_favourites_path(@itinerary, activity), method: :post do %>
+              <i class="fa-solid fa-circle-plus" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"></i>
+             
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <%= link_to "Back to itinerary", edit_itinerary_path(@itinerary), class: "btn btn-outline-success  rounded-pill my-2 my-sm-0" %>
 </div>

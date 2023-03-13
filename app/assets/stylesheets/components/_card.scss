@@ -15,6 +15,7 @@
 
 }
 
+
 .card-itinerary img {
   height: 100%;
   width: 100%;
@@ -22,7 +23,18 @@
 
 }
 
+
 // .sidebar {
+
+//.sidebar:hover{
+
+// background-color:#4F53FF;
+
+
+// }
+
+// .sidebar {
+
 
 //   display: flex;
 //   justify-content: center;
@@ -34,9 +46,15 @@
 //     font-size: 3em;
 //     color: white;
 
+
 //   }
 
 // }
+
+  }
+// transition:background-color 0.9s ease
+// }
+
 
 .card-itinerary h2 {
   font-size: 16px;
@@ -93,4 +111,14 @@
 
 a {
   text-decoration: none;
+}
+
+.card-new-itinerary-form{
+  background-color: white;
+  color: $dark-blue;
+  border-radius: 8px;
+  margin: 32px 8px;
+  padding: 24px 32px;
+  align-items: center;
+  margin: 0px 8px 8px;
 }
