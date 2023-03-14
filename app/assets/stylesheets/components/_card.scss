@@ -81,7 +81,7 @@
   background-color: $dark-blue;
   border-radius: 8px;
   color: $light-gray;
-  margin: 32px 8px;
+  margin: 32px 0px 16px;
   padding: 24px 32px;
 }
 
@@ -95,6 +95,18 @@
   .itn-title-icon{
     color: $light-blue;
   }
+}
+
+.itinerary-show-activities-background-card{
+  background-color: $dark-blue;
+  border: solid $dark-blue 2px;
+  border-radius: 8px;
+  height: 400px;
+}
+
+.itinerary-show-activities-subbackground-card{
+  height: 400px;
+  padding: 4px;
 }
 
 .itinerary-show-activities-card{
