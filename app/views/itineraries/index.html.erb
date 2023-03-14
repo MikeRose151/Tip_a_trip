@@ -35,16 +35,30 @@
     <h1> Your itineraries: </h1>
     <div class="itineraries">
       <% @itineraries.each do |itinerary|%>
+        <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
         <% if itinerary.user == current_user %>
-          <%= link_to itinerary_path(itinerary) do %>
-            <div class="card-itinerary stacked--up-left imageh">
-              <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
-                <div class="image__overlay">
-                  <div class="image__title"> <%= itinerary.destination.city%> </div>
-                  <div class="image__user"> <%= itinerary.title%> </div>
-                </div>
-              <div class="sidebar hover"> </div>
-            </div>
+          <% if original_itinerary.user == current_user && itinerary.end_date >= Date.today %>
+            <%= link_to edit_itinerary_path(itinerary) do %>
+              <div class="card-itinerary stacked--up-left imageh">
+                <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
+                  <div class="image__overlay">
+                    <div class="image__title"> <%= itinerary.destination.city%> </div>
+                    <div class="image__user"> <%= itinerary.title%> </div>
+                  </div>
+                <div class="sidebar hover"> </div>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to itinerary_path(itinerary) do %>
+              <div class="card-itinerary stacked--up-left imageh">
+                <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
+                  <div class="image__overlay">
+                    <div class="image__title"> <%= itinerary.destination.city%> </div>
+                    <div class="image__user"> <%= itinerary.title%> </div>
+                  </div>
+                <div class="sidebar hover"> </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
