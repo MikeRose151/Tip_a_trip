@@ -21,14 +21,21 @@
       <div>
         <p> Want some inspiration? <%= link_to "Check out itineraries from fellow Tip-a-Trippers", itineraries_path %> </p>
       </div>
-      <div>
-        <% @itinerary_activities.each do |itinerary_activity| %>
-          <div class="itinerary-show-activities-card">
-            <div> <%= itinerary_activity.activity.name %> </div>
-            <div> <%= itinerary_activity.activity.duration %> minutes </div>
-            <%= button_to 'Remove from itinerary', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), method: :delete %>
+
+      <div class="itinerary-show-activities-background-card">
+        <div>
+          <div class="itinerary-showpage-list-scroll">
+            <div class="itinerary-show-activities-subbackground-card">
+              <% @itinerary_activities.each do |itinerary_activity| %>
+                <div class="itinerary-show-activities-card">
+                  <div> <%= itinerary_activity.activity.name %> </div>
+                  <div> <%= itinerary_activity.activity.duration %> minutes </div>
+                  <%= link_to 'Remove from itinerary', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), method: :delete %>
+                </div>
+              <% end %>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
     <%# the above is the same as in part of the show.html.erb page so might wanna make a partial %>
@@ -38,17 +45,17 @@
       </div>
       <div>
         <%# update the href for /activities so it only shows London activities %>
-        <p> <%= button_to "Find activities", itinerary_activities_path(@itinerary), method: :get %> to add to your shortlist </p>
+        <p> <%= link_to "Find activities", itinerary_activities_path(@itinerary), method: :get %> to add to your shortlist </p>
       </div>
         <% @favourites.each do |favourite| %>
             <div class="itinerary-show-favourites-card">
               <%= favourite.activity.name %>
               <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
-                <%= button_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
+                <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
               <% else %>
-                <%= button_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
+                <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
               <% end %>
-              <%= button_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
+              <%= link_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
             </div>
           <% end %>
     </div>

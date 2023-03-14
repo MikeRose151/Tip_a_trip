@@ -1,14 +1,12 @@
-
 <% if params[:user_id].nil? %>
-<%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control rounded-pill mr-sm-2 ",
-    placeholder: "Browse Itineraries... "
-  %>
-  <% submit_tag "Search", class: "btn btn-primary " %>
-<% end %>
-
+  <%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control rounded-pill mr-sm-2 ",
+      placeholder: "Browse Itineraries... "
+    %>
+    <% submit_tag "Search", class: "btn btn-primary " %>
+  <% end %>
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
       <% if itinerary.public? %>
@@ -16,23 +14,22 @@
         <%= link_to itinerary_path(itinerary) do %>
           <div class="card-itinerary imageh">
               <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
-                <div class="image__overlay">
-                  <div class="image__title"> <%= itinerary.destination.city%> </div>
-                  <div class="image__user"> <%= itinerary.title%> </div>
-                </div>
+              <div class="image__overlay">
+                <div class="image__title"> <%= itinerary.destination.city%> </div>
+                <div class="image__user"> <%= itinerary.title%> </div>
+              </div>
             <div class="sidebar hover"> </div>
+            <% if itinerary.user.photo.attached? %>
+              <%= cl_image_tag itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
     <% end %>
-    </div>
   </div>
-
 <% elsif params[:user_id] %>
-<%# if the URI pattern is users/:id/itineraries then show this %>
-
   <div>
-    <h1 type="button" class="btn btn-light btn2"> Your Itineraries </h1>
+    <h1 type="button" class="btn btn-light btn2"> My Itineraries </h1>
     <div class="itineraries2">
       <% @itineraries.each do |itinerary|%>
         <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
@@ -62,8 +59,15 @@
           <% end %>
         <% end %>
       <% end %>
+      <div>
+        <div class="steal-card" style="height: 500px;">
+          <h2>Tip-a-Trip Stats</h2>
+          <p>Total Tips</p>
+          <p>Total Trips</p>
+          <p>Total Tips Tripped</p>
+          <p></p>
+        </div>
+      </div>
     </div>
   </div>
-
-
 <% end %>
