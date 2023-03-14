@@ -28,13 +28,47 @@ User.create!(
   username: "Tripper Trevor"
 )
 
-7.times do
-  User.create!(
-    email: Faker::Internet.email,
-    password: 123456,
-    username: Faker::Internet.username
-  )
-end
+User.create!(
+  email: "michael@tat.com",
+  password: 123456,
+  username: "Magic Mike"
+)
+
+User.create!(
+  email: "tommy@tat.com",
+  password: 123456,
+  username: "Tipper Tommy"
+)
+
+User.create!(
+  email: "georgia@tat.com",
+  password: 123456,
+  username: "Georgia Grace"
+)
+
+User.create!(
+  email: "Fara@tat.com",
+  password: 123456,
+  username: "Fara B"
+)
+
+User.create!(
+  email: "Nnamdi@tat.com",
+  password: 123456,
+  username: "Namdi Travels"
+)
+
+User.create!(
+  email: "Dee@tat.com",
+  password: 123456,
+  username: "Dee Tips"
+)
+
+User.create!(
+  email: "Pedro@tat.com",
+  password: 123456,
+  username: "Pedro Tasca"
+)
 
 puts 'Creating 10 Cities...'
 
