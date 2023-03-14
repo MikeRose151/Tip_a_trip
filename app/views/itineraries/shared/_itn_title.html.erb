@@ -6,8 +6,8 @@
     <% else %>
       <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </p>
     <% end %>
-    <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @original_itinerary.user.username%> </p>
-    <% if @original_itinerary.user == current_user %>
+    <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
+    <% if @itinerary.user == current_user %>
       <%= simple_form_for(@itinerary, method: :patch) do |f| %>
         <%= f.check_box :public %>
         <%= f.submit "Publish?" %>

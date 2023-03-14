@@ -1,8 +1,25 @@
 <div class="container" style ="height:vh100;">
   <div class="row">
     <div class="col-6">
-      <%= render "itineraries/shared/itn_title" %>
-      <%= render "itineraries/shared/itn_list" %>
+      <div class="itinerary-show-title-card">
+        <h2> <%= "#{@itinerary.destination.city} itinerary: #{@itinerary.title}" %> </h2>
+        <div class="itinerary-show-title-card-subtitle">
+          <% if @itinerary_duration == 1 %>
+            <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days" id=""></i> <%= "#{@itinerary_duration} day (#{@itinerary.start_date})" %> </p>
+          <% else %>
+            <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </p>
+          <% end %>
+          <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
+        </div>
+      </div>
+      <div>
+        <% @itinerary_activities.each do |itinerary_activity| %>
+          <div class="itinerary-show-activities-card">
+            <div> <%= itinerary_activity.activity.name %> </div>
+            <div> <%= itinerary_activity.activity.duration %> minutes </div>
+          </div>
+        <% end %>
+      </div>
       <div>
         <% if @itinerary.user == current_user %>
           <%= link_to 'Back to My Itineraries', user_itineraries_path(current_user) %>
@@ -11,16 +28,15 @@
         <% end %>
       </div>
     </div>
-
-
-      <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
-
-    <% unless @itinerary.user == current_user || @original_itinerary.user == current_user %>
-
     <div class="col-6 d-flex justify-content-center align-items-center">
       <div class="steal-card" style="background: white; border: solid 0.5px; padding: 26px; border-radius: 5%; height: 300px; width: 400px;">
-        <p> Like the look of <%= @itinerary.user.username %>'s itinerary? </p>
-        <p> Use it for your own trip to <%= @itinerary.destination.city %>! </p>
+        <% if @original_itinerary.user = current_user %>
+          <p> Enjoyed your <%= @itinerary.destination.city %> itinerary that much!? </p>
+          <p> Go ahead and use it again! </p>
+        <% else %>
+          <p> Like the look of <%= @itinerary.user.username %>'s itinerary? </p>
+          <p> Use it for your own trip to <%= @itinerary.destination.city %>! </p>
+        <% end %>
         <form action="/itineraries" method="post">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <%# <input id="comment_submit" name="commit" src="/assets/button.png" type="image" value="Comment" width="100px" height="100px"/> %>
@@ -32,6 +48,5 @@
         </form>
       </div>
     </div>
-    <% end %>
   </div>
 </div>

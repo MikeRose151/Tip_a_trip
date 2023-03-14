@@ -36,8 +36,10 @@
 
 .btn-create-new {
   padding: 10px 20px;
-  font-size: 14px;
-
+  font-size: 18px;
+  font-family: $headers;
 }
 
-
+.dropdown-item {
+  font-family: $headers;
+}
