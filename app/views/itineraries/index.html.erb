@@ -31,8 +31,8 @@
 <%# if the URI pattern is users/:id/itineraries then show this %>
 
   <div>
-    <h1> Your itineraries: </h1>
-    <div class="itineraries">
+    <h1 type="button" class="btn btn-light btn2"> Your Itineraries </h1>
+    <div class="itineraries2">
       <% @itineraries.each do |itinerary|%>
         <% if itinerary.user == current_user %>
           <%= link_to itinerary_path(itinerary) do %>

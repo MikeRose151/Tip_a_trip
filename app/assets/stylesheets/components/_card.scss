@@ -6,6 +6,14 @@
   padding: 30px;
 }
 
+.itineraries2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 25px;
+  column-gap: 25px;
+  padding: 15px;
+}
+
 .card-itinerary {
   height: 200px;
   background: white;
@@ -15,6 +23,23 @@
 
 }
 
+.btn2{
+  font-family:$headers;
+  --bs-btn-font-size:2rem;
+  display:block;
+  font-weight: bold;
+  color: #373737;
+  --bs-btn-padding-y:1.45rem;
+
+
+}
+
+.btn-light{
+  --bs-btn-bg:none;
+  --bs-btn-border-color:none;
+  --bs-btn-hover-bg:none;
+  --bs-btn-hover-color:rgb(128, 128, 128);
+}
 
 .card-itinerary img {
   height: 100%;
