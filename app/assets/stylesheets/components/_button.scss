@@ -7,7 +7,7 @@
     --colorShadeD: rgb(187, 232, 211);
     --colorShadeE: rgb(205, 255, 232);
   }
-  
+
   @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
   * {
     box-sizing: border-box;
@@ -16,17 +16,17 @@
   *::after {
     box-sizing: border-box;
   }
-  body {
-    font-family: "OpenSans", sans-serif;
-    font-size: 1rem;
-    line-height: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    min-height: 100vh;
-    background: var(--backgroundColor);
-  }
+  // body {
+  //   font-family: "OpenSans", sans-serif;
+  //   font-size: 1rem;
+  //   line-height: 2;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   margin: 0;
+  //   min-height: 100vh;
+  //   background: var(--backgroundColor);
+  // }
   button {
     position: relative;
     display: inline-block;
@@ -41,7 +41,7 @@
     text-transform: uppercase;
     font-family: inherit;
   }
-  
+
   button.big-button {
     padding: 1em 2em;
     border: 2px solid var(--colorShadeA);
@@ -65,23 +65,23 @@
     transform: translate3d(0, 0.75em, -1em);
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
   }
-  
+
   button.big-button:hover {
     background: var(--colorShadeD);
     transform: translate(0, 0.375em);
   }
-  
+
   button.big-button:hover::before {
     transform: translate3d(0, 0.75em, -1em);
   }
-  
+
   button.big-button:active {
     transform: translate(0em, 0.75em);
   }
-  
+
   button.big-button:active::before {
     transform: translate3d(0, 0, -1em);
-  
+
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
   }
 
@@ -95,4 +95,3 @@
 input[type=submit]{
   background-color: aqua;
 }
-
