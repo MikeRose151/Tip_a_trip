@@ -13,7 +13,7 @@ puts 'Creating 10 fake Users including test, Lazy Susan, and Tripper Trevor...'
 User.create!(
   email: "test@tat.com",
   password: 123456,
-  username: "Lieutenant Test"
+  username: "Test Tickle"
 )
 
 User.create!(
@@ -28,13 +28,47 @@ User.create!(
   username: "Tripper Trevor"
 )
 
-7.times do
-  User.create!(
-    email: Faker::Internet.email,
-    password: 123456,
-    username: Faker::Internet.username
-  )
-end
+User.create!(
+  email: "michael@tat.com",
+  password: 123456,
+  username: "Magic Mike"
+)
+
+User.create!(
+  email: "tommy@tat.com",
+  password: 123456,
+  username: "Tipper Tommy"
+)
+
+User.create!(
+  email: "georgia@tat.com",
+  password: 123456,
+  username: "Georgia Grace"
+)
+
+User.create!(
+  email: "Fara@tat.com",
+  password: 123456,
+  username: "Fara B"
+)
+
+User.create!(
+  email: "Nnamdi@tat.com",
+  password: 123456,
+  username: "Namdi Travels"
+)
+
+User.create!(
+  email: "Dee@tat.com",
+  password: 123456,
+  username: "Dee Tips"
+)
+
+User.create!(
+  email: "Pedro@tat.com",
+  password: 123456,
+  username: "Pedro Tasca"
+)
 
 puts 'Creating 10 Cities...'
 
@@ -434,6 +468,7 @@ itinerary_1 = Itinerary.create!(
 )
 
 itinerary_1.original_itinerary_id = itinerary_1.id
+itinerary_1.save!
 
 itinerary_2 = Itinerary.create!(
   title: "Cultural Visit",
@@ -445,6 +480,7 @@ itinerary_2 = Itinerary.create!(
 )
 
 itinerary_2.original_itinerary_id = itinerary_2.id
+itinerary_2.save!
 
 itinerary_3 = Itinerary.create!(
   title: "Historical Trip",
@@ -456,6 +492,7 @@ itinerary_3 = Itinerary.create!(
 )
 
 itinerary_3.original_itinerary_id = itinerary_3.id
+itinerary_3.save!
 
 itinerary_4 = Itinerary.create!(
   title: "First Time Visit",
@@ -467,8 +504,8 @@ itinerary_4 = Itinerary.create!(
 )
 
 itinerary_4.original_itinerary_id = itinerary_4.id
+itinerary_4.save!
 
-# ensure itinerary_4 and itinerary_5 are the same except for dates
 
 itinerary_5 = Itinerary.create!(
   title: "Basic Tourist",
@@ -480,6 +517,7 @@ itinerary_5 = Itinerary.create!(
 )
 
 itinerary_5.original_itinerary_id = itinerary_5.id
+itinerary_5.save!
 
 itinerary_6 = Itinerary.create!(
   title: "Relaxing Time",
@@ -491,6 +529,8 @@ itinerary_6 = Itinerary.create!(
 )
 
 itinerary_6.original_itinerary_id = itinerary_5.id
+# ensuring itn5 and itn6 are the same dates
+itinerary_6.save!
 
 itinerary_7 = Itinerary.create!(
   title: "Foodie Trip",
@@ -502,6 +542,7 @@ itinerary_7 = Itinerary.create!(
 )
 
 itinerary_7.original_itinerary_id = itinerary_7.id
+itinerary_7.save!
 
 itinerary_8 = Itinerary.create!(
   title: "First Time Visit",
@@ -513,6 +554,7 @@ itinerary_8 = Itinerary.create!(
 )
 
 itinerary_8.original_itinerary_id = itinerary_8.id
+itinerary_8.save!
 
 itinerary_9 = Itinerary.create!(
   title: "Mostly Pastry-Eating",
@@ -524,6 +566,7 @@ itinerary_9 = Itinerary.create!(
 )
 
 itinerary_9.original_itinerary_id = itinerary_9.id
+itinerary_9.save!
 
 itinerary_10 = Itinerary.create!(
   title: "Coffee Shops",
@@ -535,6 +578,7 @@ itinerary_10 = Itinerary.create!(
 )
 
 itinerary_10.original_itinerary_id = itinerary_10.id
+itinerary_10.save!
 
 itinerary_11 = Itinerary.create!(
   title: "Nights Out",
@@ -546,6 +590,7 @@ itinerary_11 = Itinerary.create!(
 )
 
 itinerary_11.original_itinerary_id = itinerary_11.id
+itinerary_11.save!
 
 itinerary_12 = Itinerary.create!(
   title: "Pizza (and seeing the city)",
@@ -557,6 +602,7 @@ itinerary_12 = Itinerary.create!(
 )
 
 itinerary_12.original_itinerary_id = itinerary_12.id
+itinerary_12.save!
 
 itinerary_13 = Itinerary.create!(
   title: "Blimey",
@@ -568,6 +614,7 @@ itinerary_13 = Itinerary.create!(
 )
 
 itinerary_13.original_itinerary_id = itinerary_13.id
+itinerary_13.save!
 
 itinerary_14 = Itinerary.create!(
   title: "The Best Dam(n) Itinerary",
@@ -579,6 +626,7 @@ itinerary_14 = Itinerary.create!(
 )
 
 itinerary_14.original_itinerary_id = itinerary_14.id
+itinerary_14.save!
 
 itinerary_15 = Itinerary.create!(
   title: "Bella Viaggio",
@@ -590,6 +638,7 @@ itinerary_15 = Itinerary.create!(
 )
 
 itinerary_15.original_itinerary_id = itinerary_15.id
+itinerary_15.save!
 
 itinerary_16 = Itinerary.create!(
   title: "Best Time in the 6ix",
@@ -601,6 +650,7 @@ itinerary_16 = Itinerary.create!(
 )
 
 itinerary_16.original_itinerary_id = itinerary_16.id
+itinerary_16.save!
 
 itinerary_17 = Itinerary.create!(
   title: "Beaching Around",
@@ -612,6 +662,7 @@ itinerary_17 = Itinerary.create!(
 )
 
 itinerary_17.original_itinerary_id = itinerary_17.id
+itinerary_17.save!
 
 itinerary_18 = Itinerary.create!(
   title: "Ich bin ein Berliner",
@@ -623,6 +674,7 @@ itinerary_18 = Itinerary.create!(
 )
 
 itinerary_18.original_itinerary_id = itinerary_18.id
+itinerary_18.save!
 
 itinerary_19 = Itinerary.create!(
   title: "Tea and Crumpets",
@@ -634,6 +686,7 @@ itinerary_19 = Itinerary.create!(
 )
 
 itinerary_19.original_itinerary_id = itinerary_19.id
+itinerary_19.save!
 
 itinerary_20 = Itinerary.create!(
   title: "Le Meilleur Itinéraire",
@@ -645,6 +698,7 @@ itinerary_20 = Itinerary.create!(
 )
 
 itinerary_20.original_itinerary_id = itinerary_20.id
+itinerary_20.save!
 
 puts 'Creating 4 fake Favourites for Test account...'
 

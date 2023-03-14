@@ -1,19 +1,18 @@
 <% if params[:user_id].nil? %>
-<%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control rounded-pill mr-sm-2",
-    placeholder: "Browse Itineraries... "
-  %>
-  <% submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
+  <%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control rounded-pill mr-sm-2 ",
+      placeholder: "Browse Itineraries... "
+    %>
+    <% submit_tag "Search", class: "btn btn-primary " %>
+  <% end %>
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
       <% if itinerary.public? %>
        <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
         <%= link_to itinerary_path(itinerary) do %>
-          <div class="card-itinerary stacked--up-left imageh">
+          <div class="card-itinerary imageh">
               <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
                 <div class="image__overlay">
                   <div class="image__title"> <%= itinerary.destination.city%> </div>
@@ -26,29 +25,38 @@
     <% end %>
     </div>
   </div>
-
 <% elsif params[:user_id] %>
-<%# if the URI pattern is users/:id/itineraries then show this %>
-
   <div>
-    <h1> Your itineraries: </h1>
-    <div class="itineraries">
+    <h1 type="button" class="btn btn-light btn2"> My Itineraries </h1>
+    <div class="itineraries2">
       <% @itineraries.each do |itinerary|%>
+        <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
         <% if itinerary.user == current_user %>
-          <%= link_to itinerary_path(itinerary) do %>
-            <div class="card-itinerary stacked--up-left imageh">
-              <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
-                <div class="image__overlay">
-                  <div class="image__title"> <%= itinerary.destination.city%> </div>
-                  <div class="image__user"> <%= itinerary.title%> </div>
-                </div>
-              <div class="sidebar hover"> </div>
-            </div>
+          <% if original_itinerary.user == current_user && itinerary.end_date >= Date.today %>
+            <%= link_to edit_itinerary_path(itinerary) do %>
+              <div class="card-itinerary stacked--up-left imageh">
+                <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
+                  <div class="image__overlay">
+                    <div class="image__title"> <%= itinerary.destination.city%> </div>
+                    <div class="image__user"> <%= itinerary.title%> </div>
+                  </div>
+                <div class="sidebar hover"> </div>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to itinerary_path(itinerary) do %>
+              <div class="card-itinerary stacked--up-left imageh">
+                <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
+                  <div class="image__overlay">
+                    <div class="image__title"> <%= itinerary.destination.city%> </div>
+                    <div class="image__user"> <%= itinerary.title%> </div>
+                  </div>
+                <div class="sidebar hover"> </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
     </div>
   </div>
-
-
 <% end %>

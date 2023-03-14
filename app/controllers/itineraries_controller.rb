@@ -1,6 +1,7 @@
 class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
+    @original_itinerary = Itinerary.find(@itinerary.original_itinerary_id)
     @itinerary_duration = (@itinerary.end_date - @itinerary.start_date).to_i + 1
     @all_itinerary_activities = ItineraryActivity.all
     @itinerary_activities = []
@@ -36,7 +37,11 @@ class ItinerariesController < ApplicationController
       @itinerary.user = current_user
       if @itinerary.save!
         @itinerary.original_itinerary_id = @itinerary.id
-        redirect_to edit_itinerary_path(@itinerary)
+        if @itinerary.save!
+          redirect_to edit_itinerary_path(@itinerary)
+        else
+          render :new, status: :unprocessable_entity
+        end
       else
         render :new, status: :unprocessable_entity
       end
@@ -51,6 +56,7 @@ class ItinerariesController < ApplicationController
       @itinerary.start_date = params[:start_date].to_date
       @days_duration = (@original_itinerary.end_date - @original_itinerary.start_date).to_i
       @itinerary.end_date = @itinerary.start_date + @days_duration
+      @itinerary.activities = @original_itinerary.activities
       if @itinerary.save!
         redirect_to user_itineraries_path(current_user)
       else
@@ -61,6 +67,7 @@ class ItinerariesController < ApplicationController
 
   def edit
     @itinerary = Itinerary.find(params[:id])
+    @original_itinerary = Itinerary.find(@itinerary.original_itinerary_id)
     @itinerary_duration = (@itinerary.end_date - @itinerary.start_date).to_i + 1
     @user = current_user
     counter = 0
