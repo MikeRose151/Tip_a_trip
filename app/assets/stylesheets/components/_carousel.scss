@@ -24,6 +24,7 @@
 
 .fave_button{
  font-size: 2.5rem;
+ color: $orange;
 
 }
 
@@ -42,5 +43,12 @@
     border-radius: 50px;
     padding: 20px;
 
+}
+
+.spaced{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
