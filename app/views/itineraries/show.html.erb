@@ -12,7 +12,7 @@
           <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @itinerary.user.username%> </p>
         </div>
       </div>
-      <div>
+      <div class="itinerary-showpage-list-scroll" style="overflow-y:scroll; height:500px;">
         <% @itinerary_activities.each do |itinerary_activity| %>
           <div class="itinerary-show-activities-card">
             <div> <%= itinerary_activity.activity.name %> </div>
