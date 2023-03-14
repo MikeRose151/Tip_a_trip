@@ -1,9 +1,12 @@
 
 <div class="container">
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false">
+  
     <div class="carousel-inner">
       <% @activities.each_with_index do |activity, index| %>
+          
+        <% if activity.destination == @itinerary.destination %>
+       
 
         <% if index == 0 %>
           <div class="carousel-item active">
@@ -11,26 +14,35 @@
           <div class="carousel-item">
         <% end %>
 
-          <%= cl_image_tag activity.photo.key, class: "d-block activity-img"%>
-          <div class="carousel-caption d-flex justify-content-around "> 
-            <p class="text" style="color: black;">  <%= activity.name %> </p>
-            <%= link_to itinerary_activity_favourites_path(@itinerary, activity), method: :post do %>
-              <i class="fa-solid fa-circle-plus fave_button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"></i>
-            <% end %>
-            <p class="text" style="color: black;">  £<%= activity.cost %> </p>
-          </div>
+            <div class='d-flex'>
+              <div class='w-50 position-relative'>
+                <%= cl_image_tag activity.photo.key, class: "d-block activity-img"%>
+                
+              </div>
+
+              <div class='w-50 spaced'>
+                <p class="text m-2" style="color: black;">  <%= activity.name %> </p> 
+                <p class="text m-2" style="color: black;">  £<%= activity.cost %> </p>
+                <div class="d-flex justify-content-around"> 
+                    <button class="btn outline" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                      <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true">Previous</span>
+                    </button>
+                    <%= link_to itinerary_activity_favourites_path(@itinerary, activity), method: :post do %>
+                      <i class="fa-solid fa-circle-plus fave_button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"></i>
+                    <% end %>
+                    <button class="btn" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                      <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true">Next</span>
+                    </button>
+                </div>
+
+              </div>
+              
+            </div>
         </div>
       <% end %>
+      <% end %>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon arrow " aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon arrow" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    
   </div>
 
   <%= link_to "Back to itinerary", edit_itinerary_path(@itinerary), class: " egg btn btn-outline-primary rounded-pill my-2 my-sm-0" %>
