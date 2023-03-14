@@ -108,14 +108,15 @@
 
 .itinerary-show-activities-background-card{
   background-color: $dark-blue;
-  border: solid $dark-blue 2px;
+  border-top: solid $dark-blue 16px;
+  border-bottom: solid $dark-blue 16px;
   border-radius: 8px;
   height: 400px;
 }
 
 .itinerary-show-activities-subbackground-card{
   height: 400px;
-  padding: 4px;
+  padding: 0px 4px;
 }
 
 .itinerary-show-activities-card{
