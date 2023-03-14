@@ -3,14 +3,11 @@
 
 .imageh{
   position: relative;
-
-
 }
 
 .image__img{
   display: block;
   width: 100%;
-
 }
 
 .image__overlay{
@@ -45,8 +42,6 @@
   transform: translateY(0);
 }
 
-
-
 .image__title{
    font-size: 1em;
    font-weight: bold;
@@ -60,18 +55,15 @@
 }
 .search-form .form-control {
   border-color: $dark-blue;
-  border-width: 2px;
+  border-width: 1.5px;
   background-color: transparent;
   font-size: 14px;
-  height: 40px;
-
-  width: 500px;
-
+  height: 50px;
+  width: 1240px;
 }
 
 .search-form {
-  padding: 10px 15px;
-  position: sticky;
+  padding: 25px;
   top: 0;
   z-index: 999;
   display: flex;
