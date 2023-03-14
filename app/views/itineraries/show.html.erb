@@ -15,6 +15,8 @@
 
       <%# the above is the same as in part of the edit.html.erb page so might wanna make a partial %>
 
+    <% unless @itinerary.user == current_user || @original_itinerary == current_user %>
+
     <div class="col-6 d-flex justify-content-center align-items-center">
       <div class="steal-card" style="background: white; border: solid 0.5px; padding: 26px; border-radius: 5%; height: 300px; width: 400px;">
         <p> Like the look of <%= @itinerary.user.username %>'s itinerary? </p>
@@ -22,10 +24,7 @@
         <form action="/itineraries" method="post">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <%# <input id="comment_submit" name="commit" src="/assets/button.png" type="image" value="Comment" width="100px" height="100px"/> %>
-          <div>
-            <%= image_tag("button", size: "35x35")%>
-            <input type="submit" name="commit" value="Clone this itinerary" class="steal-button">
-          </div>
+          <input type="submit" name="commit" value="Clone this itinerary" class="steal-button">
           <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
           <label for="start">Start date:</label>
           <input type="date" id="start" name="start_date" value="Start date" min="">
@@ -33,5 +32,6 @@
         </form>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

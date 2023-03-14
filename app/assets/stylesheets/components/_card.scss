@@ -3,7 +3,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 25px;
   column-gap: 25px;
-  padding: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 10px;
+  border-radius: 10px;
 }
 
 .itineraries2 {
@@ -15,13 +18,14 @@
 }
 
 .card-itinerary {
-  height: 200px;
+  height: 250px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-
+  border-radius: 5px;
 }
+
 
 .btn2{
   font-family:$headers;
@@ -39,70 +43,18 @@
   --bs-btn-border-color:none;
   --bs-btn-hover-bg:none;
   --bs-btn-hover-color:rgb(128, 128, 128);
+
+.image__overlay {
+  border-radius: 5px;
+
 }
 
 .card-itinerary img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 5px;
 }
-
-
-
-
-// .sidebar {
-
-// .sidebar:hover{
-
-//   background-color:#4F53FF;
-
-
-//.sidebar:hover{
-
-// background-color:#4F53FF;
-
-
-// }
-
-// .sidebar {
-
-
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 2%;
-
-// }
-
-// .sidebar {
-
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 10%;
-
-//   height: 100%;
-//   background-color: $dark-blue;
-//   i {
-//     font-size: 3em;
-//     color: white;
-
-
-
-//   }
-
-// }
-
-
-// transition:background-color 0.9s ease
-// }
-
-
-
-//   }
-// transition:background-color 0.9s ease
-// }
-
 
 
 .card-itinerary h2 {
@@ -191,13 +143,4 @@ a {
   align-items: center;
   margin: 8px;
   padding: 8px 32px;;
-}
-
-.stacked--up-left {
-  &:hover {
-      transform: translate(-5px, -5px);
-
-      &:before { transform: translate(5px, 5px); }
-      &:after { transform: translate(10px, 10px); }
-  }
 }
