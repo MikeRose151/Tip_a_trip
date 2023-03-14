@@ -26,6 +26,23 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
+  position: relative;
+
+  img:first-child {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  img:last-child {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+  }
 }
 
 
@@ -50,14 +67,6 @@
   border-radius: 5px;
 
 }
-
-.card-itinerary img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
 
 .card-itinerary h2 {
   font-size: 16px;
@@ -119,6 +128,7 @@
   align-items: center;
   margin: 8px;
   padding: 8px 32px;
+  // width: 610px;
 }
 
 .itinerary-show-activities-card-title{

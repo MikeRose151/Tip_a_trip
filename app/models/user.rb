@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :itineraries
   has_many :activities, through: :favourites
   has_many :favourites
+  has_one_attached :photo
 end
