@@ -16,16 +16,18 @@
         <%= link_to itinerary_path(itinerary) do %>
           <div class="card-itinerary imageh">
               <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
-                <div class="image__overlay">
-                  <div class="image__title"> <%= itinerary.destination.city%> </div>
-                  <div class="image__user"> <%= itinerary.title%> </div>
-                </div>
+              <div class="image__overlay">
+                <div class="image__title"> <%= itinerary.destination.city%> </div>
+                <div class="image__user"> <%= itinerary.title%> </div>
+              </div>
             <div class="sidebar hover"> </div>
+            <% if itinerary.user.photo.attached? %>
+              <%= cl_image_tag itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
     <% end %>
-    </div>
   </div>
 
 <% elsif params[:user_id] %>

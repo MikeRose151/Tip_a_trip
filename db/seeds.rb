@@ -16,17 +16,21 @@ User.create!(
   username: "Test Tickle"
 )
 
+
 User.create!(
   email: "susan@tat.com",
   password: 123456,
   username: "Lazy Susan"
 )
 
-User.create!(
+tt = User.create!(
   email: "trevor@tat.com",
   password: 123456,
   username: "Tripper Trevor"
 )
+
+tt_avatar = URI.open("https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+tt.photo.attach(io: tt_avatar, filename: "tt.jpg", content_type: "image/jpg")
 
 User.create!(
   email: "michael@tat.com",
