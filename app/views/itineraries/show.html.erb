@@ -22,10 +22,7 @@
         <form action="/itineraries" method="post">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <%# <input id="comment_submit" name="commit" src="/assets/button.png" type="image" value="Comment" width="100px" height="100px"/> %>
-          <div>
-            <%= image_tag("button", size: "35x35")%>
-            <input type="submit" name="commit" value="Clone this itinerary" class="steal-button">
-          </div>
+          <input type="submit" name="commit" value="Clone this itinerary" class="steal-button">
           <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
           <label for="start">Start date:</label>
           <input type="date" id="start" name="start_date" value="Start date" min="">
