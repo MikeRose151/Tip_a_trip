@@ -49,7 +49,7 @@ class ItinerariesController < ApplicationController
       # this happens when stealing an existing itenerary
       @original_itinerary = Itinerary.find(params[:original_itinerary_id])
       @itinerary = Itinerary.new
-      @itinerary.original_itinerary_id = @original_itinerary.id
+      @itinerary.original_itinerary_id = @original_itinerary.original_itinerary_id
       @itinerary.user = current_user
       @itinerary.destination = @original_itinerary.destination
       @itinerary.title = @original_itinerary.title
