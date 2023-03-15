@@ -42,7 +42,9 @@
                       <%= cl_image_tag itinerary_activity.activity.photo.key, class:"image_activity_img activity" %>
                       <strong> <%= itinerary_activity.activity.name %> </strong> | <em> <%= itinerary_activity.activity.duration %> minutes </em>
                     </div>
-                    <%= link_to 'Remove from itinerary', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), method: :delete %>
+                  <div type="button" class="btn btn-dark" >
+                    <%= link_to 'remove', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), method: :delete, class: "red" %>
+                  </div>
                   </div>
                 <% end %>
               <% end %>
@@ -69,9 +71,13 @@
                 <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
                   <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
                 <% else %>
-                  <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
+                <div type="button" class="btn btn-light">
+                  <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post, class: "blue" %>
+                 </div>
                 <% end %>
-                <%= link_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
+                 <div type="button" class="btn btn-dark" >
+                <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete, class: "red2"  %>
+                </div>
               </div>
             <% end %>
           </div>
