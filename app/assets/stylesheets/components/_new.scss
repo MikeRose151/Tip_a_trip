@@ -30,3 +30,20 @@
   --bs-btn-hover-color:#0B0633;
 
 }
+
+
+
+.dark{
+  padding: 7px;
+    border-radius: 50rem;
+    background-color: #0B0633;
+    color: #F5F4F4;
+
+}
+
+.dark:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+}
