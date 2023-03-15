@@ -1,13 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <div>
-        <%= simple_form_for(@itinerary, method: :patch) do |f| %>
-          <%= f.submit "Publish your itinerary?" %>
-          <%= f.check_box :public %>
-        <% end %>
-      </div>
-      <div class="itinerary-title">
+
+      <div class="itinerary-title mt-4">
         <h1> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
       </div>
 
@@ -111,6 +106,12 @@
       </div>
     </div>
   </div>
+  <div class="publish_position mt-3">
+        <%= simple_form_for(@itinerary, method: :patch) do |f| %>
+          <%= f.submit "Publish Your Itinerary?", class: "publish" %>
+          <%= f.check_box :public %>
+        <% end %>
+      </div>
   <div class="d-flex justify-content-center m-4">
     <p> Looking for some further inspiration? <%= link_to "Check out itineraries from fellow Tip-a-Trippers", itineraries_path %> </p>
   </div>
