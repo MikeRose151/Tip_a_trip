@@ -100,9 +100,9 @@
                   <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
                     <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
                   <% else %>
-                    <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post, class: "dark2" %>
+                    <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), data: {turbo_method: :post}, class: "dark2" %>
                   <% end %>
-                  <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete, class: "red4"  %>
+                  <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), data: {turbo_method: :delete}, class: "red4"  %>
                 </div>
               <% end %>
             </div>
