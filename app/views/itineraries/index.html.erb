@@ -7,6 +7,7 @@
     %>
     <% submit_tag "Search", class: "btn btn-primary " %>
   <% end %>
+<div class="itinerary-container">
   <div class="itineraries">
     <%@itineraries.each do |itinerary|%>
       <% if itinerary.public? %>
@@ -27,6 +28,7 @@
       <% end %>
     <% end %>
   </div>
+</div>
 <% elsif params[:user_id] %>
     <div class="container">
       <div class="row">

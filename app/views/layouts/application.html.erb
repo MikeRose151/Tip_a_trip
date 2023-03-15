@@ -20,10 +20,11 @@
     <%= render "shared/flashes" %>
 
     <%= yield %>
-
+<div class ="footer">
   <% unless current_page?(root_path) %>
-     <%= render partial: "shared/mainfooter" %>
+    <%= render partial: "shared/mainfooter" %>
   <% end %>
+  </div>
   </body>
 
 </html>
