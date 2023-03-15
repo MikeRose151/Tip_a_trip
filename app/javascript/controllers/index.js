@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import FavouriteButtonController from "./favourite_button_controller"
+application.register("favourite-button", FavouriteButtonController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
