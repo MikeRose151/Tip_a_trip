@@ -29,11 +29,15 @@
 
 .card-text{
   color: #0B0633;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-title{
   color:  #0B0633;
   font-size: 35px;
+  text-align: center;
 }
 .card-body{
   text-align: justify;
