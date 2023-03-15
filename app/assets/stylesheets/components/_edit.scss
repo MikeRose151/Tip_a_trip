@@ -68,3 +68,24 @@
   color: #FF4949;
 
 }
+
+.publish_position{
+  position: center;
+  text-align: center;
+}
+
+.publish{
+  padding: 9px;
+    border-radius: 50rem;
+    background-color: #FF4949;
+    color: #F5F4F4;
+    font-size: 22px;
+    border: solid #0B0633 2px;
+    padding-bottom: 6px;
+}
+
+.publish:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+}
