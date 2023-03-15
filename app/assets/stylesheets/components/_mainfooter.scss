@@ -1,6 +1,7 @@
 
 .mainfooter {
   position: relative;
+  position: fixed;
   background-color: $dark-blue;
   margin-top: auto;
   padding: 5px;
@@ -8,7 +9,7 @@
 }
 
 .mainfooter marquee {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   background-color: $dark-blue;
