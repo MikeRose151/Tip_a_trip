@@ -1,13 +1,7 @@
 <div class="container" style ="height:vh100;">
   <div class="row">
     <div class="col-6">
-      <div>
-        <% if @itinerary.user == current_user %>
-          <%= link_to 'Back to My Itineraries', user_itineraries_path(current_user) %>
-        <% else %>
-          <%= link_to 'Back to Itineraries', itineraries_path %>
-        <% end %>
-      </div>
+
       <div class="itinerary-title">
         <h1> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
       </div>
@@ -43,6 +37,13 @@
           </div>
 
       </div>
+      <div class="mt-4">
+        <% if @itinerary.user == current_user %>
+          <%= link_to 'Back to My Itineraries', user_itineraries_path(current_user) %>
+        <% else %>
+          <%= link_to 'Back to Itineraries', itineraries_path, class: "dark4" %>
+        <% end %>
+      </div>
     </div>
 
     <div class="col-6 d-flex justify-content-center">
@@ -77,7 +78,7 @@
           <div class="d-flex justify-content-center">
             <div class="mt-3">
               <button class="move_card">
-                <input type="submit" name="commit" value="Clone this itinerary" type="button" class="btn btn-dark" class="steal-button">
+                <input type="submit" name="commit" value="Clone this itinerary" class= "dark3">
                 <%= image_tag "button.png", class: "buttonlogo" %>
               </button>
             </div>
