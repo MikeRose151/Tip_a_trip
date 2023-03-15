@@ -4,53 +4,61 @@
   <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false">
 
     <div class="carousel-inner">
-      <% @activities.each_with_index do |activity, index| %>
 
-      <% if activity.destination == @itinerary.destination %>
-        <% if index == 0 %>
-          <div class="carousel-item active">
-        <% else %>
-          <div class="carousel-item">
-        <% end %>
-            <div class='d-flex me-2'>
-              <div class='w-50 position-relative'>
-                <%= cl_image_tag activity.photo.key, class: "d-block activity-img"%>
-
-              </div>
-
-              <div class=' info-card w-50 ms-2 spaced card'>
-                <h3 class="text-title m-2">  <%= activity.name %> </h3>
-                <ul class="text">
-                  <li>  <%= activity.address %> </li>
-                  <li class="my-2">  £<%= activity.cost %> </li>
-                  <li>  <%= activity.duration %> mins</li>
-                </ul>
-                <div class="d-flex justify-content-around" data-controller="favourite-button">
-                    <button class="btn outline" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                      <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true">Previous</span>
-                    </button>
-                      <%= button_to itinerary_activity_favourites_path( @itinerary, activity ), method: :post, class: 'favourite-btn' do  %>
-                        <%# <% if Favourite.where(user_id: @itinerary.user_id, activity_id: activity.id).exists? || ItineraryActivity.where(itinerary_id: @itinerary.id, activity_id: activity.id).exists? %>
-                        <div data-favourite-button-target="button" data-action="click->favourite-button#toggle">
-                          <i class="fa-regular fa-heart fave_button"></i>
-                        </div>
-                      <% end %>
-                    <button class="btn" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                      <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true">Next</span>
-                    </button>
-                </div>
-<%# data: {favourite_button_target: "button"} %>
-              </div>
-
-            </div>
-
-        </div>
+      <% @relevant_activities = [] %>
+      <% @activities.each do |activity| %>
+        <% @relevant_activities << activity if (Favourite.find_by(user_id: @itinerary.user_id, activity_id: activity.id).nil?) %>
+        <%# || (ItineraryActivity.find_by(itinerary_id: @itinerary.id, activity_id: activity.id).nil?) %>
       <% end %>
+      <% @relevant_activities.each_with_index do |activity, index| %>
+        <% if activity.destination == @itinerary.destination %>
+          <% if index == 0 %>
+            <div class="carousel-item active">
+          <% else %>
+            <div class="carousel-item">
+          <% end %>
+              <div class='d-flex me-2'>
+                <div class='w-50 position-relative'>
+                  <%= cl_image_tag activity.photo.key, class: "d-block activity-img"%>
+
+                </div>
+
+                <div class=' info-card w-50 ms-2 spaced card'>
+                  <h3 class="text-title m-2">  <%= activity.name %> </h3>
+                  <ul>
+                    <li class="activities-info-text">
+                      <i class="fa-regular fa-compass"></i> <%= activity.address %>
+                    </li>
+                    <li class="activities-info-text">
+                      <i class="fa-solid fa-tag"></i> £<%= activity.cost %>
+                    </li>
+                    <li class="activities-info-text">
+                      <i class="fa-solid fa-stopwatch"></i> <%= activity.duration %> mins
+                    </li>
+                  </ul>
+                      <div class="d-flex justify-content-between">
+                        <button class="btn outline" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                          <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                        </button>
+                        <button class="btn" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                          <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                      </div>
+                  <div class="d-flex justify-content-around" data-controller="favourite-button">
+                        <%= button_to itinerary_activity_favourites_path( @itinerary, activity ), method: :post, class: 'favourite-btn-outline' do  %>
+                          <div data-favourite-button-target="button" data-action="click->favourite-button#toggle">
+                            <i class="fa-regular fa-heart favourite-btn-outline"></i>
+                          </div>
+                        <% end %>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <%= link_to "Continue to itinerary", edit_itinerary_path(@itinerary), class: "btn btn-outline-success btn-outline-light rounded-pill btn-create-new" %>
+                  </div>
+                </div>
+              </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
-
-
   </div>
-
-  <%= link_to "Back to itinerary", edit_itinerary_path(@itinerary), class: "btn btn-outline-success btn-outline-light rounded-pill my-2 my-sm-0 btn-create-new" %>
 </div>

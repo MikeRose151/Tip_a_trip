@@ -13,16 +13,30 @@
 
 .btn-dark{
 
-  --bs-btn-bg:#0B0633;
+  --bs-btn-bg: $dark-blue;
 }
 
 
-.favourite-btn {
+.favourite-btn-outline {
   background: none;
   border: none;
   outline: none;
-  color: blue;
+  color: $light-blue;
+  font-size: 150px;
+  line-height: none;
   &:hover {
-    color: rgb(51, 51, 227);
+    color: $orange;
   }
 }
+
+.favourite-btn-solid{
+  background: none;
+  border: none;
+  outline: none;
+  color: $orange;
+  font-size: 150px;
+  line-height: none;
+  &:hover {
+    color: $orange;
+  }
+ }
