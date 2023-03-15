@@ -8,7 +8,7 @@
     <div class="col-8 hometext">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title fonttitle d-flex justify-content-center">Weclome to Tip-a-Trip</h5>
+          <h1 class="card-title fonttitle d-flex justify-content-center">Welcome to Tip-a-Trip.</h1>
           <h6 class="card-subtitle mb-2 text-muted"> </h6>
           <p class="card-text font">
             Here, you can easily create and customise your travel itinerary to make your trip planning experience simple and stress-free.
@@ -22,9 +22,12 @@
           <p class="card-text font">
             Create. Share. Travel.
           </p>
-          <%= link_to "[Browse itineraries CTA]", itineraries_path %>
-          <%= link_to "[Create itinerary CTA]", new_itinerary_path %>
-          [Some fake reviews]
+          <li class="nav-item button d-flex ">
+          <%= link_to "Browse Itineraries", itineraries_path,
+          class: "btn btn-outline-success btn-outline-light rounded-pill my-2 my-sm-0 btn-create-new" %>
+          <%= link_to "Build Your Itinerary", new_itinerary_path, class: "btn btn-outline-success btn-outline-light rounded-pill my-2 my-sm-0 btn-create-new" %>
+          </li>
+
         </div>
       </div>
     </div>
