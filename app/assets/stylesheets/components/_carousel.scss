@@ -3,7 +3,7 @@
     object-fit: cover;
     width: 100%;
     border-radius: 20px;
-  
+
 }
 
 .carousel-inner {
@@ -37,17 +37,13 @@
     text-align: center;
     font-size: 48px;
     font-weight: bold;
-    
-}
-
-.fave_button{
- font-size: 4rem;
 
 }
 
 .egg{
     color: whitesmoke !important;
     border: solid  whitesmoke !important;
+    width: 100px;
     &:hover {
         background: whitesmoke;
         color: #0B0633!important;
@@ -73,4 +69,3 @@
     background-color: #0B0633;
     border-radius: 20px;
 }
-

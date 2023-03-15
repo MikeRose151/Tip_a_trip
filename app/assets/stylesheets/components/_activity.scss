@@ -3,3 +3,16 @@
   width: 40px;
   border-radius: 50%;
 }
+
+.activities-info{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.activities-info-text{
+  color: white;
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}

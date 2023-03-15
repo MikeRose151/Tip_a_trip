@@ -11,6 +11,6 @@ export default class extends Controller {
   toggle() {
     console.log(this.buttonTarget.innerHTML)
     // this.buttonTarget.insertAdjacentHTML("beforeend", `<i class="fa-solid fa-heart fave_button"></i>`)
-    this.buttonTarget.innerHTML = '<i class="fa-solid fa-heart fave_button"></i>'
+    this.buttonTarget.innerHTML = '<i class="fa-solid fa-heart favourite-btn-solid"></i>'
   }
 }
