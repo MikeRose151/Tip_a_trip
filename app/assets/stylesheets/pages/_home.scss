@@ -5,8 +5,8 @@
     to right,
     #0B0633 0%,
     #0B0633 38%,
-    #F5F4F4 38%,
-    #F5F4F4 100%
+    #e0e2f4  38%,
+    #f6e2f1 100%
   );
 }
 
@@ -33,21 +33,31 @@
 
 .card-title{
   color:  #0B0633;
-  font-size: 25px;
+  font-size: 35px;
 }
 .card-body{
-  text-align: center;
+  text-align: justify;
   color: #F5F4F4;
-
 }
 
-.card{--bs-card-bg: #F5F4F4;
+// .card{
+//   --bs-card-bg: transparent;
+//   position: right;
+
+
+//   --bs-card-border-width: 0px;
+//   element.style {
+//     width: 40rem;
+//   }
+// }
+
+.card {
+  --bs-card-bg: transparent;
   position: right;
   --bs-card-border-width: 0px;
-  element.style {
-    width: 40rem;
+  width: 60%;
 }
-}
+
 .row {
   --bs-gutter-x: 1.5rem;}
 

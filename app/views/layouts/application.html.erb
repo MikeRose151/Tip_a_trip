@@ -21,6 +21,9 @@
 
     <%= yield %>
 
+  <% unless current_page?(root_path) %>
+     <%= render partial: "shared/mainfooter" %>
+  <% end %>
   </body>
 
 </html>
