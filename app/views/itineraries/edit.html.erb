@@ -42,7 +42,7 @@
                       <%= cl_image_tag itinerary_activity.activity.photo.key, class:"image_activity_img activity" %>
                       <strong> <%= itinerary_activity.activity.name %> </strong> | <em> <%= itinerary_activity.activity.duration %> minutes </em>
                     </div>
-                    <%= link_to 'Remove from itinerary', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), method: :delete %>
+                    <%= link_to 'Remove', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity), data: {turbo_method: :delete} %>
                   </div>
                 <% end %>
               <% end %>
@@ -69,9 +69,9 @@
                 <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
                   <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
                 <% else %>
-                  <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post %>
+                  <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), data: {turbo_method: :post} %>
                 <% end %>
-                <%= link_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete  %>
+                <%= link_to 'Remove from shortlist', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), data: {turbo_method: :delete}  %>
               </div>
             <% end %>
           </div>
