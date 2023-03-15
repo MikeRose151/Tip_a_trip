@@ -25,6 +25,7 @@
             <% end %>
           </div>
         </div>
+
         <div class="itinerary-showpage-list-scroll">
           <div class="itinerary-show-activities-subbackground-card">
             <% @itinerary_activities.each do |itinerary_activity| %>
@@ -37,10 +38,12 @@
             </div>
             <% end %>
             <br>
+
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
+
     <div class="col-6 d-flex justify-content-center">
       <div class="steal-card">
         <% if @original_itinerary.user == current_user %>
@@ -50,6 +53,7 @@
           <div class="d-flex justify-content-center">
             <h5> Go ahead and use it again! </h5>
           </div>
+
         <% else %>
           <div class="d-flex justify-content-center">
             <h3> Like the look of <%= @itinerary.user.username %>'s itinerary? </h3>
@@ -61,6 +65,7 @@
         <form action="/itineraries" method="post">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <%# <input id="comment_submit" name="commit" src="/assets/button.png" type="image" value="Comment" width="100px" height="100px"/> %>
+
           <input type="hidden" name="original_itinerary_id" value="<%= @itinerary.id %>">
           <div class="d-flex justify-content-center">
             <div class="mt-4">
@@ -76,6 +81,7 @@
               </button>
             </div>
           </div>
+
           <%# javascript click event to display end_date to user, based on form start_date + @itinerary_duration %>
         </form>
       </div>
