@@ -1,6 +1,7 @@
 class FavouritesController < ApplicationController
 
   def create
+    @favourites = Favourite.all
     @favourite = Favourite.new
     @favourite.user_id = current_user.id
     @activity = Activity.find(params[:activity_id])
