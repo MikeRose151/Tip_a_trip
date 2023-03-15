@@ -25,18 +25,21 @@
                   <li class="my-2">  £<%= activity.cost %> </li>
                   <li>  <%= activity.duration %> mins</li>
                 </ul>
-                <div class="d-flex justify-content-around">
+                <div class="d-flex justify-content-around" data-controller="favourite-button">
                     <button class="btn outline" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                       <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true">Previous</span>
                     </button>
-                    <%= link_to itinerary_activity_favourites_path( @itinerary, activity ), data: {turbo_method: :post} do  %>
-                      <i class="fa-solid fa-circle-plus fave_button"></i>
-                    <% end %>
+                      <%= button_to itinerary_activity_favourites_path( @itinerary, activity ), method: :post, class: 'favourite-btn' do  %>
+                        <%# <% if Favourite.where(user_id: @itinerary.user_id, activity_id: activity.id).exists? || ItineraryActivity.where(itinerary_id: @itinerary.id, activity_id: activity.id).exists? %>
+                        <div data-favourite-button-target="button" data-action="click->favourite-button#toggle">
+                          <i class="fa-regular fa-heart fave_button"></i>
+                        </div>
+                      <% end %>
                     <button class="btn" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                       <span class=" egg btn btn-outline-primary rounded-pill my-2 my-sm-0" aria-hidden="true">Next</span>
                     </button>
                 </div>
-
+<%# data: {favourite_button_target: "button"} %>
               </div>
 
             </div>
