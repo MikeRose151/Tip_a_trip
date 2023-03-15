@@ -200,7 +200,7 @@ file_2 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678372872
     marketvisit.photo.attach(io: file_2, filename:"market.jpg", content_type: "image/jpg")
 
 ballpit = Activity.create(
-  name: "Ballie Ballerson Cocktail Bar",
+  name: "Ballie Ballerson",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "97-113 Curtain Rd, London EC2A 3BS",
@@ -233,7 +233,7 @@ file_5 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678374173
 madametussauds.photo.attach(io: file_5, filename:"madame.jpg", content_type: "image/jpg")
 
 lighterman = Activity.create(
-  name: "The Lighterman King's Cross",
+  name: "The Lighterman",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "3 Granary Square, London N1C 4BH",
@@ -244,7 +244,7 @@ file_6 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678374602
 lighterman.photo.attach(io: file_6, filename:"madame.jpg", content_type: "image/jpg")
 
 shard = Activity.create(
-  name: "The Shard, Aqua Shard Restaurant",
+  name: "The Shard",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "32 London Bridge St, London SE1 9SG",
@@ -288,7 +288,7 @@ file_10 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v167837616
 lewagondemo.photo.attach(io: file_10, filename:"madame.jpg", content_type: "image/jpg")
 
 toweroflondon = Activity.create(
-  name: "Tower of London Tour",
+  name: "Tower of London",
   duration: rand(30..180),
   cost: rand(10..50),
   address: "London EC3N 4AB",
@@ -299,7 +299,7 @@ file_11 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v167844833
 toweroflondon.photo.attach(io: file_11, filename:"madame.jpg", content_type: "image/jpg")
 
 axethrowing= Activity.create(
-  name: "Bad Axe Throwing - Wembley Park",
+  name: "Bad Axe Throwing",
   duration: rand(30..180),
   cost: rand(10..50),
   address: "Boxpark, 18 Olympic Way, Wembley HA9 0JT",
@@ -343,7 +343,7 @@ file_15 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v167837821
 gardens.photo.attach(io: file_15, filename:"madame.jpg", content_type: "image/jpg")
 
 rivertour = Activity.create(
-  name: "Bateaux Parisiens Seine River Gourmet Lunch & Sightseeing Cruise",
+  name: "Bateaux Parisiens Seine River Cruise",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "Port de la Bourdonnais, 75007 Paris, France",
@@ -407,7 +407,7 @@ file_21 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v167838113
 disney.photo.attach(io: file_21, filename:"madame.jpg", content_type: "image/jpg")
 
  segway= Activity.create(
-  name: "GO GO Segway tours - Paris",
+  name: "GO GO Segway Tour",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "101 Av. de la Bourdonnais, 75007 Paris, France",
@@ -420,7 +420,7 @@ segway.photo.attach(io: file_22, filename:"madame.jpg", content_type: "image/jpg
 # NEED TO PROPERLY COMPLETE THESE ACTIVITIES
 
 triomphe= Activity.create(
-  name: "Arc de Triomphe Tour - Paris",
+  name: "Arc de Triomphe Tour",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "Pl. Charles de Gaulle, 75008 Paris, France",
@@ -442,7 +442,7 @@ file_24 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v167844915
 montmartre.photo.attach(io: file_24, filename:"madame.jpg", content_type: "image/jpg")
 
 sacre = Activity.create(
-  name: "Sacre-Coeur - The Sacred Heart of Paris",
+  name: "Sacre-Coeur",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "Parvis du Sacré-Coeur - 35 rue du Chevalier de la Barre - 75018 Paris",
@@ -464,7 +464,7 @@ file_26 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v167845158
 rouge.photo.attach(io: file_26, filename:"madame.jpg", content_type: "image/jpg")
 
 wine = Activity.create(
-  name: "Loire Valley Castles & Wine Tasting Day Trip from Paris",
+  name: "Loire Valley Castles",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "Loire Valley Castles, France",
@@ -478,7 +478,7 @@ wine.photo.attach(io: file_27, filename:"madame.jpg", content_type: "image/jpg")
 
 
 bigbustour= Activity.create(
-  name: "Big Bus Paris Hop-On Hop-Off Tour",
+  name: "Big Bus Hop-On Hop-Off Tour",
   duration: rand(30..180),
   cost: rand(0..50),
   address: "Big Bus, 11 Av. de l'Opéra, 75001 Paris, France",
@@ -732,28 +732,6 @@ itinerary_20 = Itinerary.create!(
 
 itinerary_20.original_itinerary_id = itinerary_20.id
 itinerary_20.save!
-
-puts 'Creating 4 fake Favourites for Test account...'
-
-Favourite.create!(
-  user_id: 1,
-  activity_id: 1
-)
-
-Favourite.create!(
-  user_id: 1,
-  activity_id: 10
-)
-
-Favourite.create!(
-  user_id: 1,
-  activity_id: 15
-)
-
-Favourite.create!(
-  user_id: 1,
-  activity_id: 20
-)
 
 puts 'Creating 15 fake Itinerary Activities for 4-day Paris trip...'
 
