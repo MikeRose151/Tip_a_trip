@@ -21,6 +21,22 @@
    font-size: 15px;
    padding: 7px;
   }
+
+  .red3{
+    font-size: 15px;
+   padding: 7px;
+   border: solid #0B0633 2px;
+   border-radius: 50rem;
+
+  }
+
+  .red3:hover{
+    background-color: white;
+  transition-duration: 0.5s;
+  color:#FF4949;
+
+  }
+
   .red2:hover{
     color:#FF4949;
   }
