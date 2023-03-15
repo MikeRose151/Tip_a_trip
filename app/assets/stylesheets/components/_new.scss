@@ -41,6 +41,41 @@
 
 }
 
+.dark3{
+  padding: 14px;
+    border-radius: 50rem;
+    background-color: #0B0633;
+    color: #F5F4F4;
+    font-size: 25px;
+
+}
+
+.dark4{
+  padding: 8px;
+    border-radius: 50rem;
+    background-color: #0B0633;
+    color: #F5F4F4;
+    font-size: 22px;
+    border: solid #0B0633 2px;
+    padding-bottom: 6px;
+}
+
+.dark3:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+
+}
+
+.dark4:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+
+}
+
 .dark2{
   padding: 7px;
   border-radius: 50rem;
