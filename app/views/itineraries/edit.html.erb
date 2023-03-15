@@ -64,28 +64,25 @@
         <% if @favourites.count == 0 && @itinerary_activities.count == 0 %>
           <div class="itinerary-show-title-card-subtitle">
             <%= link_to "Get started by browsing activities to add to your shortlist", itinerary_activities_path(@itinerary) %> to add to your shortlist
-
-        <div class="itinerary-show-title-card-subtitle">
-          <p> <%= link_to "Find more activities to add to your shortlist", itinerary_activities_path(@itinerary) %> to add to your shortlist </p>
-        </div>
-        <div class="itinerary-showpage-list-scroll">
-          <div class="itinerary-show-activities-subbackground-card">
-            <% @favourites.each do |favourite| %>
-              <div class="itinerary-show-activities-card">
-                <%= favourite.activity.name %>
-                <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
-                  <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
-                <% else %>
-                <div type="button" class="btn btn-light">
-                  <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post, class: "blue" %>
-                 </div>
-                <% end %>
-                 <div type="button" class="btn btn-dark" >
-                <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete, class: "red2"  %>
+          </div>
+          <div class="itinerary-showpage-list-scroll">
+            <div class="itinerary-show-activities-subbackground-card">
+              <% @favourites.each do |favourite| %>
+                <div class="itinerary-show-activities-card">
+                  <%= favourite.activity.name %>
+                  <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
+                    <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
+                  <% else %>
+                    <div type="button" class="btn btn-light">
+                      <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), method: :post, class: "blue" %>
+                    </div>
+                  <% end %>
+                  <div type="button" class="btn btn-dark" >
+                    <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), method: :delete, class: "red2"  %>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-
+              <% end %>
+            </div>
           </div>
         <% elsif @favourites.count == 0 && @itinerary_activities.count > 0 %>
           <div class="itinerary-show-title-card-subtitle">
