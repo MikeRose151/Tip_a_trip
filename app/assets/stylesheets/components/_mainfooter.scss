@@ -1,0 +1,23 @@
+
+.mainfooter {
+  position: relative;
+  background-color: $dark-blue;
+  margin-top: auto;
+  padding: 5px;
+
+}
+
+.mainfooter marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $dark-blue;
+}
+
+.text-behind-marquee {
+  text-align: center;
+  position: absolute;
+  z-index: +1;
+  color: white;
+  font-family: $headers-font;
+}
