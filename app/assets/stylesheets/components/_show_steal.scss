@@ -14,12 +14,22 @@
 .buttonlogo{
   height: 35px;
   width: 35px;
+
   }
 
   .move_card{
-   padding: 0px;
+   padding: 5px;
    background: $dark-blue;
    border-radius: 50rem;
+
+  }
+  .move_card:hover{
+    background:  #F5F4F4;
+    transition-duration:0.5s;
+    border: solid #0B0633 2px;
+    padding: 8px;
+    border-radius: 100rem;
+
   }
 
   .size{

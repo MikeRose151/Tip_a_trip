@@ -37,9 +37,9 @@
                       <%= cl_image_tag itinerary_activity.activity.photo.key, class:"image_activity_img activity" %>
                       <strong> <%= itinerary_activity.activity.name %> </strong> | <em> <%= itinerary_activity.activity.duration %> minutes </em>
                     </div>
-                     <div type="button" class="btn btn-dark" >
-                       <%= link_to 'remove', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), data: {turbo_method: :delete}, class: "red" %>
-                     </div>
+
+                       <%= link_to 'remove', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), data: {turbo_method: :delete}, class: "red4" %>
+
                   </div>
                 <% end %>
               <% end %>
