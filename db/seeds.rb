@@ -16,24 +16,24 @@ testtickle = User.create!(
   username: "Test Tickle"
 )
 
-testtickle_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
+testtickle_avatar = URI.open("https://hellogiggles.com/wp-content/uploads/sites/7/2016/11/22/IMG_2531.jpg?quality=82&strip=all")
 testtickle.photo.attach(io: testtickle_avatar, filename: "testtickle.jpg", content_type: "image/jpg")
 
 
 
 ls = User.create!(
-  email: "susan@tat.com",
+  email: "larry@tat.com",
   password: 123456,
-  username: "Lazy Susan"
+  username: "Lazy Larry"
 )
 
-ls_avatar = URI.open("https://hellogiggles.com/wp-content/uploads/sites/7/2016/11/22/IMG_2531.jpg?quality=82&strip=all")
+ls_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
 ls.photo.attach(io: ls_avatar, filename: "ls.jpg", content_type: "image/jpg")
 
 tt = User.create!(
-  email: "trevor@tat.com",
+  email: "trina@tat.com",
   password: 123456,
-  username: "Tripper Trevor"
+  username: "Tripper Trina"
 )
 
 tt_avatar = URI.open("https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
