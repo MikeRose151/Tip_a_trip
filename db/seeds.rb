@@ -754,6 +754,7 @@ itinerary_22 = Itinerary.create!(
   public: false
 )
 
+
 itinerary_3.original_itinerary_id = itinerary_3.id
 itinerary_3.save!
 
