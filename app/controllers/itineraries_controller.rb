@@ -18,6 +18,20 @@ class ItinerariesController < ApplicationController
       @itineraries = Itinerary.joins(:destination).where(sql_query, query: "%#{params[:query]}%")
     else
       @itineraries = Itinerary.all
+      @counter_tips = 0
+      @itineraries.each do |itn|
+        @counter_tips += 1 if itn.user == current_user
+      end
+      @counter_trips = 0
+      @itineraries.each do |itn|
+        original_itn = Itinerary.find(itn.original_itinerary_id)
+        @counter_trips += 1 if (itn.user == current_user) && (original_itn.user == current_user)
+      end
+      @counter_trips_tipped = 0
+      @itineraries.each do |itn|
+        original_itn = Itinerary.find(itn.original_itinerary_id)
+        @counter_trips_tipped += 1 if original_itn.user == current_user
+      end
     end
   end
 
