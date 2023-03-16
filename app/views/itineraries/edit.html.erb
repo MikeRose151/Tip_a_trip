@@ -15,7 +15,7 @@
               </div>
             </div>
           <% elsif @favourites.count == 0 && @itinerary_activities.count > 0 %>
-            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center" style="height:100%;">
+            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center">
              <div>
                 <%= link_to itinerary_activities_path(@itinerary) do %>
                   <i style= "font-size:150px;" class="fa-solid fa-plus"></i>
@@ -23,7 +23,7 @@
               </div>
             </div>
           <% else %>
-            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center " style="height:52px;">
+            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center">
               <%= link_to itinerary_activities_path(@itinerary) do %>
                   <i style= "font-size:60px;" class="fa-solid fa-plus"></i>
                 <% end %>
