@@ -33,7 +33,9 @@
     <div class="container">
       <div class="row">
         <div class="col-8">
-          <h1> My Itineraries </h1>
+          <div class="mt-6">
+            <h1> <%= current_user.username %>'s Dashboard </h1>
+          </div>
           <div class="itineraries2">
             <% @itineraries.each do |itinerary|%>
               <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
@@ -59,9 +61,17 @@
         <div class="col-4">
           <div class="steal-card" style="height: 500px; margin-top: 64px;">
             <h2>Tip-a-Trip Stats</h2>
-            <p>Total Tips</p>
-            <p>Total Trips</p>
-            <p>Total Tips Tripped</p>
+            <%# <% counter_trips = 0 %> %>
+            <%# <% @itineraries.each do %> %>
+              <%# <% counter_trips += 1 if itinerary.user == current_user %> %>
+              <%# <% return counter_trips %> %>
+            <%# <% end %> %>
+            <%# <p>Total Trips: <%= counter_trips %></p> %>
+            <%# count where itinerary.user = current_user %>
+            <p>Total Tips: <%=  %></p>
+            <%# count where itinerary.original.user = current_user %>
+            <p>Total Tips Tripped: </p>
+            <%# count where itinerary.original.user = current_user %>
             <p></p>
           </div>
         </div>
