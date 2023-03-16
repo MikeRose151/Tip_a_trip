@@ -1,7 +1,60 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
 
+    <div class="col-6 d-flex align-items-end">
+      <div>
+       <h3 class="itinerary-title"> Shortlist </h3>
+        <div class="itinerary-show-activities-background-card ">
+
+          <% if @favourites.count == 0 && @itinerary_activities.count == 0 %>
+            <div class="itinerary-edit-favourite-plus">
+              <div>
+                <%= link_to itinerary_activities_path(@itinerary) do %>
+                  <i style= "font-size:150px;" class="fa-solid fa-plus"></i>
+                <% end %>
+              </div>
+            </div>
+          <% elsif @favourites.count == 0 && @itinerary_activities.count > 0 %>
+            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center">
+             <div>
+                <%= link_to itinerary_activities_path(@itinerary) do %>
+                  <i style= "font-size:150px;" class="fa-solid fa-plus"></i>
+                <% end %>
+              </div>
+            </div>
+          <% else %>
+            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center">
+              <%= link_to itinerary_activities_path(@itinerary) do %>
+                  <i style= "font-size:60px;" class="fa-solid fa-plus"></i>
+                <% end %>
+            </div>
+            <div class="itinerary-showpage-list-scroll">
+              <div class="itinerary-show-activities-subbackground-card">
+                <% @favourites.each do |favourite| %>
+                  <div class="itinerary-show-activities-card">
+                    <%= favourite.activity.name %>
+                    <div class= "p-2">
+                      <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
+                        <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
+                      <% else %>
+                        <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), data: {turbo_method: :post}, class: "dark2" %>
+                      <% end %>
+                      <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), data: {turbo_method: :delete}, class: "red4 ms-5"  %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="col-6">
       <div class="itinerary-title mt-4">
         <h1> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
       </div>
@@ -13,8 +66,21 @@
           <% else %>
             <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </p>
           <% end %>
+          <div class="publish_position">
+          <% if @itinerary.public %>
+              <%= simple_form_for(@itinerary, method: :patch) do |f| %>
+                <%= f.input :public, class: "d-none" %>
+                <%= f.submit "Unpublish", class: "publish mb-3" %>
+              <% end %>
+            <% else %>
+              <%= simple_form_for(@itinerary, method: :patch) do |f| %>
+                <%= f.input :public, class: "d-none" %>
+                <%= f.submit "Publish", class: "publish mb-3" %>
+              <% end %>
+            <% end %>
+          </div>
           <div
-            class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @original_itinerary.user.username%>
+            class="itinerary-show-title-card-subtitle-text">
             <% if @itinerary.user.photo.attached? %>
               <%= cl_image_tag @itinerary.user.photo.key, class:"itinerary_avatar_img avatar-show-edit" %>
             <% end %>
@@ -48,73 +114,17 @@
       </div>
     </div>
 
-    <div class="col-6 d-flex align-items-end">
-      <div> 
-       <h3 class="itinerary-title"> Shortlist </h3>
-        <div class="itinerary-show-activities-background-card ">
 
-          <% if @favourites.count == 0 && @itinerary_activities.count == 0 %>
-            <div class="itinerary-edit-favourite-plus">
-              <div>
-                <%= link_to itinerary_activities_path(@itinerary) do %>
-                  <i style= "font-size:150px;" class="fa-solid fa-plus"></i>
-                <% end %>
-              </div>
-            </div>
-          <% elsif @favourites.count == 0 && @itinerary_activities.count > 0 %>
-            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center" style="height:100%;">
-             <div>
-                <%= link_to itinerary_activities_path(@itinerary) do %>
-                  <i style= "font-size:150px;" class="fa-solid fa-plus"></i>
-                <% end %>
-              </div>
-            </div>
-          <% else %>
-            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center " style="height:52px;">
-              <%= link_to itinerary_activities_path(@itinerary) do %>
-                  <i style= "font-size:60px;" class="fa-solid fa-plus"></i>
-                <% end %>
-            </div>
-            <div class="itinerary-showpage-list-scroll">
-              <div class="itinerary-show-activities-subbackground-card">
-                <% @favourites.each do |favourite| %>
-                  <div class="itinerary-show-activities-card">
-                    <%= favourite.activity.name %>
-                    <div class= "p-2">
-                      <% if @itinerary_activities.map(&:activity).include?(favourite.activity) %>
-                        <%= link_to 'Added', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), disabled: true, method: :post %>
-                      <% else %>
-                        <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), data: {turbo_method: :post}, class: "dark2" %>
-                      <% end %>
-                      <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), data: {turbo_method: :delete}, class: "red4 ms-5"  %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-    </div>
-    </div>
+
+
+
   </div>
-  <div class="publish_position mt-3">
-   <% if @itinerary.public %>
-      <%= simple_form_for(@itinerary, method: :patch) do |f| %>
-        <%= f.input :public, class: "d-none" %>
-        <%= f.submit "Unpublish", class: "publish mb-3" %>
-      <% end %>
-    <% else %>
-      <%= simple_form_for(@itinerary, method: :patch) do |f| %>
-        <%= f.input :public, class: "d-none" %>
-        <%= f.submit "Publish", class: "publish mb-3" %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="d-flex justify-content-center btn ">
-      <%= link_to "All My Itineraries", user_itineraries_path(current_user) %>
+
+  <div class="d-flex justify-content-end btn">
+      <%= link_to "Save", user_itineraries_path(current_user) %>
+
   </div>
   <div class="d-flex justify-content-center m-4">
     <p> Looking for some further inspiration? <%= link_to "Check out itineraries from fellow Tip-a-Trippers", itineraries_path %> </p>
   </div>
 </div>
-
