@@ -742,8 +742,8 @@ itinerary_21 = Itinerary.create!(
   public: false
 )
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_21.original_itinerary_id = itinerary_21.id
+itinerary_21.save!
 
 itinerary_22 = Itinerary.create!(
   title: "Tokyo Tour Trip ",
@@ -755,8 +755,8 @@ itinerary_22 = Itinerary.create!(
 )
 
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_22.original_itinerary_id = itinerary_22.id
+itinerary_22.save!
 
 itinerary_23 = Itinerary.create!(
   title: "New York Music Tour",
@@ -768,8 +768,8 @@ itinerary_23 = Itinerary.create!(
 )
 
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_23.original_itinerary_id = itinerary_23.id
+itinerary_23.save!
 
 itinerary_24 = Itinerary.create!(
   title: "Art Trip",
@@ -781,8 +781,8 @@ itinerary_24 = Itinerary.create!(
 )
 
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_24.original_itinerary_id = itinerary_24.id
+itinerary_24.save!
 
 itinerary_25 = Itinerary.create!(
   title: "Jazz Tour",
@@ -794,8 +794,8 @@ itinerary_25 = Itinerary.create!(
 )
 
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_25.original_itinerary_id = itinerary_25.id
+itinerary_25.save!
 
 puts 'Creating 15 fake Itinerary Activities for 4-day Paris trip...'
 
