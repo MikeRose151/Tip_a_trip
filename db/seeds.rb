@@ -16,24 +16,24 @@ testtickle = User.create!(
   username: "Test Tickle"
 )
 
-testtickle_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
+testtickle_avatar = URI.open("https://hellogiggles.com/wp-content/uploads/sites/7/2016/11/22/IMG_2531.jpg?quality=82&strip=all")
 testtickle.photo.attach(io: testtickle_avatar, filename: "testtickle.jpg", content_type: "image/jpg")
 
 
 
 ls = User.create!(
-  email: "susan@tat.com",
+  email: "larry@tat.com",
   password: 123456,
-  username: "Lazy Susan"
+  username: "Lazy Larry"
 )
 
-ls_avatar = URI.open("https://hellogiggles.com/wp-content/uploads/sites/7/2016/11/22/IMG_2531.jpg?quality=82&strip=all")
+ls_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
 ls.photo.attach(io: ls_avatar, filename: "ls.jpg", content_type: "image/jpg")
 
 tt = User.create!(
-  email: "trevor@tat.com",
+  email: "trina@tat.com",
   password: 123456,
-  username: "Tripper Trevor"
+  username: "Tripper Trina"
 )
 
 tt_avatar = URI.open("https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
@@ -179,8 +179,8 @@ puts 'Creating 12 London Activities and 15 Paris Activities...'
 
 londoneye = Activity.create(
     name: "London Eye",
-    duration: rand(30..180),
-    cost: rand(0..50),
+    duration: 30,
+    cost: 38,
     address: "London Eye, Riverside Building, County Hall, London SE1 7PB",
     destination_id: london.id
 )
@@ -190,8 +190,8 @@ file_1 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678371750
 
 marketvisit = Activity.create(
   name: "Borough Market visit",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: rand(30..50),
   address: "London, 8 Southwark St, London SE1 1TL",
   destination_id: london.id
 )
@@ -201,8 +201,8 @@ file_2 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678372872
 
 ballpit = Activity.create(
   name: "Ballie Ballerson",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 60,
+  cost: rand(30..40),
   address: "97-113 Curtain Rd, London EC2A 3BS",
   destination_id: london.id
 )
@@ -212,8 +212,8 @@ file_3 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678373134
 
 londondungeons = Activity.create(
   name: "London Dungeons",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 90,
+  cost: 27,
   address: "Riverside Building, County Hall, Westminster Bridge Rd, London SE1 7PB",
   destination_id: london.id
 )
@@ -223,8 +223,8 @@ file_4 = URI.open("https://res.cloudinary.com/dz5xhbsjv/image/upload/v1678373599
 
 madametussauds = Activity.create(
   name: "Madame Tussauds",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 60,
+  cost: 32,
   address: "Marylebone Rd, London NW1 5LR",
   destination_id: london.id
 )
@@ -234,8 +234,8 @@ madametussauds.photo.attach(io: file_5, filename:"madame.jpg", content_type: "im
 
 lighterman = Activity.create(
   name: "The Lighterman",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 150,
+  cost: rand(20..50),
   address: "3 Granary Square, London N1C 4BH",
   destination_id: london.id
 )
@@ -245,8 +245,8 @@ lighterman.photo.attach(io: file_6, filename:"madame.jpg", content_type: "image/
 
 shard = Activity.create(
   name: "The Shard",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 30,
+  cost: 32,
   address: "32 London Bridge St, London SE1 9SG",
   destination_id: london.id
 )
@@ -256,8 +256,8 @@ shard.photo.attach(io: file_7, filename:"madame.jpg", content_type: "image/jpg")
 
 feeteast = Activity.create(
   name: "93 Feet East Club",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 180,
+  cost: rand(20..50),
   address: "150 Brick Ln, London E1 6QL",
   destination_id: london.id
 )
@@ -267,8 +267,8 @@ feeteast.photo.attach(io: file_8, filename:"madame.jpg", content_type: "image/jp
 
 tatemodern = Activity.create(
   name: "Tate Modern",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: rand(0..10),
   address: "Bankside, London SE1 9TG",
   destination_id: london.id
 )
@@ -278,8 +278,8 @@ tatemodern.photo.attach(io: file_9, filename:"madame.jpg", content_type: "image/
 
 lewagondemo = Activity.create(
   name: "Le Wagon Demo Day",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 240,
+  cost: 40,
   address: "Shoreditch Stables, North, 138 Kingsland Rd, London E2 8DY",
   destination_id: london.id
 )
@@ -289,8 +289,8 @@ lewagondemo.photo.attach(io: file_10, filename:"madame.jpg", content_type: "imag
 
 toweroflondon = Activity.create(
   name: "Tower of London",
-  duration: rand(30..180),
-  cost: rand(10..50),
+  duration: 60,
+  cost: 29,
   address: "London EC3N 4AB",
   destination_id: london.id
 )
@@ -300,8 +300,8 @@ toweroflondon.photo.attach(io: file_11, filename:"madame.jpg", content_type: "im
 
 axethrowing= Activity.create(
   name: "Bad Axe Throwing",
-  duration: rand(30..180),
-  cost: rand(10..50),
+  duration: 150,
+  cost: 32,
   address: "Boxpark, 18 Olympic Way, Wembley HA9 0JT",
   destination_id: london.id
 )
@@ -311,8 +311,8 @@ axethrowing.photo.attach(io: file_12, filename:"madame.jpg", content_type: "imag
 
 eiffeltower = Activity.create(
   name: "Eiffel Tower",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: 15,
   address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris, France",
   destination_id: paris.id
 )
@@ -322,8 +322,8 @@ eiffeltower.photo.attach(io: file_13, filename:"madame.jpg", content_type: "imag
 
 louvre = Activity.create(
   name: "The Louvre",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 180,
+  cost: 17,
   address: "Rue de Rivoli, 75001 Paris, France",
   destination_id: paris.id
 )
@@ -333,8 +333,8 @@ louvre.photo.attach(io: file_14, filename:"madame.jpg", content_type: "image/jpg
 
 gardens = Activity.create(
   name: "Luxembourg Gardens",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 60,
+  cost: 0,
   address: "Luxembourg Gardens, 75006 Paris, France",
   destination_id: paris.id
 )
@@ -344,8 +344,8 @@ gardens.photo.attach(io: file_15, filename:"madame.jpg", content_type: "image/jp
 
 rivertour = Activity.create(
   name: "Bateaux Parisiens Seine River Cruise",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 90,
+  cost: 15,
   address: "Port de la Bourdonnais, 75007 Paris, France",
   destination_id: paris.id
 )
@@ -355,8 +355,8 @@ rivertour.photo.attach(io: file_16, filename:"madame.jpg", content_type: "image/
 
 panthean = Activity.create(
   name: "The Panthéon",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 60,
+  cost: 10,
   address: "Pl. du Panthéon, 75005 Paris, France",
   destination_id: paris.id
 )
@@ -365,8 +365,8 @@ panthean = Activity.create(
 
 ombres = Activity.create(
   name: "Les Ombres Restaurant",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: 127,
   address: "27 Quai Jacques Chirac, 75007 Paris, France",
   destination_id: paris.id
 )
@@ -375,8 +375,8 @@ ombres.photo.attach(io: file_18, filename:"madame.jpg", content_type: "image/jpg
 
 orsay = Activity.create(
   name: "Orsay Museum",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: 15,
   address: "1 Rue de la Légion d'Honneur, 75007 Paris, France",
   destination_id: paris.id
 )
@@ -386,8 +386,8 @@ orsay.photo.attach(io: file_19, filename:"madame.jpg", content_type: "image/jpg"
 
 chapelle = Activity.create(
   name: "Sainte-Chapelle",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 60,
+  cost: 11,
   address: "10 Bd du Palais, 75001 Paris, France",
   destination_id: paris.id
 )
@@ -397,8 +397,8 @@ chapelle.photo.attach(io: file_20, filename:"madame.jpg", content_type: "image/j
 
 disney = Activity.create(
   name: "Disney Land Paris",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 2880,
+  cost: 62,
   address: "Bd de Parc, 77700 Coupvray, France",
   destination_id: paris.id
 )
@@ -408,8 +408,8 @@ disney.photo.attach(io: file_21, filename:"madame.jpg", content_type: "image/jpg
 
  segway= Activity.create(
   name: "GO GO Segway Tour",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 90,
+  cost: 33,
   address: "101 Av. de la Bourdonnais, 75007 Paris, France",
   destination_id: paris.id
 )
@@ -421,8 +421,8 @@ segway.photo.attach(io: file_22, filename:"madame.jpg", content_type: "image/jpg
 
 triomphe= Activity.create(
   name: "Arc de Triomphe Tour",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: 12,
   address: "Pl. Charles de Gaulle, 75008 Paris, France",
   destination_id: paris.id
 )
@@ -432,8 +432,8 @@ triomphe.photo.attach(io: file_23, filename:"madame.jpg", content_type: "image/j
 
 montmartre= Activity.create(
   name: "Montmartre Village",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 240,
+  cost: rand(30..50),
   address: "Montmartre, Blanche/Pigalle",
   destination_id: paris.id
 )
@@ -443,8 +443,8 @@ montmartre.photo.attach(io: file_24, filename:"madame.jpg", content_type: "image
 
 sacre = Activity.create(
   name: "Sacre-Coeur",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 120,
+  cost: 6,
   address: "Parvis du Sacré-Coeur - 35 rue du Chevalier de la Barre - 75018 Paris",
   destination_id: paris.id
 )
@@ -454,8 +454,8 @@ sacre.photo.attach(io: file_25, filename:"madame.jpg", content_type: "image/jpg"
 
 rouge= Activity.create(
   name: "Moulin Rouge",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 150,
+  cost: 77,
   address: "Moulin Rouge. 82 boulevard de Clichy - 75018 Paris. Montmartre",
   destination_id: paris.id
 )
@@ -465,8 +465,8 @@ rouge.photo.attach(io: file_26, filename:"madame.jpg", content_type: "image/jpg"
 
 wine = Activity.create(
   name: "Loire Valley Castles",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 720,
+  cost: 88,
   address: "Loire Valley Castles, France",
   destination_id: paris.id
 )
@@ -479,8 +479,8 @@ wine.photo.attach(io: file_27, filename:"madame.jpg", content_type: "image/jpg")
 
 bigbustour= Activity.create(
   name: "Big Bus Hop-On Hop-Off Tour",
-  duration: rand(30..180),
-  cost: rand(0..50),
+  duration: 135,
+  cost: 37,
   address: "Big Bus, 11 Av. de l'Opéra, 75001 Paris, France",
   destination_id: paris.id
 )
@@ -742,8 +742,8 @@ itinerary_21 = Itinerary.create!(
   public: false
 )
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_21.original_itinerary_id = itinerary_21.id
+itinerary_21.save!
 
 itinerary_22 = Itinerary.create!(
   title: "Tokyo Tour Trip ",
@@ -755,8 +755,47 @@ itinerary_22 = Itinerary.create!(
 )
 
 
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
+itinerary_22.original_itinerary_id = itinerary_22.id
+itinerary_22.save!
+
+itinerary_23 = Itinerary.create!(
+  title: "New York Music Tour",
+  destination_id: nyc.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: User.all[2], # Trevor
+  public: false
+)
+
+
+itinerary_23.original_itinerary_id = itinerary_23.id
+itinerary_23.save!
+
+itinerary_24 = Itinerary.create!(
+  title: "Art Trip",
+  destination_id: toronto.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: User.all[2], # Trevor
+  public: false
+)
+
+
+itinerary_24.original_itinerary_id = itinerary_24.id
+itinerary_24.save!
+
+itinerary_25 = Itinerary.create!(
+  title: "Jazz Tour",
+  destination_id: london.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: User.all[2], # Trevor
+  public: false
+)
+
+
+itinerary_25.original_itinerary_id = itinerary_25.id
+itinerary_25.save!
 
 puts 'Creating 15 fake Itinerary Activities for 4-day Paris trip...'
 

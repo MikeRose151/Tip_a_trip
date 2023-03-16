@@ -194,3 +194,15 @@ a {
   justify-content: center;
   height: 100%;
 }
+
+.dashboard-stats-card {
+  background: rgba(255, 255, 255, 0.4);
+  // border: solid 1px $dark-blue;
+  color: $dark-blue;
+  padding: 32px;
+  border-radius: 8px;
+  position: sticky;
+  margin-top: 48px;
+  height: fit-content;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}

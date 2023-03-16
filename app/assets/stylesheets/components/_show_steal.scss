@@ -1,13 +1,13 @@
 .steal-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
   // border: solid 1px $dark-blue;
   color: $dark-blue;
   padding: 32px;
   border-radius: 8px;
   position: sticky;
-  top: 230px;
+  margin-top: 48px;
   height: fit-content;
-  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
 
