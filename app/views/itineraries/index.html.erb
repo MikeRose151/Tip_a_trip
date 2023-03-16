@@ -46,9 +46,7 @@
     <div class="container">
       <div class="row">
         <div class="col-8">
-          <div class="mt-6">
-            <h1> <%= current_user.username %>'s Dashboard </h1>
-          </div>
+          <h1 class="mt-5"> <%= current_user.username %>'s Dashboard </h1>
           <div class="itineraries2">
             <% @itineraries.each do |itinerary|%>
               <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
@@ -72,12 +70,27 @@
           </div>
         </div>
         <div class="col-4">
-          <div class="dashboard-stats-card" style="margin-top: 64px;">
-            <h2>Tip-a-Trip Stats</h2>
-              <p>Total Trips: <%= @counter_tips %> </p>
-              <p>Total Tips: <%= @counter_trips %> </p>
-              <p>Total Tips Tripped: <%= @counter_trips_tipped %> </p>
-            <p></p>
+          <div class="dashboard-stats-card " style="margin-top: 64px;">
+            <h2 class="mb-3">Your Stats</h2>
+              <div class="d-flex justify-content-start align-items-center my-2">
+               <h1>  &#128100;  </h1> <p class="ms-2">  <%= current_user.username %> </p>
+              </div>
+
+              <div class="d-flex justify-content-start align-items-end">
+               <h1> &#128233;   </h1> <p class="ms-2">  <%= current_user.email %> </p>
+              </div>
+
+              <div class="d-flex justify-content-start align-items-center my-2">
+               <h1>  &#128274;  </h1> <a style="color:#FF494;" class="ms-2">  Change your password </a>
+              </div>
+
+              <div class="d-flex justify-content-start align-items-end my-2 mb-4">
+               <h2> &#128204; <%= @counter_trips_tipped %>  </h2> <p class="ms-2"> people have cloned your trips  </p>
+              </div>
+
+              <div class="d-flex justify-content-start align-items-end my-2">
+               <h2>  Total Trips:  </h2> <h3 style="color:#FF494;" class="ms-2"> <%= @counter_tips %> </h3>
+              </div> 
           </div>
         </div>
       </div>
