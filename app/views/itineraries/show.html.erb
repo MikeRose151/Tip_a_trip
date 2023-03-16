@@ -4,11 +4,11 @@
 
       <div class="itinerary-title">
         <% if @itinerary.user == current_user %>
-          <%= link_to 'Back', user_itineraries_path(current_user), class: " me-5" %>
+          <%= link_to 'Back', user_itineraries_path(current_user), class: "back" %>
         <% else %>
-          <%= link_to 'Back', :back, class: " me-5" %>
+          <%= link_to 'Back', :back, class: "back" %>
         <% end %>
-        <h1> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
+        <h1 class="itinerarytitle"> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
       </div>
       <div class="itinerary-show-activities-background-card">
         <div class="itinerary-show-title-card-subtitle">

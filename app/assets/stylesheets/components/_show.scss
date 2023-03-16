@@ -6,3 +6,33 @@
   padding-top: 10px;
 
 }
+.back{
+padding: 10px;
+    border-radius: 50rem;
+    background-color:#F5F4F4;
+    color: #0B0633;
+    font-size: 18px;
+    border: solid #0B0633 2px;
+    position: relative;
+    left: -40px;
+    bottom:14px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 55px;
+}
+
+.itinerarytitle{
+  position: relative;
+    left: -18px;
+
+}
+
+.back:hover{
+  background-color: #0B0633;
+  transition-duration: 0.5s;
+  color:#F5F4F4;
+
+
+
+
+}
