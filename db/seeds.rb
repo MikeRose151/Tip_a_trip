@@ -312,7 +312,7 @@ axethrowing.photo.attach(io: file_12, filename:"madame.jpg", content_type: "imag
 eiffeltower = Activity.create(
   name: "Eiffel Tower",
   duration: 120,
-  cost: 15),
+  cost: 15,
   address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris, France",
   destination_id: paris.id
 )
@@ -333,7 +333,7 @@ louvre.photo.attach(io: file_14, filename:"madame.jpg", content_type: "image/jpg
 
 gardens = Activity.create(
   name: "Luxembourg Gardens",
-  duration: 60),
+  duration: 60,
   cost: 0,
   address: "Luxembourg Gardens, 75006 Paris, France",
   destination_id: paris.id
@@ -773,7 +773,7 @@ itinerary_3.save!
 
 itinerary_24 = Itinerary.create!(
   title: "Art Trip",
-  destination_id: toront.id,
+  destination_id: toronto.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
   user: User.all[2], # Trevor
