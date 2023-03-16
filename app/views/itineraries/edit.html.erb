@@ -15,7 +15,7 @@
               </div>
             </div>
           <% elsif @favourites.count == 0 && @itinerary_activities.count > 0 %>
-            <div class="itinerary-show-title-card-subtitle d-flex justify-content-center">
+            <div class="itinerary-edit-favourite-plus">
              <div>
                 <%= link_to itinerary_activities_path(@itinerary) do %>
                   <i style= "font-size:150px;" class="fa-solid fa-plus"></i>
