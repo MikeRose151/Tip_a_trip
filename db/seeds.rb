@@ -733,6 +733,30 @@ itinerary_20 = Itinerary.create!(
 itinerary_20.original_itinerary_id = itinerary_20.id
 itinerary_20.save!
 
+itinerary_21 = Itinerary.create!(
+  title: "Rio Carnival Trip",
+  destination_id: rio.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: User.all[2], # Trevor
+  public: false
+)
+
+itinerary_3.original_itinerary_id = itinerary_3.id
+itinerary_3.save!
+
+itinerary_22 = Itinerary.create!(
+  title: "Tokyo Tour Trip ",
+  destination_id: tokyo.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: User.all[2], # Trevor
+  public: false
+)
+
+itinerary_3.original_itinerary_id = itinerary_3.id
+itinerary_3.save!
+
 puts 'Creating 15 fake Itinerary Activities for 4-day Paris trip...'
 
 ItineraryActivity.create!(
