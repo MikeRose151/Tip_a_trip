@@ -1,11 +1,14 @@
 <% if params[:user_id].nil? %>
   <%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
-    <%= content_tag :span, "", class: "fa fa-search search-icon" %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control rounded-pill mr-sm-2 ",
-      placeholder: "Browse Itineraries... "
-    %>
+    <div class="search-icon-group">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control rounded-pill mr-sm-2 ",
+        placeholder: "Browse Itineraries... "
+      %>
+      <%#= content_tag :span, "", class: "fa fa-search search-icon" %>
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    </div>
     <% submit_tag "Search", class: "btn btn-primary " %>
   <% end %>
 <div class="itinerary-container">
