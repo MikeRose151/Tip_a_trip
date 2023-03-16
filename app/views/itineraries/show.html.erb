@@ -51,9 +51,9 @@
 
         <div class="col-6 d-flex justify-content-center align-items-center">
           <div class="steal-card">
-            <% if @itinerary.end_date >= Date.today %>
+            <% if @itinerary.end_date >= Date.today && @itinerary.user == current_user %>
               <div class="d-flex justify-content-center">
-                <h2> Enjoy your upcoming itinerary in <%= @itinerary.destination.city %>! (add image?) </h2>
+                <h2> Enjoy your upcoming trip to <%= @itinerary.destination.city %>! </h2>
               </div>
             <% else %>
               <% if @original_itinerary.user == current_user %>
@@ -66,7 +66,7 @@
 
               <% elsif @itinerary.user == current_user %>
                 <div class="d-flex justify-content-center">
-                  <h3> Did you enjoy <%= @original_itinerary.user.username %>'s <%= @itinerary.destination.city %> itinerary? </h3>
+                  <h3> Enjoyed <%= @original_itinerary.user.username %>'s <%= @itinerary.destination.city %> itinerary? </h3>
                 </div>
                 <div class="d-flex justify-content-center">
                   <h5> Go ahead and use it again! </h5>
