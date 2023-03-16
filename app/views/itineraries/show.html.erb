@@ -19,10 +19,9 @@
           <% else %>
             <div class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </div>
           <% end %>
-          <div
-            class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @original_itinerary.user.username%>
-            <% if @itinerary.user.photo.attached? %>
-              <%= cl_image_tag @itinerary.user.photo.key, class:"itinerary_avatar_img avatar-show-edit" %>
+          <div class="itinerary-show-title-card-subtitle-text">
+            <% if @original_itinerary.user.photo.attached? %>
+              <%= cl_image_tag @original_itinerary.user.photo.key, class:"itinerary_avatar_img avatar-show-edit" %>
             <% end %>
           </div>
         </div>
@@ -57,9 +56,17 @@
             <h5> Go ahead and use it again! </h5>
           </div>
 
+        <% elsif @itinerary.user == current_user %>
+          <div class="d-flex justify-content-center">
+            <h3> Did you enjoy <%= @original_itinerary.user.username %>'s <%= @itinerary.destination.city %> itinerary? </h3>
+          </div>
+          <div class="d-flex justify-content-center">
+            <h5> Go ahead and use it again! </h5>
+          </div>
+
         <% else %>
           <div class="d-flex justify-content-center">
-            <h3> Like the look of <%= @itinerary.user.username %>'s itinerary? </h3>
+            <h3> Like the look of <%= @original_itinerary.user.username %>'s itinerary? </h3>
           </div>
           <div class="d-flex justify-content-center">
             <h5> Use it for your own trip to <%= @itinerary.destination.city %>! </h5>
