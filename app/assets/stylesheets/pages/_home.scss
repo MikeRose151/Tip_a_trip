@@ -5,13 +5,13 @@
     to right,
     #0B0633 0%,
     #0B0633 38%,
-    #e0e2f4  38%,
-    #f6e2f1 100%
+    #d3d7fb  38%,
+    #f8def1 100%
   );
 }
 
 .image {
-  width: 50%;
+  width: 70%;
   margin-top: 160px;
 }
 
@@ -31,7 +31,8 @@
   color: #0B0633;
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-align: justify;
+  font-family: $body;
 }
 
 .card-title{
@@ -59,7 +60,8 @@
   --bs-card-bg: transparent;
   position: right;
   --bs-card-border-width: 0px;
-  width: 60%;
+  width: 80%;
+  margin-left: 75px;
 }
 
 .row {
@@ -94,14 +96,29 @@
 
 .logotext{
   height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.planefont {
+color: #0B0633;
+}
+
+.small {
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.buttonspacing{
+  margin-top: 100px;
 
 }
 
-.planefont{
-
-  color: #0B0633;
+.nav-item{
+  justify-content: center;
+  margin-right: 23px;
+  
 }
