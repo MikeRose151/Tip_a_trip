@@ -39,7 +39,7 @@
                       <% else %>
                         <%= link_to 'Add to Itinerary', itinerary_activity_itinerary_activities_path(@itinerary, favourite.activity, favourite_id: favourite), data: {turbo_method: :post}, class: "dark2" %>
                       <% end %>
-                      <%= link_to 'remove', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), data: {turbo_method: :delete}, class: "red4 ms-5"  %>
+                      <%= link_to 'x', itinerary_activity_favourite_path(@itinerary, favourite.activity, favourite), data: {turbo_method: :delete}, class: "x ms-5"  %>
                     </div>
                   </div>
                 <% end %>
@@ -104,7 +104,7 @@
                       <strong> <%= itinerary_activity.activity.name %> </strong> | <em> <%= itinerary_activity.activity.duration %> minutes </em>
                     </div>
 
-                       <%= link_to 'remove', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), data: {turbo_method: :delete}, class: "red4" %>
+                       <%= link_to 'x', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), data: {turbo_method: :delete}, class: "x ms-5" %>
 
                   </div>
                 <% end %>
