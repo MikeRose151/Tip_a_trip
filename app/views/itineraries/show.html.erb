@@ -12,11 +12,18 @@
       </div>
       <div class="itinerary-show-activities-background-card">
         <div class="itinerary-show-title-card-subtitle">
-          <% if @itinerary_duration == 1 %>
-            <div class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days" id=""></i> <%= "#{@itinerary_duration} day (#{@itinerary.start_date})" %> </div>
-          <% else %>
-            <div class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </div>
-          <% end %>
+          <div class="d-flex">
+            <% if @itinerary_duration == 1 %>
+              <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days" id=""></i><%= "#{@itinerary_duration} day" %></p>
+            <% else %>
+              <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days" %> </p>
+            <% end %>
+            <% if @itinerary.start_date.strftime('%b') == @itinerary.end_date.strftime('%b') %>
+              <p class="itinerary-show-title-card-subtitle-text"> | <%= @itinerary.start_date.strftime('%b %Y') %></p>
+            <% else %>
+              <p class="itinerary-show-title-card-subtitle-text"> | <%= @itinerary.start_date.strftime('%b %Y') %> - <%= @itinerary.end_date.strftime('%b %Y') %></p>
+            <% end %>
+          </div>
           <div class="itinerary-show-title-card-subtitle-text">
             <% if @original_itinerary.user.photo.attached? %>
               <%= cl_image_tag @original_itinerary.user.photo.key, class:"itinerary_avatar_img avatar-show-edit" %>

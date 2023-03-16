@@ -61,11 +61,18 @@
 
       <div class="itinerary-show-activities-background-card">
         <div class="itinerary-show-title-card-subtitle">
-          <% if @itinerary_duration == 1 %>
-            <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days" id=""></i> <%= "#{@itinerary_duration} day (#{@itinerary.start_date})" %> </p>
-          <% else %>
-            <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </p>
-          <% end %>
+          <div class="d-flex">
+            <% if @itinerary_duration == 1 %>
+              <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days" id=""></i><%= "#{@itinerary_duration} day" %></p>
+            <% else %>
+              <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days" %> </p>
+            <% end %>
+            <% if @itinerary.start_date.strftime('%b') == @itinerary.end_date.strftime('%b') %>
+              <p class="itinerary-show-title-card-subtitle-text"> | <%= @itinerary.start_date.strftime('%b %Y') %></p>
+            <% else %>
+              <p class="itinerary-show-title-card-subtitle-text"> | <%= @itinerary.start_date.strftime('%b %Y') %> - <%= @itinerary.end_date.strftime('%b %Y') %></p>
+            <% end %>
+          </div>
           <div class="publish_position">
           <% if @itinerary.public %>
               <%= simple_form_for(@itinerary, method: :patch) do |f| %>
