@@ -46,7 +46,7 @@ class ItinerariesController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     else
-      # this happens when stealing an existing itenerary
+      # this happens when stealing an existing itinerary
       @original_itinerary = Itinerary.find(params[:original_itinerary_id])
       @itinerary = Itinerary.new
       @itinerary.original_itinerary_id = @original_itinerary.original_itinerary_id
@@ -102,8 +102,16 @@ class ItinerariesController < ApplicationController
 
   def update
     @itinerary = Itinerary.find(params[:id])
-    @itinerary.update(publish_params)
-    redirect_to action: "show", id: params[:id]
+    # raise
+    if @itinerary.public == true
+      @itinerary.public = false
+      @itinerary.save
+    else
+      @itinerary.public = true
+      @itinerary.save
+    end
+      # @itinerary.update(publish_params)
+    redirect_to action: "edit", id: params[:id]
   end
 
   private

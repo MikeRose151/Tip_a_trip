@@ -72,15 +72,19 @@
 .publish_position{
   position: center;
   text-align: center;
+
+  .form-check {
+    display: none;
+  }
 }
 
 .publish{
   padding: 9px;
     border-radius: 50rem;
-    background-color: #FF4949;
+    background-color:  #0B0633 ;
     color: #F5F4F4;
     font-size: 22px;
-    border: solid #0B0633 2px;
+    border: solid whitesmoke 2px;
     padding-bottom: 6px;
 }
 
