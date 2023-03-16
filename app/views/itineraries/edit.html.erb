@@ -31,7 +31,7 @@
                   <p> Your itinerary appears to be empty - add activities from your shorlist! </p>
                 </div>
               <% else %>
-                <% @itinerary_activities.each do |itinerary_activity| %>
+                <% @itinerary_activities.reverse.each do |itinerary_activity| %>
                   <div class="itinerary-show-activities-card">
                     <div>
                       <%= cl_image_tag itinerary_activity.activity.photo.key, class:"image_activity_img activity" %>
