@@ -1,13 +1,12 @@
-<div class="container" style ="height:vh100;">
+<div class="container show-page" style ="height:vh100;">
+  <% if @itinerary.user == current_user %>
+    <%= link_to 'Back', user_itineraries_path(current_user), class: "back" %>
+  <% else %>
+    <%= link_to 'Back', :back, class: "back" %>
+  <% end %>
   <div class="row">
     <div class="col-6 my-4">
-
       <div class="itinerary-title">
-        <% if @itinerary.user == current_user %>
-          <%= link_to 'Back', user_itineraries_path(current_user), class: "back" %>
-        <% else %>
-          <%= link_to 'Back', :back, class: "back" %>
-        <% end %>
         <h1 class="itinerarytitle"> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
       </div>
       <div class="itinerary-show-activities-background-card">
