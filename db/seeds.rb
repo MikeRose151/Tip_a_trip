@@ -27,7 +27,7 @@ ls = User.create!(
   username: "Lazy Larry"
 )
 
-ls_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
+ls_avatar = URI.open("https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 ls.photo.attach(io: ls_avatar, filename: "ls.jpg", content_type: "image/jpg")
 
 tt = User.create!(
@@ -36,7 +36,7 @@ tt = User.create!(
   username: "Tripper Trina"
 )
 
-tt_avatar = URI.open("https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+tt_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
 tt.photo.attach(io: tt_avatar, filename: "tt.jpg", content_type: "image/jpg")
 
 mm = User.create!(
