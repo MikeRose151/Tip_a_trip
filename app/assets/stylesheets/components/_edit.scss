@@ -70,8 +70,11 @@
 }
 
 .publish_position{
-  position: center;
+  position: relative;
+  bottom:5px;
+  left:4px;
   text-align: center;
+
 
   .form-check {
     display: none;

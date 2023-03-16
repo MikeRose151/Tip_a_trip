@@ -1,7 +1,6 @@
 <div class="edit-page" style="background: linear-gradient(to right, rgba(201, 212, 251, 0.582), rgba(248, 196, 213, 0.607)), url(<%= cl_image_path @itinerary.destination.photo.key %>); min-height: calc(100vh - 126px); background-size: cover;">
   <div class="container">
     <div class="row">
-
       <div class="col-6 d-flex align-items-end">
         <div>
         <h3 class="itinerary-title"> Shortlist </h3>
@@ -49,12 +48,10 @@
           </div>
         </div>
       </div>
-
       <div class="col-6">
         <div class="itinerary-title mt-4">
           <h1> <%= "#{@itinerary.title}"%> | <%= "#{@itinerary.destination.city}" %> </h1>
         </div>
-
         <div class="itinerary-show-activities-background-card">
           <div class="itinerary-show-title-card-subtitle">
             <div class="d-flex">
@@ -106,9 +103,7 @@
                         <%= cl_image_tag itinerary_activity.activity.photo.key, class:"image_activity_img activity" %>
                         <strong> <%= itinerary_activity.activity.name %> </strong> | <em> <%= itinerary_activity.activity.duration %> minutes </em>
                       </div>
-
                         <%= link_to 'x', itinerary_activity_itinerary_activity_path(itinerary_activity.itinerary, itinerary_activity.activity, itinerary_activity ), data: {turbo_method: :delete}, class: "x ms-5" %>
-
                     </div>
                   <% end %>
                 <% end %>
@@ -116,13 +111,7 @@
             </div>
         </div>
       </div>
-
-
-
-
-
     </div>
-
     <div class="d-flex justify-content-end">
         <%= link_to "Save", user_itineraries_path(current_user), class: "btn btn-outline-success btn-outline-light rounded-pill btn-create-new" %>
     </div>
