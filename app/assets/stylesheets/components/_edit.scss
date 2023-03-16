@@ -101,3 +101,14 @@
   color: rgb(162, 159, 159);
   font-size: 20px;
 }
+
+.white-bottom {
+  background: white;
+  border-radius: 8px;
+  padding: 12px 100px;
+  width: fit-content;
+  margin: 0 auto;
+  p {
+    margin: 0;
+  }
+}
