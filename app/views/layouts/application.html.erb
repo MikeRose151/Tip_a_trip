@@ -13,22 +13,26 @@
   </head>
 
   <body>
-    <%# <div class="home-container"> %>
-      <% unless controller_name == 'pages' %>
-        <%= render "shared/navbar" %>
-      <% end %>
-      <%= render "shared/flashes" %>
-
-      <div class="mb-5">
-        <%= yield %>
-      </div>
-
-      <div class="footer">
-        <% unless current_page?(root_path) %>
-          <%= render partial: "shared/mainfooter" %>
+    <% unless current_page?(root_path) %>
+      <div class="home-container">
+    <% end %>
+        <% unless controller_name == 'pages' %>
+          <%= render "shared/navbar" %>
         <% end %>
+        <%= render "shared/flashes" %>
+
+        <div>
+          <%= yield %>
+        </div>
+
+        <div>
+          <% unless current_page?(root_path) %>
+            <%= render partial: "shared/mainfooter", class: 'footer' %>
+          <% end %>
+        </div>
+    <% unless current_page?(root_path) %>
       </div>
-    <%# </div> %>
+    <% end %>
   </body>
 
 </html>
