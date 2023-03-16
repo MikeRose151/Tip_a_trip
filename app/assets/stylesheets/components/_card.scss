@@ -122,6 +122,8 @@
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.5);
   height: 400px;
+  width: 40vw;
+  margin: 0 auto;
 }
 
 .itinerary-show-activities-subbackground-card{
@@ -184,6 +186,13 @@ a {
   align-items: center;
   margin: 8px;
   padding: 8px 32px;;
+}
+
+.itinerary-edit-favourite-plus{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .dashboard-stats-card {
