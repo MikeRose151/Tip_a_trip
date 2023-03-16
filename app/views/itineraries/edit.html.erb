@@ -70,12 +70,12 @@
             <% if @itinerary.public %>
                 <%= simple_form_for(@itinerary, method: :patch) do |f| %>
                   <%= f.input :public, class: "d-none" %>
-                  <%= f.submit "Unpublish", class: "publish mb-3" %>
+                  <%= f.submit "Unpublish", class: "publish mb-2" %>
                 <% end %>
               <% else %>
                 <%= simple_form_for(@itinerary, method: :patch) do |f| %>
                   <%= f.input :public, class: "d-none" %>
-                  <%= f.submit "Publish", class: "publish mb-3" %>
+                  <%= f.submit "Publish", class: "publish mb-2" %>
                 <% end %>
               <% end %>
             </div>

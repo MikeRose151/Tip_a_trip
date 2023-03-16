@@ -542,14 +542,14 @@ itinerary_4.save!
 
 itinerary_5 = Itinerary.create!(
   title: "Basic Tourist",
-  destination_id: london.id,
+  destination_id: berlin.id,
   start_date: Date.new(2023, 1, 4),
   end_date: Date.new(2023, 1, 7),
   user: tt, # Trina
   public: true
 )
 
-itinerary_5.original_itinerary_id = itinerary_5.id
+itinerary_5.original_itinerary_id = itinerary_1.id
 itinerary_5.save!
 
 itinerary_6 = Itinerary.create!(
@@ -601,17 +601,17 @@ itinerary_9 = Itinerary.create!(
 itinerary_9.original_itinerary_id = itinerary_9.id
 itinerary_9.save!
 
-itinerary_10 = Itinerary.create!(
-  title: "Coffee Shops",
-  destination_id: amsterdam.id,
+itinerary_15 = Itinerary.create!(
+  title: "Bella Viaggio",
+  destination_id: rome.id,
   start_date: Date.new(2023, 2, 3),
-  end_date: Date.new(2023, 2, 12),
-  user: User.all[6],
+  end_date: Date.new(2023, 2, 5),
+  user: User.all[9],
   public: true
 )
 
-itinerary_10.original_itinerary_id = itinerary_10.id
-itinerary_10.save!
+itinerary_15.original_itinerary_id = itinerary_15.id
+itinerary_15.save!
 
 itinerary_11 = Itinerary.create!(
   title: "Nights Out",
@@ -661,17 +661,17 @@ itinerary_14 = Itinerary.create!(
 itinerary_14.original_itinerary_id = itinerary_14.id
 itinerary_14.save!
 
-itinerary_15 = Itinerary.create!(
-  title: "Bella Viaggio",
-  destination_id: rome.id,
+itinerary_10 = Itinerary.create!(
+  title: "Coffee Shops",
+  destination_id: amsterdam.id,
   start_date: Date.new(2023, 2, 3),
-  end_date: Date.new(2023, 2, 5),
-  user: User.all[9],
+  end_date: Date.new(2023, 2, 12),
+  user: User.all[6],
   public: true
 )
 
-itinerary_15.original_itinerary_id = itinerary_15.id
-itinerary_15.save!
+itinerary_10.original_itinerary_id = itinerary_10.id
+itinerary_10.save!
 
 itinerary_16 = Itinerary.create!(
   title: "Best Time in the 6ix",

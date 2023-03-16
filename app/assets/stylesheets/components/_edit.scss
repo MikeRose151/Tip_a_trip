@@ -74,7 +74,8 @@
   bottom:5px;
   left:4px;
   text-align: center;
-
+  font-family: "Play", "sans-serif";
+  font-size: 18px;
 
   .form-check {
     display: none;
@@ -82,19 +83,20 @@
 }
 
 .publish{
-  padding: 9px;
-    border-radius: 50rem;
-    background-color:  #0B0633 ;
-    color: #F5F4F4;
-    font-size: 22px;
-    border: solid whitesmoke 2px;
-    padding-bottom: 6px;
+  padding: 8px 40px;
+  border-radius: 50rem;
+  background-color:  $dark-blue ;
+  color: $orange;
+  font-size: 18px;
+  border: solid $orange;
+  width: 160px;
+  position: centre;
 }
 
 .publish:hover{
-  background-color: #F5F4F4;
+  background-color: $orange;
   transition-duration: 0.5s;
-  color:#0B0633;
+  color:white;
 }
 
 .x {
