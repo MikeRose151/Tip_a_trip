@@ -79,3 +79,8 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.card-itinerary:hover {
+  transform: scale(1.05);
+  transition: 0.7s ease;
+}
