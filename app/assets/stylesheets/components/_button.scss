@@ -10,3 +10,33 @@
 // input[type=submit]{
 //   background-color: aqua;
 // }
+
+.btn-dark{
+
+  --bs-btn-bg: $dark-blue;
+}
+
+
+.favourite-btn-outline {
+  background: none;
+  border: none;
+  outline: none;
+  color: $light-blue;
+  font-size: 150px;
+  line-height: none;
+  &:hover {
+    color: $orange;
+  }
+}
+
+.favourite-btn-solid{
+  background: none;
+  border: none;
+  outline: none;
+  color: $orange;
+  font-size: 150px;
+  line-height: none;
+  &:hover {
+    color: $orange;
+  }
+ }

@@ -38,8 +38,13 @@
   padding: 10px 20px;
   font-size: 18px;
   font-family: $headers;
+  margin: 12px;
 }
 
 .dropdown-item {
   font-family: $headers;
+}
+
+.navbar-nav li {
+  margin-right: 10px;
 }

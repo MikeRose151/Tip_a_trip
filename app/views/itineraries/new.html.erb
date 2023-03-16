@@ -14,17 +14,17 @@
       </div>
       <div class="card-new-itinerary-form">
         <%= simple_form_for @itinerary do |f| %>
-          <%= f.input :start_date %>
+          <%= f.input :start_date,  class: "startdatefont"%>
           <%= f.input :end_date %>
           <%= f.input :destination, collection: @destination_cities.sort%>
           <%= f.input :title %>
-          <%= f.submit %>
+          <%= f.submit value="Get started!", class: "dark" %>
         <% end %>
       </div>
     </div>
     <div class="col-6">
       <%# <div id="destination-image"> %>
-        <%= image_tag("globe", class: "destination-image") %>
+        <%= image_tag "globe.png", class: "destination-image" %>
       <%# </div> %>
     </div>
   </div>

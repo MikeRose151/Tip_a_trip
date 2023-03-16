@@ -4,9 +4,9 @@
   background: linear-gradient(
     to right,
     #0B0633 0%,
-    #0B0633 50%,
-    #F5F4F4 50%,
-    #F5F4F4 100%
+    #0B0633 38%,
+    #e0e2f4  38%,
+    #f6e2f1 100%
   );
 }
 
@@ -29,25 +29,39 @@
 
 .card-text{
   color: #0B0633;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-title{
   color:  #0B0633;
-  font-size: 25px;
+  font-size: 35px;
+  text-align: center;
 }
 .card-body{
-  text-align: center;
+  text-align: justify;
   color: #F5F4F4;
-
 }
 
-.card{--bs-card-bg: #F5F4F4;
+// .card{
+//   --bs-card-bg: transparent;
+//   position: right;
+
+
+//   --bs-card-border-width: 0px;
+//   element.style {
+//     width: 40rem;
+//   }
+// }
+
+.card {
+  --bs-card-bg: transparent;
   position: right;
   --bs-card-border-width: 0px;
-  element.style {
-    width: 40rem;
+  width: 60%;
 }
-}
+
 .row {
   --bs-gutter-x: 1.5rem;}
 
@@ -84,64 +98,10 @@
     align-items: center;
     justify-content: center;
 
+
 }
 
-.itinerary-showpage-list-scroll {
+.planefont{
 
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    background-color: transparent;
-    width: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-  }
+  color: #0B0633;
 }
-
-.itinerary-showpage-list-scroll:hover {
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #0b0633
-  }
-}
-@media (hover: none) {
-  .itinerary-showpage-list-scroll {
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #0b0633
-    }
-  }
-}
-
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #0b0633 #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-    visibility: hidden;
-  }
-
-  *::-webkit-scrollbar:hover {
-    width: 16px;
-    visibility: visible;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #0b0633;
-    border-radius: 10px;
-    // border: 3px solid #ffffff;
-  }

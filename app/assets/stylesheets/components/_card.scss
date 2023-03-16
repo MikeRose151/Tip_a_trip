@@ -11,12 +11,10 @@
 
 .itineraries2 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   row-gap: 25px;
   column-gap: 25px;
   padding: 15px;
-  padding-left: 100px;
-  padding-right: 100px;
 }
 
 .card-itinerary {
@@ -42,6 +40,11 @@
     height: 50px;
     width: 50px;
     border: 2px solid white;
+  }
+
+  .image-link {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -90,20 +93,40 @@
   background-color: $dark-blue;
   border-radius: 8px;
   color: $light-gray;
-  margin: 32px 8px;
-  padding: 24px 32px;
+
+  margin: 15px 8px;
+  padding: 18px 32px;
+
 }
 
 .itinerary-show-title-card-subtitle{
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 18px;
+  margin-bottom: 12px;
 }
 
 .itinerary-show-title-card-subtitle-text{
   color: $orange;
+  margin: 1px;
   .itn-title-icon{
     color: $light-blue;
   }
+}
+
+.itinerary-show-activities-background-card{
+  background-color: $dark-blue;
+  border-top: solid $dark-blue 16px;
+  border-bottom: solid $dark-blue 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  height: 400px;
+}
+
+.itinerary-show-activities-subbackground-card{
+  height: 100%;
+  padding: 0px 4px;
 }
 
 .itinerary-show-activities-card{
@@ -115,8 +138,14 @@
   justify-content: space-between;
   align-items: center;
   margin: 8px;
-  padding: 8px 32px;
-  // width: 610px;
+  padding: 8px;
+}
+
+.itinerary-show-activities-card-empty{
+  color: $light-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .itinerary-show-activities-card-title{
@@ -132,7 +161,7 @@ a {
   color: $dark-blue;
   border-radius: 8px;
   margin: 32px 8px;
-  padding: 24px 32px;
+  padding: 15px 32px;
   align-items: center;
   margin: 0px 8px 8px;
 }

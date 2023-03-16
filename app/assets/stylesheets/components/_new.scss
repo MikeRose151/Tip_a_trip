@@ -3,3 +3,101 @@
   border: none;
   width: 100%;
 }
+
+.startdatefont{
+  font-weight: bold;
+  font-size: large;
+  color: #FF4949;
+
+}
+
+.form-label {
+
+  color:#0B0633;
+  font-weight: bold;
+
+}
+
+.get_started{
+  background: #0B0633;
+  color: #F5F4F4;
+  font-size: 25px;
+
+}
+
+.btn-dark{
+  --bs-btn-hover-bg:#F5F4F4;
+  --bs-btn-hover-color:#0B0633;
+
+}
+
+
+
+.dark{
+  padding: 7px;
+    border-radius: 50rem;
+    background-color: #0B0633;
+    color: #F5F4F4;
+
+}
+
+.dark3{
+  padding: 14px;
+    border-radius: 50rem;
+    background-color: #0B0633;
+    color: #F5F4F4;
+    font-size: 25px;
+    border:none;
+
+}
+
+.dark4{
+  padding: 9px;
+    border-radius: 50rem;
+    background-color: #0B0633;
+    color: #F5F4F4;
+    font-size: 18px;
+    border: solid #0B0633 2px;
+    padding-bottom: 6px;
+}
+
+.dark3:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+
+
+}
+
+.dark4:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+
+}
+
+.dark2{
+  padding: 7px;
+  border-radius: 50rem;
+  background-color: #0B0633;
+  color: #F5F4F4;
+  border: solid #0B0633 2px;
+
+}
+
+.dark2:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+
+}
+
+.dark:hover{
+  background-color: #F5F4F4;
+  transition-duration: 0.5s;
+  color:#0B0633;
+
+}
