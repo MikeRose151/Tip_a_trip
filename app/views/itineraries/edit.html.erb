@@ -13,8 +13,21 @@
           <% else %>
             <p class="itinerary-show-title-card-subtitle-text"> <i class="fa-regular fa-calendar-days"></i> <%= "#{@itinerary_duration} days (#{@itinerary.start_date} - #{@itinerary.end_date})" %> </p>
           <% end %>
+          <div class="publish_position">
+          <% if @itinerary.public %>
+              <%= simple_form_for(@itinerary, method: :patch) do |f| %>
+                <%= f.input :public, class: "d-none" %>
+                <%= f.submit "Unpublish", class: "publish mb-3" %>
+              <% end %>
+            <% else %>
+              <%= simple_form_for(@itinerary, method: :patch) do |f| %>
+                <%= f.input :public, class: "d-none" %>
+                <%= f.submit "Publish", class: "publish mb-3" %>
+              <% end %>
+            <% end %>
+          </div>
           <div
-            class="itinerary-show-title-card-subtitle-text"> <i class="fa-solid fa-pencil"></i> <%= @original_itinerary.user.username%>
+            class="itinerary-show-title-card-subtitle-text">
             <% if @itinerary.user.photo.attached? %>
               <%= cl_image_tag @itinerary.user.photo.key, class:"itinerary_avatar_img avatar-show-edit" %>
             <% end %>
@@ -97,21 +110,10 @@
     </div>
     </div>
   </div>
-  <div class="publish_position mt-3">
-   <% if @itinerary.public %>
-      <%= simple_form_for(@itinerary, method: :patch) do |f| %>
-        <%= f.input :public, class: "d-none" %>
-        <%= f.submit "Unpublish", class: "publish mb-3" %>
-      <% end %>
-    <% else %>
-      <%= simple_form_for(@itinerary, method: :patch) do |f| %>
-        <%= f.input :public, class: "d-none" %>
-        <%= f.submit "Publish", class: "publish mb-3" %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="d-flex justify-content-center btn ">
-      <%= link_to "save", user_itineraries_path(current_user) %>
+
+  <div class="d-flex justify-content-end btn">
+      <%= link_to "Save", user_itineraries_path(current_user) %>
+
   </div>
   <div class="d-flex justify-content-center m-4">
     <p> Looking for some further inspiration? <%= link_to "Check out itineraries from fellow Tip-a-Trippers", itineraries_path %> </p>
