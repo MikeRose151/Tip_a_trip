@@ -87,6 +87,17 @@
   justify-content: center;
 }
 
+.search-icon-group {
+  position: relative;
+  width: fit-content;
+  .search-icon {
+    position: absolute;
+    right: 21px;
+    bottom: 11px;
+    font-size: 28px;
+  }
+}
+
 .btn .btn-primary {
   font-family: $headers;
 }
