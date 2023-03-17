@@ -515,18 +515,6 @@ itinerary_2 = Itinerary.create!(
 itinerary_2.original_itinerary_id = itinerary_2.id
 itinerary_2.save!
 
-itinerary_3 = Itinerary.create!(
-  title: "Historical Trip",
-  destination_id: rome.id,
-  start_date: Date.new(2023, 2, 3),
-  end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
-  public: false
-)
-
-itinerary_3.original_itinerary_id = itinerary_3.id
-itinerary_3.save!
-
 itinerary_4 = Itinerary.create!(
   title: "First Time Visit",
   destination_id: london.id,
@@ -538,7 +526,6 @@ itinerary_4 = Itinerary.create!(
 
 itinerary_4.original_itinerary_id = itinerary_4.id
 itinerary_4.save!
-
 
 itinerary_5 = Itinerary.create!(
   title: "Basic Tourist",
@@ -552,18 +539,30 @@ itinerary_5 = Itinerary.create!(
 itinerary_5.original_itinerary_id = itinerary_1.id
 itinerary_5.save!
 
-itinerary_6 = Itinerary.create!(
-  title: "Relaxing Time",
-  destination_id: barcelona.id,
-  start_date: Date.new(2022, 8, 1),
-  end_date: Date.new(2022, 8, 5),
-  user: User.all[4],
+itinerary_12 = Itinerary.create!(
+  title: "Pizza (and seeing the city)",
+  destination_id: rome.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: User.all[7],
   public: true
 )
 
-itinerary_6.original_itinerary_id = itinerary_5.id
-# ensuring itn5 and itn6 are the same dates
-itinerary_6.save!
+itinerary_12.original_itinerary_id = itinerary_12.id
+itinerary_12.save!
+
+itinerary_3 = Itinerary.create!(
+  title: "Historical Trip",
+  destination_id: rome.id,
+  start_date: Date.new(2023, 2, 3),
+  end_date: Date.new(2023, 2, 6),
+  user: tt, # Trina
+  public: false
+)
+
+itinerary_3.original_itinerary_id = itinerary_12.id
+itinerary_3.save!
+
 
 itinerary_7 = Itinerary.create!(
   title: "Foodie Trip",
@@ -625,17 +624,19 @@ itinerary_11 = Itinerary.create!(
 itinerary_11.original_itinerary_id = itinerary_11.id
 itinerary_11.save!
 
-itinerary_12 = Itinerary.create!(
-  title: "Pizza (and seeing the city)",
-  destination_id: rome.id,
-  start_date: Date.new(2023, 2, 3),
-  end_date: Date.new(2023, 2, 6),
-  user: User.all[7],
+itinerary_6 = Itinerary.create!(
+  title: "Relaxing Time",
+  destination_id: barcelona.id,
+  start_date: Date.new(2022, 8, 1),
+  end_date: Date.new(2022, 8, 5),
+  user: User.all[4],
   public: true
 )
 
-itinerary_12.original_itinerary_id = itinerary_12.id
-itinerary_12.save!
+itinerary_6.original_itinerary_id = itinerary_5.id
+# ensuring itn5 and itn6 are the same dates
+itinerary_6.save!
+
 
 itinerary_13 = Itinerary.create!(
   title: "Blimey",
@@ -884,11 +885,6 @@ puts 'Creating 10 fake Itinerary Activities for 3-day Paris trip...'
 ItineraryActivity.create!(
   itinerary_id: 9,
   activity_id: 13
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 9,
-  activity_id: 14
 )
 
 ItineraryActivity.create!(
