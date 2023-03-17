@@ -790,7 +790,7 @@ itinerary_25 = Itinerary.create!(
   destination_id: london.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
+  user: pt,
   public: false
 )
 
