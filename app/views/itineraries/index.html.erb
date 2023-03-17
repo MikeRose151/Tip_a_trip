@@ -25,11 +25,11 @@
                   <div class="image__title"> <%= itinerary.title%>
                   </div>
                   <div class ="image__title">
-                    <% duration = (itinerary.end_date - itinerary.start_date).to_i  %>
+                    <% duration = (itinerary.end_date - itinerary.start_date).to_i + 1  %>
                     <% if duration == 1 %>
                       <%= "#{duration} day" %>
                     <% else %>
-                      <%= "#{duration + 1} days " %>
+                      <%= "#{duration} days " %>
                     <% end %>
                   </div>
                 </div>
@@ -57,8 +57,17 @@
                     <%= link_to path, class: "image-link" do %>
                       <%= cl_image_tag original_itinerary.destination.photo.key, class:"image__img"%>
                       <div class="image__overlay">
-                        <div class="image__title"> <%= original_itinerary.destination.city%> </div>
-                        <div class="image__user"> <%= original_itinerary.title%> </div>
+                        <div class="image__title"> <%= itinerary.destination.city%> </div>
+                        <div class="image__title"> <%= itinerary.title%>
+                        </div>
+                        <div class ="image__title">
+                          <% duration = (itinerary.end_date - itinerary.start_date).to_i + 1  %>
+                          <% if duration == 1 %>
+                            <%= "#{duration} day" %>
+                          <% else %>
+                            <%= "#{duration} days " %>
+                          <% end %>
+                        </div>
                       </div>
                       <% if original_itinerary.user.photo.attached? %>
                         <%= cl_image_tag original_itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
