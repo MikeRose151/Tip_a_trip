@@ -1,0 +1,5 @@
+meta_product_name: "Tip-a-Trip"
+meta_title: "Tip-a-Trip - Share holiday itineraries"
+meta_description: "Build and bespoke holiday itineraries for all your trips"
+meta_image: "polaroids.png" # should exist in `app/assets/images/`
+twitter_account: "@tip_a_trip"   # required for Twitter Cards
