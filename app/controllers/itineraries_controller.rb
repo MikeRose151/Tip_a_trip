@@ -67,7 +67,11 @@ class ItinerariesController < ApplicationController
       @itinerary.user = current_user
       @itinerary.destination = @original_itinerary.destination
       @itinerary.title = @original_itinerary.title
-      @itinerary.start_date = params[:start_date].to_date
+      if @itinerary.start_date.nil?
+        @itinerary.start_date = Date.today
+      else
+        @itinerary.start_date = params[:start_date].to_date
+      end
       @days_duration = (@original_itinerary.end_date - @original_itinerary.start_date).to_i
       @itinerary.end_date = @itinerary.start_date + @days_duration
       @itinerary.activities = @original_itinerary.activities
