@@ -1,99 +1,101 @@
-<% if params[:user_id].nil? %>
-  <%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
-    <div class="search-icon-group">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control rounded-pill mr-sm-2 ",
-        placeholder: "Browse Itineraries... "
-      %>
-      <%#= content_tag :span, "", class: "fa fa-search search-icon" %>
-      <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    </div>
-    <% submit_tag "Search", class: "btn btn-primary " %>
-  <% end %>
-<div class="itinerary-container">
-  <div class="itineraries">
-    <%@itineraries.each do |itinerary|%>
-      <% if itinerary.public? %>
-       <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
-        <%= link_to itinerary_path(itinerary), class: "image-link" do %>
-          <div class="card-itinerary imageh">
-              <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
-              <div class="image__overlay">
-                <div class="image__title"> <%= itinerary.destination.city%> </div>
-                <div class="image__title"> <%= itinerary.title%>
+<div>
+  <% if params[:user_id].nil? %>
+    <%= form_with url: itineraries_path, method: :get, class: "d-flex search-form" do %>
+      <div class="search-icon-group">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control rounded-pill mr-sm-2 ",
+          placeholder: "Browse Itineraries... "
+        %>
+        <%#= content_tag :span, "", class: "fa fa-search search-icon" %>
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      </div>
+      <% submit_tag "Search", class: "btn btn-primary " %>
+    <% end %>
+  <div class="itinerary-container">
+    <div class="itineraries">
+      <%@itineraries.each do |itinerary|%>
+        <% if itinerary.public? %>
+        <%# <%= cl_image_tag d.photo.key, height: 300, crop: :fill %>
+          <%= link_to itinerary_path(itinerary), class: "image-link" do %>
+            <div class="card-itinerary imageh">
+                <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
+                <div class="image__overlay">
+                  <div class="image__title"> <%= itinerary.destination.city%> </div>
+                  <div class="image__title"> <%= itinerary.title%>
+                  </div>
+                  <div class ="image__title">
+                    <% duration = (itinerary.end_date - itinerary.start_date).to_i  %>
+                    <% if duration == 1 %>
+                      <%= "#{duration} day" %>
+                    <% else %>
+                      <%= "#{duration + 1} days " %>
+                    <% end %>
+                  </div>
                 </div>
-                <div class ="image__title">
-                  <% duration = (itinerary.end_date - itinerary.start_date).to_i  %>
-                  <% if duration == 1 %>
-                    <%= "#{duration} day" %>
-                  <% else %>
-                    <%= "#{duration + 1} days " %>
-                  <% end %>
-                </div>
-              </div>
-            <div class="sidebar hover"> </div>
-            <% if itinerary.user.photo.attached? %>
-              <%= cl_image_tag itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
-            <% end %>
-          </div>
+              <div class="sidebar hover"> </div>
+              <% if itinerary.user.photo.attached? %>
+                <%= cl_image_tag itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
-<% elsif params[:user_id] %>
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <h1 class="mt-5"> <%= current_user.username %>'s Dashboard </h1>
-          <div class="itineraries2">
-            <% @itineraries.each do |itinerary|%>
-              <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
-              <% path = original_itinerary.user == current_user && itinerary.end_date >= Date.today ? edit_itinerary_path(itinerary) : itinerary_path(itinerary) %>
-              <% if itinerary.user == current_user %>
-                <div class="card-itinerary stacked--up-left imageh">
-                  <%= link_to path, class: "image-link" do %>
-                    <%= cl_image_tag original_itinerary.destination.photo.key, class:"image__img"%>
-                    <div class="image__overlay">
-                      <div class="image__title"> <%= original_itinerary.destination.city%> </div>
-                      <div class="image__user"> <%= original_itinerary.title%> </div>
-                    </div>
-                    <% if original_itinerary.user.photo.attached? %>
-                      <%= cl_image_tag original_itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
+  <% elsif params[:user_id] %>
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <h1 class="mt-5"> <%= current_user.username %>'s Dashboard </h1>
+            <div class="itineraries2">
+              <% @itineraries.each do |itinerary|%>
+                <% original_itinerary = Itinerary.find(itinerary.original_itinerary_id) %>
+                <% path = original_itinerary.user == current_user && itinerary.end_date >= Date.today ? edit_itinerary_path(itinerary) : itinerary_path(itinerary) %>
+                <% if itinerary.user == current_user %>
+                  <div class="card-itinerary stacked--up-left imageh">
+                    <%= link_to path, class: "image-link" do %>
+                      <%= cl_image_tag original_itinerary.destination.photo.key, class:"image__img"%>
+                      <div class="image__overlay">
+                        <div class="image__title"> <%= original_itinerary.destination.city%> </div>
+                        <div class="image__user"> <%= original_itinerary.title%> </div>
+                      </div>
+                      <% if original_itinerary.user.photo.attached? %>
+                        <%= cl_image_tag original_itinerary.user.photo.key, class:"itinerary_avatar_img avatar" %>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                  <div class="sidebar hover"> </div>
-                </div>
+                    <div class="sidebar hover"> </div>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="dashboard-stats-card " style="margin-top: 64px;">
-            <h2 class="mb-3">Your Profile</h2>
-              <div class="d-flex justify-content-start align-items-center my-2">
-               <h1>  &#128100;  </h1> <p class="ms-2">  <%= current_user.username %> </p>
-              </div>
+          <div class="col-4">
+            <div class="dashboard-stats-card " style="margin-top: 64px;">
+              <h2 class="mb-3">Your Profile</h2>
+                <div class="d-flex justify-content-start align-items-center my-2">
+                <h1>  &#128100;  </h1> <p class="ms-2">  <%= current_user.username %> </p>
+                </div>
 
-              <div class="d-flex justify-content-start align-items-end">
-               <h1> &#128233;   </h1> <p class="ms-2">  <%= current_user.email %> </p>
-              </div>
+                <div class="d-flex justify-content-start align-items-end">
+                <h1> &#128233;   </h1> <p class="ms-2">  <%= current_user.email %> </p>
+                </div>
 
-              <div class="d-flex justify-content-start align-items-center my-2">
-               <h1>  &#128274;  </h1> <a style="color:#FF494;" class="ms-2">  Change your password </a>
-              </div>
+                <div class="d-flex justify-content-start align-items-center my-2">
+                <h1>  &#128274;  </h1> <a style="color:#FF494;" class="ms-2">  Change your password </a>
+                </div>
 
-              <div class="d-flex justify-content-start align-items-end my-2 mb-4">
-               <h2> &#128204; <%= @counter_trips_tipped %>  </h2> <p class="ms-2"> people have cloned your trips  </p>
-              </div>
+                <div class="d-flex justify-content-start align-items-end my-2 mb-4">
+                <h2> &#128204; <%= @counter_trips_tipped %>  </h2> <p class="ms-2"> people have cloned your trips  </p>
+                </div>
 
-              <div class="d-flex justify-content-start align-items-end my-2">
-               <h2>  Total Trips:  </h2> <h3 style="color:#FF494;" class="ms-2"> <%= @counter_tips %> </h3>
-              </div>
+                <div class="d-flex justify-content-start align-items-end my-2">
+                <h2>  Total Trips:  </h2> <h3 style="color:#FF494;" class="ms-2"> <%= @counter_tips %> </h3>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-<% end %>
+  <% end %>
+</div>

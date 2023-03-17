@@ -16,20 +16,16 @@
     <% unless current_page?(root_path) %>
       <div class="home-container">
     <% end %>
-        <% unless controller_name == 'pages' %>
-          <%= render "shared/navbar" %>
-        <% end %>
-        <%= render "shared/flashes" %>
-
-        <div>
-          <%= yield %>
-        </div>
-
-        <div>
-          <% unless current_page?(root_path) %>
-            <%= render partial: "shared/mainfooter", class: 'footer' %>
-          <% end %>
-        </div>
+    <% unless controller_name == 'pages' %>
+      <%= render "shared/navbar" %>
+    <% end %>
+    <%= render "shared/flashes" %>
+    <%= yield %>
+    <div>
+      <% unless current_page?(root_path) %>
+        <%= render partial: "shared/mainfooter", class: 'footer' %>
+      <% end %>
+    </div>
     <% unless current_page?(root_path) %>
       </div>
     <% end %>
