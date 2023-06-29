@@ -17,7 +17,11 @@
           <%= link_to "Build Your Itinerary", new_itinerary_path, class: "btn btn-outline-success btn-outline-light rounded-pill my-2 my-sm-0 btn-create-new" %>
       </li>
          <li class="nav-item dropdown">
+          <% if current_user.photo.key %>
             <%= cl_image_tag current_user.photo.key, class: "avatar-show-edit dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "avatar.png", class: "avatar-show-edit dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
             <div class="dropdown-menu dropdown-menu-end animate__animated animate__flipInX" aria-labelledby="navbarDropdown">
               <%= link_to "🏠 Home", root_path, class: "dropdown-item" %>
               <%= link_to "🛬 Your Dashboard", user_itineraries_path(current_user), class: "dropdown-item" %>
