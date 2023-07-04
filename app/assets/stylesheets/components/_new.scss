@@ -62,14 +62,20 @@
     padding-bottom: 6px;
 }
 
-.dark3:hover{
+.dark3:hover,
+.dark3:hover .buttonlogo {
   background-color: #FF4949;
   transition-duration: 0.5s;
-  color:#0B0633;
-
-
-
+  color: #0B0633;
 }
+
+.move_card:hover .dark3,
+.move_card:hover .dark3 .buttonlogo {
+  background-color: #FF4949;
+  transition-duration: 0.5s;
+  color: #0B0633;
+}
+
 
 .dark4:hover{
   background-color: #F5F4F4;
