@@ -22,8 +22,7 @@
                 <%= cl_image_tag itinerary.destination.photo.key, class:"image__img"%>
                 <div class="image__overlay">
                   <div class="image__title"> <%= itinerary.destination.city%> </div>
-                  <div class="image__title"> <%= itinerary.title%>
-                  </div>
+                  <div class="image__title"> <em><strong><%= itinerary.title %></em></strong></div>
                   <div class ="image__title">
                     <% duration = (itinerary.end_date - itinerary.start_date).to_i + 1  %>
                     <% if duration == 1 %>
@@ -58,8 +57,7 @@
                       <%= cl_image_tag original_itinerary.destination.photo.key, class:"image__img"%>
                       <div class="image__overlay">
                         <div class="image__title"> <%= itinerary.destination.city%> </div>
-                        <div class="image__title"> <%= itinerary.title%>
-                        </div>
+                        <div class="image__title"> <em><strong><%= itinerary.title %></em></strong></div>
                         <div class ="image__title">
                           <% duration = (itinerary.end_date - itinerary.start_date).to_i + 1  %>
                           <% if duration == 1 %>
