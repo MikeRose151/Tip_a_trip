@@ -110,4 +110,3 @@ ItineraryActivity.create!(
   activity_id: 18
 )
 puts 'Finished!'
-

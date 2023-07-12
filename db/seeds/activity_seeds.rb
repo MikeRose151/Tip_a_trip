@@ -1,3 +1,5 @@
+require 'open-uri'
+
 puts 'Creating 12 London Activities and 15 Paris Activities...'
 
 londoneye = Activity.create(

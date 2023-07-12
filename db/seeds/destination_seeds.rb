@@ -1,3 +1,5 @@
+require 'open-uri'
+
 puts 'Creating 10 Cities...'
 
 london = Destination.create(
