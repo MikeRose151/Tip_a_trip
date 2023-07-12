@@ -1,8 +1,5 @@
 require 'open-uri'
 
-puts "Cleaning database"
-User.destroy_all
-
 puts "Creating 10 fake Users including test, Lazy Susan, and Tripper Trevor..."
 
 testtickle = User.create!(
@@ -13,8 +10,6 @@ testtickle = User.create!(
 
 testtickle_avatar = URI.open("https://hellogiggles.com/wp-content/uploads/sites/7/2016/11/22/IMG_2531.jpg?quality=82&strip=all")
 testtickle.photo.attach(io: testtickle_avatar, filename: "testtickle.jpg", content_type: "image/jpg")
-
-
 
 ls = User.create!(
   email: "larry@tat.com",

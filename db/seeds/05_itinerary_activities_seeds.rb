@@ -1,6 +1,3 @@
-puts "Cleaning database"
-ItineraryActivity.destroy_all
-
 puts 'Creating 15 fake Itinerary Activities for 4-day Paris trip...'
 
 ItineraryActivity.create!(

@@ -1,6 +1,3 @@
-puts "Cleaning database"
-Itinerary.destroy_all
-
 puts 'Creating 20 fake Itineraries...'
 
 itinerary_1 = Itinerary.create!(
