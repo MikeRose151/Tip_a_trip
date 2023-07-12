@@ -1,5 +1,6 @@
 puts "Cleaning database"
 User.destroy_all
+
 puts "Creating 10 fake Users including test, Lazy Susan, and Tripper Trevor..."
 
 testtickle = User.create!(
