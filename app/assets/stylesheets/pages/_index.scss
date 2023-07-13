@@ -1,74 +1,66 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.imageh{
+.imageh {
   position: relative;
 }
 
-.image__img{
+.image__img {
   display: block;
   width: 100%;
 }
 
-.image__overlay{
+.image__overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
-  color:#ffff;
+  background: $dark-blue-faded;
+  color: #ffff;
   font-family: $body;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity:0;
+  opacity: 0;
   transition: opacity 0.25s;
-  opacity:1;
-
-
+  opacity: 1;
 }
 
 .image__overlay * {
   transform: translateY(20px);
   transition: transform 0.25s;
-
 }
 
-.image__overlay:hover{
-   position: absolute;
+.image__overlay:hover {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   // background: rgba(0,0,0,0.6);
-  color:#ffff;
+  color: #ffff;
   font-family: $body;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity:0;
+  opacity: 0.5;
   transition: opacity 0.25s;
-  opacity:0;
-
 }
 
 .image__overlay:hover * {
   transform: translateY(0);
 }
 
-.image__title{
-   font-size: 1em;
-   font-weight: bold;
-
+.image__title {
+  font-size: 1em;
+  font-weight: bold;
 }
 
-.image__user{
+.image__user {
   font-size: 1em;
-
-
 }
 .search-form .form-control {
   border-color: $dark-blue;
