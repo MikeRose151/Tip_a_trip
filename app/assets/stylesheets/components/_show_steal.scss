@@ -7,29 +7,28 @@
   position: sticky;
   margin-top: 48px;
   height: fit-content;
-  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
-
-.buttonlogo{
+.buttonlogo {
   height: 35px;
   width: 35px;
+}
 
-  }
+.move_card {
+  padding: 5px;
+  background: $dark-blue;
+  border-radius: 50rem;
+  transition-duration: 0.75s;
+}
+.move_card:hover {
+  background: #0b0633;
+  transition-duration: 0.5s;
+  border: solid #0b0633 2px;
+  border-radius: 100rem;
+  scale: 1.1;
+}
 
-  .move_card{
-   padding: 5px;
-   background: $dark-blue;
-   border-radius: 50rem;
-
-  }
-  .move_card:hover {
-    background:   #0B0633;
-    transition-duration:0.5s;
-    border: solid #0B0633 2px;
-    border-radius: 100rem;
-  }
-
-  .size{
-    font-size: 20px;
-  }
+.size {
+  font-size: 20px;
+}
