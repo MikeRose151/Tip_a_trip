@@ -1,6 +1,8 @@
 # Clear database
 puts "Cleaning database"
 User.destroy_all
+Destination.destroy_all
+Activity.destroy_all
 Itinerary.destroy_all
 ItineraryActivity.destroy_all
 

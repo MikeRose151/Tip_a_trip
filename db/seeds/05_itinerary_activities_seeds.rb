@@ -45,41 +45,6 @@ ItineraryActivity.create!(
   activity_id: 21
 )
 
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 22
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 23
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 24
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 25
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 26
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 27
-)
-
-ItineraryActivity.create!(
-  itinerary_id: 2,
-  activity_id: 28
-)
-
 puts 'Creating 10 fake Itinerary Activities for 3-day Paris trip...'
 
 ItineraryActivity.create!(

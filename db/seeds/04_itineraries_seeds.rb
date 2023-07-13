@@ -1,11 +1,22 @@
 puts 'Creating 20 fake Itineraries...'
 
+london = Destination.find_by(city: "London")
+paris = Destination.find_by(city: "Paris")
+rio = Destination.find_by(city: "Rio")
+nyc = Destination.find_by(city: "New York City")
+barcelona = Destination.find_by(city: "Barcelona")
+tokyo = Destination.find_by(city: "Tokyo")
+toronto = Destination.find_by(city: "Toronto")
+rome = Destination.find_by(city: "Rome")
+amsterdam = Destination.find_by(city: "Amsterdam")
+berlin = Destination.find_by(city: "Berlin")
+
 itinerary_1 = Itinerary.create!(
   title: "Fun Time",
   destination_id: tokyo.id,
   start_date: Date.new(2022, 5, 8),
   end_date: Date.new(2022, 5, 26),
-  user: User.all[3],
+  user: User.all[2],
   public: true
 )
 
@@ -17,7 +28,7 @@ itinerary_2 = Itinerary.create!(
   destination_id: paris.id,
   start_date: Date.new(2022, 9, 26),
   end_date: Date.new(2022, 9, 30),
-  user: tt, # Trina
+  user: User.all[1],
   public: true
 )
 
@@ -29,7 +40,7 @@ itinerary_4 = Itinerary.create!(
   destination_id: london.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: User.all[3],
+  user: User.all[2],
   public: true
 )
 
@@ -41,7 +52,7 @@ itinerary_5 = Itinerary.create!(
   destination_id: berlin.id,
   start_date: Date.new(2023, 1, 4),
   end_date: Date.new(2023, 1, 7),
-  user: tt, # Trina
+  user: User.all[2],
   public: true
 )
 
@@ -65,7 +76,7 @@ itinerary_3 = Itinerary.create!(
   destination_id: rome.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
+  user: User.all[2],
   public: false
 )
 
@@ -248,7 +259,7 @@ itinerary_21 = Itinerary.create!(
   destination_id: rio.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
+  user: User.all[2],
   public: false
 )
 
@@ -260,7 +271,7 @@ itinerary_22 = Itinerary.create!(
   destination_id: tokyo.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
+  user: User.all[2],
   public: false
 )
 
@@ -273,7 +284,7 @@ itinerary_23 = Itinerary.create!(
   destination_id: nyc.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
+  user: User.all[2],
   public: false
 )
 
@@ -286,7 +297,7 @@ itinerary_24 = Itinerary.create!(
   destination_id: toronto.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: tt, # Trina
+  user: User.all[2],
   public: false
 )
 
@@ -299,7 +310,7 @@ itinerary_25 = Itinerary.create!(
   destination_id: london.id,
   start_date: Date.new(2023, 2, 3),
   end_date: Date.new(2023, 2, 6),
-  user: pt,
+  user: User.all[9],
   public: false
 )
 

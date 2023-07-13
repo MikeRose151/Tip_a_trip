@@ -8,17 +8,17 @@ testtickle = User.create!(
   username: "Test Tickle"
 )
 
-testtickle_avatar = URI.open("https://hellogiggles.com/wp-content/uploads/sites/7/2016/11/22/IMG_2531.jpg?quality=82&strip=all")
+testtickle_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689185318/development/user_test.jpg")
 testtickle.photo.attach(io: testtickle_avatar, filename: "testtickle.jpg", content_type: "image/jpg")
 
-ls = User.create!(
+ll = User.create!(
   email: "larry@tat.com",
   password: 123456,
   username: "Lazy Larry"
 )
 
-ls_avatar = URI.open("https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
-ls.photo.attach(io: ls_avatar, filename: "ls.jpg", content_type: "image/jpg")
+ll_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689185319/development/user_larry.jpg")
+ll.photo.attach(io: ll_avatar, filename: "ls.jpg", content_type: "image/jpg")
 
 tt = User.create!(
   email: "trina@tat.com",
@@ -26,7 +26,7 @@ tt = User.create!(
   username: "Tripper Trina"
 )
 
-tt_avatar = URI.open("https://www.cedars-sinai.org/content/dam/cedars-sinai/blog/2019/06/SelfieSafety.jpg")
+tt_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689185322/development/user_trina.jpg")
 tt.photo.attach(io: tt_avatar, filename: "tt.jpg", content_type: "image/jpg")
 
 mm = User.create!(
@@ -35,7 +35,7 @@ mm = User.create!(
   username: "Magic Mike"
 )
 
-mm_avatar = URI.open("https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg")
+mm_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689185323/development/user_mike.jpg")
 mm.photo.attach(io: mm_avatar, filename: "mm.jpg", content_type: "image/jpg")
 
 tommy = User.create!(
@@ -44,7 +44,7 @@ tommy = User.create!(
   username: "Tipper Tommy"
 )
 
-tommy_avatar = URI.open("https://i.pinimg.com/originals/75/33/3c/75333c44a7adb9cf15af954d1ca56198.jpg")
+tommy_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689035777/development/user_tommy.jpg")
 tommy.photo.attach(io: tommy_avatar, filename: "mm.jpg", content_type: "image/jpg")
 
 gg = User.create!(
@@ -53,7 +53,7 @@ gg = User.create!(
   username: "Georgia Grace"
 )
 
-gg_avatar = URI.open("https://img.freepik.com/free-photo/portrait-young-beautiful-afro-american-woman-taking-selfie-outdoors-street_58466-12263.jpg")
+gg_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689185326/development/user_georgia.jpg")
 gg.photo.attach(io: gg_avatar, filename: "gg.jpg", content_type: "image/jpg")
 
 
@@ -63,7 +63,7 @@ fara = User.create!(
   username: "Fara B"
 )
 
-fara_avatar = URI.open("https://stories.isu.pub/61029910/images/13_original_file_I3.jpg")
+fara_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689035781/development/user_fara.jpg")
 fara.photo.attach(io: fara_avatar, filename: "fara.jpg", content_type: "image/jpg")
 
 nt = User.create!(
@@ -72,7 +72,7 @@ nt = User.create!(
   username: "Nnamdi Travels"
 )
 
-nt_avatar = URI.open("https://i2-prod.dailyrecord.co.uk/incoming/article24562995.ece/ALTERNATES/s1200c/0_AFC-Bournemouth-Training-Session.jpg")
+nt_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689035783/development/user_nnamdi.jpg")
 nt.photo.attach(io: nt_avatar, filename: "nt.jpg", content_type: "image/jpg")
 
 dt = User.create!(
@@ -81,7 +81,7 @@ dt = User.create!(
   username: "Dee Tips"
 )
 
-dt_avatar = URI.open("https://i2-prod.birminghammail.co.uk/incoming/article23092740.ece/ALTERNATES/s1200c/0_DQP_BEM_090518DEE_29JPG.jpg")
+dt_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689185330/development/user_dee.jpg")
 dt.photo.attach(io: dt_avatar, filename: "dt.jpg", content_type: "image/jpg")
 
 pt = User.create!(
@@ -90,5 +90,5 @@ pt = User.create!(
   username: "Pedro Tasca"
 )
 
-pt_avatar = URI.open("https://www.intrepidescape.com/wp-content/gallery/selfie-success/cache/Steps-to-Selfie-Success-1-4.jpg-nggid03848-ngg0dyn-0x0x100-00f0w010c010r110f110r010t010.jpg")
+pt_avatar = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689035787/development/user_pedro.jpg")
 pt.photo.attach(io: pt_avatar, filename: "pt.jpg", content_type: "image/jpg")
