@@ -13,14 +13,14 @@ class Itinerary < ApplicationRecord
   private
 
   def start_date_must_be_valid
-    return unless start_date.present? && start_date < Date.current
-
-    errors.add(:start_date, "must be no earlier than today")
+    if start_date.present? && start_date < Date.current
+      errors.add(:start_date, "must be no earlier than today")
+    end
   end
 
   def end_date_must_be_valid
-    return unless end_date.present? && end_date < start_date
-
-    errors.add(:end_date, "must be no earlier than start date")
+    if end_date.present? && end_date < start_date
+      errors.add(:end_date, "must be no earlier than start date")
+    end
   end
 end

@@ -15,9 +15,19 @@
       <div class="card-new-itinerary-form">
         <%= simple_form_for @itinerary do |f| %>
           <%= f.input :destination, collection: @destination_cities.sort, include_blank: '--Select the destination of your trip!--', required: true, label: 'Destination' %>
+
           <%= f.input :title, placeholder: "E.g. 'Hidden Gems', 'Must-Sees', 'For All The Family', 'A Foodie's Dream'", required: true, label: 'Title' %>
-          <%= f.input :start_date, required: true, as: :date, html5: true%>
-          <%= f.input :end_date, required: true, as: :date, html5: true%>
+
+          <%= f.input :start_date, required: true, as: :date, html5: true %>
+          <% if @itinerary.errors[:start_date].any? %>
+            <%= @itinerary.errors[:start_date].first %>
+          <% end %>
+
+          <%= f.input :end_date, required: true, as: :date, html5: true %>
+          <% if @itinerary.errors[:end_date].any? %>
+            <%= @itinerary.errors[:end_date].first %>
+          <% end %>
+
           <div class="d-flex justify-content-center">
             <%= f.submit value="Get Started", class: "dark"%>
           </div>
@@ -31,22 +41,3 @@
     </div>
   </div>
 </div>
-<%# <script>
-$(document).ready(function() {
-  $('#destination-select').on('change', function() {
-    var destination = $(this).val();
-    var imageSrc = '';
-    if (destination === 'London') {
-      imageSrc = 'https://media.cntraveler.com/photos/55c8be0bd36458796e4ca38a/master/pass/london-eye-2-cr-getty.jpg';
-    } else if (destination === 'Paris') {
-      imageSrc = 'https://media.istockphoto.com/photos/eiffel-tower-in-spring-picture-id1297043676?b=1&k=20&m=1297043676&s=170667a&w=0&h=kXklVKUeWIw7UWDDYnxMzB3uXS9prFiea3RaRPyB5M0=';
-    }
-
-    if (imageSrc !== '') {
-      $('#destination-image').html('<img src="' + imageSrc + '">');
-    } else {
-      $('#destination-image').empty();
-    }
-  });
-});
-</script> %>
