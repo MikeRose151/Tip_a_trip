@@ -47,9 +47,8 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
-#For fake seeds
-gem "faker"
-
+# For itinerary start/end date validation
+gem 'date_validator'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
