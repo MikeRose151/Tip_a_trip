@@ -1,0 +1,11 @@
+<div class="login-container">
+  <h2>Account Setup</h2>
+  <%= simple_form_for @user, url: user_path(@user), method: :patch do |f| %>
+    <%= f.input :username, placeholder: 'Please enter a Display Name for your account', label: 'Display Name' %>
+    <br>
+    <%= f.input :photo, as: :file, label: 'Profile Image (Optional)' %>
+    <br>
+    <br>
+    <%= f.submit "Continue to Tip-a-Trip", class: "dark" %>
+  <% end %>
+</div>
