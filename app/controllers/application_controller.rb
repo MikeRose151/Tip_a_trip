@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   def after_sign_in_path_for(resource)
-    itineraries_path
+    if current_user.username && current_user.avatar
+      itineraries_path
+    else
+      
   end
 end
 
