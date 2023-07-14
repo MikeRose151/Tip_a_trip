@@ -1,12 +1,11 @@
 
 .mainfooter {
-  position: relative;
-  // position: fixed;
   background-color: $dark-blue;
-  margin-top: auto;
   padding: 5px;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .mainfooter marquee {
