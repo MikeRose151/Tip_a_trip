@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
     if current_user.username && current_user.avatar
       itineraries_path
     else
-      
+      edit_user_path(current_user)
+    end
   end
 end
 
