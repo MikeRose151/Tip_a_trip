@@ -41,7 +41,6 @@ class ItinerariesController < ApplicationController
     @destination_cities = @destinations.map(&:city)
   end
 
-
   def create
     if params[:original_itinerary_id].nil?
       # this happens when creating brand new itinerary
@@ -53,8 +52,6 @@ class ItinerariesController < ApplicationController
         @itinerary.original_itinerary_id = @itinerary.id
         if @itinerary.save!
           redirect_to edit_itinerary_path(@itinerary)
-        else
-          render :new, status: :unprocessable_entity
         end
       else
         render :new, status: :unprocessable_entity
