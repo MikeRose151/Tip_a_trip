@@ -7,11 +7,10 @@
 
       <% @relevant_activities = [] %>
       <% @activities.each do |activity| %>
-        <% @relevant_activities << activity if (Favourite.find_by(user_id: @itinerary.user_id, activity_id: activity.id).nil?) %>
+        <% @relevant_activities << activity if (Favourite.find_by(user_id: @itinerary.user_id, activity_id: activity.id).nil?) && (activity.destination == @itinerary.destination) %>
         <%# || (ItineraryActivity.find_by(itinerary_id: @itinerary.id, activity_id: activity.id).nil?) %>
       <% end %>
       <% @relevant_activities.each_with_index do |activity, index| %>
-        <% if activity.destination == @itinerary.destination %>
           <% if index == 0 %>
             <div class="carousel-item active">
           <% else %>
@@ -20,9 +19,7 @@
               <div class='d-flex me-2'>
                 <div class='w-50 position-relative'>
                   <%= cl_image_tag activity.photo.key, class: "d-block activity-img"%>
-
                 </div>
-
                 <div class=' info-card w-50 ms-2 spaced card'>
                   <h3 class="text-title m-2">  <%= activity.name %> </h3>
                   <ul>
@@ -49,11 +46,9 @@
                           <div data-favourite-button-target="button" data-action="click->favourite-button#toggle">
                             <i class="fa-regular fa-heart favourite-btn-outline"></i>
                           </div>
-                        <% end %>
                   </div>
                   <div class="d-flex justify-content-end">
                     <%= link_to "Continue building itinerary", edit_itinerary_path(@itinerary), class: "btn btn-outline-success btn-outline-light rounded-pill btn-create-new" %>
-                    <% raise %>
                   </div>
                 </div>
               </div>
