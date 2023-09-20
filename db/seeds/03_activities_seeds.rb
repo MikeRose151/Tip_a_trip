@@ -524,7 +524,7 @@ cn_tower = Activity.create(
   address: "290 Bremner Blvd, Toronto, ON M5V 3L9",
   destination_id: toronto.id
 )
-img_cn_tower = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_cn_tower = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/cn_tower.jpg")
 cn_tower.photo.attach(io: img_cn_tower, filename: "cn_tower.jpg", content_type: "image/jpg")
 
 # 2
@@ -535,7 +535,7 @@ niagara_falls = Activity.create(
   address: "5920 Niagara River Pkwy, Niagara Falls, ON L2E 6X8",
   destination_id: toronto.id
 )
-img_niagara_falls = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_niagara_falls = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/niagara_falls.jpg")
 niagara_falls.photo.attach(io: img_niagara_falls, filename: "niagara_falls.jpg", content_type: "image/jpg")
 
 # 3
@@ -546,7 +546,7 @@ toronto_islands = Activity.create(
   address: "11 Queens Quay W, Toronto, ON M5J 2H3",
   destination_id: toronto.id
 )
-img_toronto_islands = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_toronto_islands = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/toronto_islands.jpg")
 toronto_islands.photo.attach(io: img_toronto_islands, filename: "toronto_islands.jpg", content_type: "image/jpg")
 
 # 4
@@ -557,7 +557,7 @@ distillery_district = Activity.create(
   address: "55 Mill St, Toronto, ON M5A 3C4",
   destination_id: toronto.id
 )
-img_distillery_district = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_distillery_district = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/distillery_district.jpg")
 distillery_district.photo.attach(io: img_distillery_district, filename: "distillery_district.jpg", content_type: "image/jpg")
 
 # 5
@@ -568,7 +568,7 @@ st_lawrence_market = Activity.create(
   address: "St Lawrence Market, Toronto, ON M5E 1C3",
   destination_id: toronto.id
 )
-img_st_lawrence_market = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_st_lawrence_market = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/st_lawrence_market.jpg")
 st_lawrence_market.photo.attach(io: img_st_lawrence_market, filename: "st_lawrence_market.jpg", content_type: "image/jpg")
 
 # 6
@@ -579,7 +579,7 @@ high_park = Activity.create(
   address: "1873 Bloor St W, Toronto, ON M6R 2Z3",
   destination_id: toronto.id
 )
-img_high_park = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_high_park = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/high_park.jpg")
 high_park.photo.attach(io: img_high_park, filename: "high_park.jpg", content_type: "image/jpg")
 
 # 7
@@ -590,7 +590,7 @@ scarborough_bluffs = Activity.create(
   address: "1 Brimley Rd. S, Bluffers Pk Rd, Scarborough, ON",
   destination_id: toronto.id
 )
-img_scarborough_bluffs = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_scarborough_bluffs = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/scarborough_bluffs.jpg")
 scarborough_bluffs.photo.attach(io: img_scarborough_bluffs, filename: "scarborough_bluffs.jpg", content_type: "image/jpg")
 
 # 8
@@ -601,7 +601,7 @@ woodbine_beach = Activity.create(
   address: "1675 Lake Shore Blvd E, Toronto, ON M4L 3W6",
   destination_id: toronto.id
 )
-img_woodbine_beach = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_woodbine_beach = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/woodbine_beach.jpg")
 woodbine_beach.photo.attach(io: img_woodbine_beach, filename: "woodbine_beach.jpg", content_type: "image/jpg")
 
 puts 'Creating Rome Activities...'
@@ -615,7 +615,7 @@ colosseum = Activity.create(
   address: "Piazza del Colosseo, 1, 00184 Roma RM",
   destination_id: rome.id
 )
-img_colosseum = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_colosseum = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/colosseum.jpg")
 colosseum.photo.attach(io: img_colosseum, filename: "colosseum.jpg", content_type: "image/jpg")
 
 # 2
@@ -626,7 +626,7 @@ trevi_fountain = Activity.create(
   address: "Piazza di Trevi, 00187 Roma RM",
   destination_id: rome.id
 )
-img_trevi_fountain = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_trevi_fountain = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/trevi_fountain.jpg")
 trevi_fountain.photo.attach(io: img_trevi_fountain, filename: "trevi_fountain.jpg", content_type: "image/jpg")
 
 # 3
@@ -637,7 +637,7 @@ basilica_di_san_pietro = Activity.create(
   address: "Piazza San Pietro, 00120 Città del Vaticano, Vatican City",
   destination_id: rome.id
 )
-img_basilica_di_san_pietro = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_basilica_di_san_pietro = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/basilica_di_san_pietro.jpg")
 basilica_di_san_pietro.photo.attach(io: img_basilica_di_san_pietro, filename: "basilica_di_san_pietro.jpg", content_type: "image/jpg")
 
 # 4
@@ -648,7 +648,7 @@ sistine_chapel = Activity.create(
   address: "Sistine Chapel, 00120 Vatican City",
   destination_id: rome.id
 )
-img_sistine_chapel = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_sistine_chapel = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/sistine_chapel.jpg")
 sistine_chapel.photo.attach(io: img_sistine_chapel, filename: "sistine_chapel.jpg", content_type: "image/jpg")
 
 # 5
@@ -659,7 +659,7 @@ pantheon = Activity.create(
   address: "Piazza della Rotonda, 00186 Roma RM",
   destination_id: rome.id
 )
-img_pantheon = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_pantheon = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/pantheon.jpg")
 pantheon.photo.attach(io: img_pantheon, filename: "pantheon.jpg", content_type: "image/jpg")
 
 puts 'Creating Amsterdam Activities...'
@@ -673,7 +673,7 @@ van_gogh_museum = Activity.create(
   address: "Museumplein 6, 1071 DJ Amsterdam, Netherlands",
   destination_id: amsterdam.id
 )
-img_van_gogh_museum = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_van_gogh_museum = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/van_gogh_museum.jpg")
 van_gogh_museum.photo.attach(io: img_van_gogh_museum, filename: "van_gogh_museum.jpg", content_type: "image/jpg")
 
 # 2
@@ -684,7 +684,7 @@ anne_frank_house = Activity.create(
   address: "Westermarkt 20, 1016 GV Amsterdam",
   destination_id: amsterdam.id
 )
-img_anne_frank_house = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_anne_frank_house = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/anne_frank_house.jpg")
 anne_frank_house.photo.attach(io: img_anne_frank_house, filename: "anne_frank_house.jpg", content_type: "image/jpg")
 
 # 3
@@ -695,7 +695,7 @@ vondelpark = Activity.create(
   address: "Vondelpark, Amsterdam",
   destination_id: amsterdam.id
 )
-img_vondelpark = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_vondelpark = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/vondelpark.jpg")
 vondelpark.photo.attach(io: img_vondelpark, filename: "vondelpark.jpg", content_type: "image/jpg")
 
 # 4
@@ -706,7 +706,7 @@ rijksmuseum = Activity.create(
   address: "Museumstraat 1, 1071 XX Amsterdam",
   destination_id: amsterdam.id
 )
-img_rijksmuseum = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_rijksmuseum = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/rijksmuseum.jpg")
 rijksmuseum.photo.attach(io: img_rijksmuseum, filename: "rijksmuseum.jpg", content_type: "image/jpg")
 
 # 5
@@ -717,7 +717,7 @@ bike_rental = Activity.create(
   address: "A-Bike Rental & Tours, Tesselschadestraat 1E, 1054 ET Amsterdam",
   destination_id: amsterdam.id
 )
-img_bike_rental = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_bike_rental = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/bike_rental.jpg")
 bike_rental.photo.attach(io: img_bike_rental, filename: "bike_rental.jpg", content_type: "image/jpg")
 
 puts 'Creating Berlin Activities...'
@@ -731,7 +731,7 @@ brandenburg_gate = Activity.create(
   address: "Brandenburg Gate, Pariser Platz, 10117 Berlin",
   destination_id: berlin.id
 )
-img_brandenburg_gate = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_brandenburg_gate = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/brandenburg_gate.jpg")
 brandenburg_gate.photo.attach(io: img_brandenburg_gate, filename: "brandenburg_gate.jpg", content_type: "image/jpg")
 
 # 2
@@ -742,7 +742,7 @@ jewish_memorial = Activity.create(
   address: "Jewish Memorial, Cora-Berliner-Straße 1, 10117 Berlin",
   destination_id: berlin.id
 )
-img_jewish_memorial = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_jewish_memorial = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/jewish_memorial.jpg")
 jewish_memorial.photo.attach(io: img_jewish_memorial, filename: "jewish_memorial.jpg", content_type: "image/jpg")
 
 # 3
@@ -753,7 +753,7 @@ reichstag_building = Activity.create(
   address: "Reichstag Building, Platz der Republik 1, 11011 Berlin",
   destination_id: berlin.id
 )
-img_reichstag_building = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_reichstag_building = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/reichstag_building.jpg")
 reichstag_building.photo.attach(io: img_reichstag_building, filename: "reichstag_building.jpg", content_type: "image/jpg")
 
 # 4
@@ -764,7 +764,7 @@ berlin_wall_memorial = Activity.create(
   address: "Berlin Wall Memorial, Platz der Republik 1, 11011 Berlin",
   destination_id: berlin.id
 )
-img_berlin_wall_memorial = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_berlin_wall_memorial = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/berlin_wall_memorial.jpg")
 berlin_wall_memorial.photo.attach(io: img_berlin_wall_memorial, filename: "berlin_wall_memorial.jpg", content_type: "image/jpg")
 
 # 5
@@ -775,7 +775,7 @@ mauerpark = Activity.create(
   address: "Mauerpark, Gleimstraße 55, 10437 Berlin",
   destination_id: berlin.id
 )
-img_mauerpark = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_mauerpark = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/mauerpark.jpg")
 mauerpark.photo.attach(io: img_mauerpark, filename: "mauerpark.jpg", content_type: "image/jpg")
 
 # 6
@@ -786,5 +786,5 @@ berghain = Activity.create(
   address: "Berghain, Am Wriezener bhf, 10243 Berlin",
   destination_id: berlin.id
 )
-img_berghain = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/champs_elysees.jpg")
+img_berghain = URI.open("https://res.cloudinary.com/tip-a-trip/image/upload/v1689178931/development/berghain.jpg")
 berghain.photo.attach(io: img_berghain, filename: "berghain.jpg", content_type: "image/jpg")
