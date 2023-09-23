@@ -551,7 +551,7 @@ toronto_islands.photo.attach(io: img_toronto_islands, filename: "toronto_islands
 
 # 4
 distillery_district = Activity.create(
-  name: "Toronto Islands",
+  name: "Distillery District",
   duration: 90,
   cost: 0,
   address: "55 Mill St, Toronto, ON M5A 3C4",
