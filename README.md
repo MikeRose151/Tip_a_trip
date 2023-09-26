@@ -1,31 +1,38 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-
-TIP-A-TRIP
-Tip-A-Trip is a travel platform
+**Tip-A-Trip** is a travel platform
 
 --------------------------------------
 
-THE PROBLEM(S) AND THE SOLUTION(S)
-[TRY TO HAVE THIS AS A TABLE AS IT'S VISUALLY EASIER]
+<ins>The Problem(s) & The Solution(s):</ins>
+
+| Problem  | Solution |
+| ------------- | ------------- |
+| Planning holiday itineraries is time-consuming  | A platform with a collection of users' itineraries to take inspiration from  |
+| After you go on holiday, your holiday itinerary rarely gets seen again  | The platform also allows you to share your past trips with other users (and family/friends) and enables you to relive your trips  |
 
 Tip-A-Trip solves 2 problems:
-(i) Planning holiday itineraries is time-consuming
-(ii) After you go on holiday, your holiday itinerary rarely gets seen again
+<br>
+⏰ Planning holiday itineraries is time-consuming
+<br>
+🫥 After you go on holiday, your holiday itinerary rarely gets seen again
 
 The solutions to the abovementioned problems:
-(i) A platform with a collection of user’s itineraries to take inspiration from, or to use as is
-(ii) The platform also allows you to share your past trips with other users (and family/friends) and enables you to relive your trips
+<br>
+🔍 A platform with a collection of users' itineraries to take inspiration from
+<br>
+😎 The platform also allows you to share your past trips with other users (and family/friends) and enables you to relive your trips
 
 ---------------------------------------
 
-2 MAIN USER STORIES
-Tripper Trina:
+<ins>The 2 Main User Stories:</ins>
+<br>
+<br>
+**Tripper Trina:**
 - Loves going on vacation
 - Thinks through everything well in advance
 - Loves to be in control and plan out a bespoke itinerary wherever they go
 - Wants to help other travellers make the most of their vacations
 
-Lazy Susan:
+**Lazy Susan:**
 - Loves going on vacation
 - Very last-minute and spontaneous
 - Hates planning; finds it daunting and boring
