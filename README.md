@@ -1,9 +1,5 @@
 **Tip-A-Trip** is a travel platform
 
---------------------------------------
-
-<ins>The Problem(s) & The Solution(s):</ins>
-
 | Problem  | Solution |
 | ------------- | ------------- |
 | Planning holiday itineraries is time-consuming  | A platform with a collection of users' itineraries to take inspiration from  |
