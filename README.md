@@ -1,5 +1,5 @@
 # Tip-A-Trip
-**Tip-A-Trip** is a travel platform
+**Tip-A-Trip** is a platform for keen travellers to create, and get inspired by, customised travel itenaries.
 
 | Problem  | Solution |
 | :------------- | :------------- |
