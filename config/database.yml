@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Tip_a_trip_development
+  database: <%= ENV['DATABASE_URL'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -77,10 +77,9 @@ test:
 #     url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full overview on how database connection configuration can be specified.
-#
+# for a full overview of how database connection configuration can be specified.
 production:
   <<: *default
-  database: Tip_a_trip_production
+  database: <%= ENV['DATABASE_URL'] %>
   username: Tip_a_trip
   password: <%= ENV["TIP_A_TRIP_DATABASE_PASSWORD"] %>
