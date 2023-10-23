@@ -21,7 +21,7 @@
 ### Database Schema explained:
 
 <kbd>
-  <img src="readme_schema.png" alt="Schema Image">
+  <img src="readme_schema.png" alt="Schema Image" style="border: 1px solid #000">
 </kbd>
 
 Step 1:
