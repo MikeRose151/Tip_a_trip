@@ -9,7 +9,7 @@
 
 ---
 
-### Setup
+### Setup:
 
 Clone the Tip-A-Trip repository from GitHub:
 ```bash
@@ -22,6 +22,8 @@ rails db:seed
 ```
 
 Test login details can be found in db/seeds/01_users_seeds.rb, or you can sign up yourself
+
+---
 
 ### The 2 Main User Stories:
 
