@@ -57,14 +57,13 @@ Tip-A-Trip then guides Trina to the itinerary's building page, where the user ca
 
 ### Credit:
 
-<ins>Technical:</ins>
+- Mike Rose (me)
+- Georgia Proctor
+- Fara Bashorun
+- Nnamdi Dibigbo
+- Tommy Down
+- Le Wagon coding bootcamp and its teaching staff
 
-- Time allocation/calculation
-- Map integration
-- Private section to upload holiday photos etc. to share with friends/family
-- Incentive/gamification to encourage users to make good itineraries
+### Get in touch:
 
-<ins>Business:</ins>
-
-- Partnerships with tourism boards
-- Partnerships with tourist attractions
+If you have any questions or would like to discuss this work, please contact michaelrose151@gmail.com
