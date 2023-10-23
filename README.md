@@ -71,6 +71,8 @@ Tip-A-Trip then guides Trina to the itinerary's building page, where the user ca
 - Partnerships with tourism boards
 - Partnerships with tourist attractions
 
+---
+
 ### Credits:
 
 - Mike Rose (me)
@@ -79,6 +81,8 @@ Tip-A-Trip then guides Trina to the itinerary's building page, where the user ca
 - Nnamdi Dibigbo
 - Tommy Down
 - Le Wagon coding bootcamp and its teaching staff
+
+---
 
 ### Get in touch:
 
