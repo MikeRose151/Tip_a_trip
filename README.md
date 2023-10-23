@@ -21,7 +21,7 @@ And then run this command to seed the database:
 rails db:seed
 ```
 
-Test login details can be found in db/seeds/01_users_seeds.rb, or you can sign up yourself
+Test login details can be found in `db/seeds/01_users_seeds.rb` or you can sign up yourself
 
 ---
 
