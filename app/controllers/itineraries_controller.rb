@@ -13,7 +13,7 @@ class ItinerariesController < ApplicationController
   def index
     if params[:query].present?
       sql_query = <<~SQL
-        destinations.city ILIKE :query
+        itineraries.title ILIKE :query OR destinations.city ILIKE :query
       SQL
       @itineraries = Itinerary.joins(:destination).where(sql_query, query: "%#{params[:query]}%")
     else
