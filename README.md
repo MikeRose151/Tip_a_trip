@@ -24,13 +24,13 @@
   <img src="readme_schema.png" alt="Schema Image">
 </kbd>
 
-<u>Step 1:</u>
+Step 1:<br>
 Tripper Trina **(USER)** decides to create an itinerary **(ITINERARY)** for their upcoming trip to London **(DESTINATION)**.
 
-<u>Step 2:</u>
+Step 2:<br>
 Tip-A-Trip will guide Trina to a list of activities available to do in London, which Trina can favourite or ignore based on if they're interested in doing that activity on their trip. Tripper Trina likes the look of the London Eye **(ACTIVITY)** and Borough Market **(ACTIVITY)** and "favourites" both of those activities **(FAVOURITE x2)**.
 
-<u>Step 3:</u>
+Step 3:<br>
 Tip-A-Trip then guides Trina to the itinerary's building page, where the user can see a list of their favourited activities located in the destination of that itinerary (in this case, Trina will see the London activities they favourited) - favourites are essentially a shortlist of activities for their itinerary. Trina will then confirm which of those favourites to actually add to their itinerary. For instance, Trina decides to against including the London Eye on their itinerary but includes Borough Market **(ITINERARY ACTIVITY)**.
 
 ---
