@@ -9,6 +9,20 @@
 
 ---
 
+### Setup
+
+Clone the Tip-A-Trip repository from GitHub:
+```bash
+git clone https://github.com/mikerose151/Tip_a_trip.git
+```
+
+And then run this command to seed the database:
+```bash
+rails db:seed
+```
+
+Test login details can be found in db/seeds/01_users_seeds.rb, or you can sign up yourself
+
 ### The 2 Main User Stories:
 
 |     User      |                                                                                                              Personality                                                                                                              |                                                Use of Tip-A-Trip                                                 |
