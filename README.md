@@ -1,5 +1,8 @@
 # Tip-A-Trip
 
+Live website: https://www.tip-a-trip.com/
+Demo: https://www.youtube.com/watch?v=YmIt_ioanJI
+
 **Tip-A-Trip** is a platform for keen travellers to create, and get inspired by, customised travel itenaries.
 
 | Problem                                                                | Solution                                                                                                                         |
