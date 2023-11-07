@@ -1,8 +1,8 @@
 # Tip-a-Trip
 
-Live website: https://www.tip-a-trip.com/
+<a href="https://www.tip-a-trip.com/" target="_blank">Live website</a>
 
-<a href="https://www.youtube.com/watch?v=YmIt_ioanJI" target="_blank">Tip-a-Trip demo video</a>
+<a href="https://www.youtube.com/watch?v=YmIt_ioanJI" target="_blank">Demo video</a>
 
 ---
 
