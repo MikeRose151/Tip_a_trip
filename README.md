@@ -2,7 +2,6 @@
 
 Live website: https://www.tip-a-trip.com/
 
-Demo: 
 <a href="https://www.youtube.com/watch?v=YmIt_ioanJI" target="_blank">Tip-a-Trip demo video</a>
 
 ---
