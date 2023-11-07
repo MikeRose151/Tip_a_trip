@@ -2,7 +2,11 @@
 
 Live website: https://www.tip-a-trip.com/
 
-Demo: https://www.youtube.com/watch?v=YmIt_ioanJI
+Demo: 
+<a href="https://www.youtube.com/watch?v=YmIt_ioanJI" target="_blank"><img src="https://www.youtube.com/watch?v=YmIt_ioanJI.jpg" 
+alt="Tip-A-Trip Demo" width="240" height="180" border="10" /></a>
+
+---
 
 **Tip-A-Trip** is a platform for keen travellers to create, and get inspired by, customised travel itenaries.
 
