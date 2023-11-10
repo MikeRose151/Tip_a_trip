@@ -1,11 +1,11 @@
 // Specific CSS for your home-page
-.home-background{
+.home-background {
   height: 100vh;
   background: linear-gradient(
     to right,
-    #0B0633 0%,
-    #0B0633 38%,
-    #d3d7fb  38%,
+    #0b0633 0%,
+    #0b0633 38%,
+    #d3d7fb 38%,
     #f8def1 100%
   );
 }
@@ -22,33 +22,31 @@
 }
 
 .txtcolour {
-  color: #0B0633;
+  color: #0b0633;
   padding-left: 50;
-
 }
 
-.card-text{
-  color: #0B0633;
+.card-text {
+  color: #0b0633;
   display: flex;
   align-items: center;
   text-align: justify;
   font-family: $body;
 }
 
-.card-title{
-  color:  #0B0633;
+.card-title {
+  color: #0b0633;
   font-size: 35px;
   text-align: center;
 }
-.card-body{
+.card-body {
   text-align: justify;
-  color: #F5F4F4;
+  color: #f5f4f4;
 }
 
 // .card{
 //   --bs-card-bg: transparent;
 //   position: right;
-
 
 //   --bs-card-border-width: 0px;
 //   element.style {
@@ -65,36 +63,38 @@
 }
 
 .row {
-  --bs-gutter-x: 1.5rem;}
-
-  element.style {
-    width: 18rem;
+  --bs-gutter-x: 1.5rem;
 }
 
-.hometext{
-  height:100vh;
-  display:flex;
+element.style {
+  width: 18rem;
+}
+
+.hometext {
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.body{--bs-body-font-family: var('Play', 'sans-serif');
+.body {
+  --bs-body-font-family: var("Play", "sans-serif");
 }
 
-.font{
-  font-family:$body;
+.font {
+  font-family: $body;
   font-size: 20px;
 }
 
-.fonttitle{
-  font-family:$headers;
+.fonttitle {
+  font-family: $headers;
   font-weight: 1000;
 }
 
-.centre{
+.centre {
   margin-inline: auto;
 }
 
-.logotext{
+.logotext {
   height: 80vh;
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@
 }
 
 .planefont {
-color: #0B0633;
+  color: #0b0633;
 }
 
 .small {
@@ -113,12 +113,37 @@ color: #0B0633;
   font-family: $headers;
 }
 
-.buttonspacing{
+.buttonspacing {
   margin-top: 100px;
-
 }
 
-.nav-item{
+.nav-item {
   justify-content: center;
   margin-right: 23px;
+}
+
+.mobile-message {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .card-body {
+    display: none;
+  }
+
+  .container-paragraphs {
+    display: none;
+  }
+
+  .mobile-message {
+    display: block;
+  }
+
+  .mobile-message p {
+    text-align: center;
+    font-size: 2vh;
+    background-color: white;
+    padding: 4%;
+    display: block;
+  }
 }

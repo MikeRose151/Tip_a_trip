@@ -11,19 +11,17 @@
   height: 60px;
 }
 
-.nav-link{
-  color: #F5F4F4;
+.nav-link {
+  color: #f5f4f4;
 }
 
 .navbar-nav {
   margin-right: auto;
-
 }
 
 .navbar .form-control {
   background-color: transparent;
   border: 1px solid #fff;
-
 }
 
 .navbar .form-group {
@@ -48,4 +46,10 @@
 
 .navbar-nav li {
   margin-right: 10px;
+}
+
+@media (max-width: 1023px) {
+  .btn-create-new {
+    display: none;
+  }
 }
