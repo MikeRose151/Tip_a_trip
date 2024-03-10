@@ -1,0 +1,3 @@
+In https://dashboard.heroku.com/apps/tip-a-trip/resources, under the "Add-ons" heading, I had a Heroku Postgres add-on.
+The datastore is named "postgresql-concave-05467" found at https://data.heroku.com/datastores/36e237cb-f5b6-43c7-9af7-399b7fe611a0#.
+On 10th March 2024, I removed the add-on from Heroku so I don't get charged $5/month.`
